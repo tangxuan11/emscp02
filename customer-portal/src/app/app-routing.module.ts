@@ -1,13 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LoginComponent } from './AppFeatures/Login/login.component';
+import { AnalyticsComponent } from './AppFeatures/Analytics/analytics.component';
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent }
+  { path: 'analytics', component: AnalyticsComponent }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  declarations: [AnalyticsComponent],
+  imports: [RouterModule.forRoot(routes),
+
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

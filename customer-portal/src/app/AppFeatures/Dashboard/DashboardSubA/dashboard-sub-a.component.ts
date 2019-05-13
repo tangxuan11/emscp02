@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class DashboardSubAComponent implements OnInit {
 
   @Input() featureTitle: string;
+  @Input() featureURL: string;
   @Input() featureDescription: string;
   @Input() featureLogoFileName: string;
 
