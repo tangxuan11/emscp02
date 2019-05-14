@@ -27,8 +27,8 @@ export class DashboardComponent implements OnInit {
   featureDescription4: string = "Manage Opt-in & Opt-out registries";
   featureLogoFileName4: string = "Logo4";
 
-  featureTitle5:string = "Campaigns";
-  featureURL5:string = "/campaigns";
+  featureTitle5:string = "Campaign";
+  featureURL5:string = "/campaign";
   featureDescription5: string = "Manage & launch campaigns";
   featureLogoFileName5: string = "Logo5";
 

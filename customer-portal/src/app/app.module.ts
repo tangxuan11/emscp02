@@ -7,6 +7,11 @@ import { CoreModule } from './Core/core.module';
 import { LoginComponent } from './AppFeatures/Login/login.component';
 import { DashboardModule } from './AppFeatures/Dashboard/dashboard.module';
 import { AnalyticsModule } from './AppFeatures/Analytics/analytics.module';
+import { MessageLogModule } from './AppFeatures/MessageLog/message-log.module';
+import { WebTextModule } from './AppFeatures/WebText/web-text.module';
+import { RegistriesModule } from './AppFeatures/Registries/registries.module';
+import { CampaignModule } from './AppFeatures/Campaign/campaign.module';
+import { CMSModule } from './AppFeatures/CMS/cms.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +23,12 @@ import { AnalyticsModule } from './AppFeatures/Analytics/analytics.module';
     AppRoutingModule,
     CoreModule,
     DashboardModule,
-    AnalyticsModule
+    AnalyticsModule,
+    MessageLogModule,
+    WebTextModule,
+    RegistriesModule,
+    CampaignModule,
+    CMSModule
   ],
   providers: [],
   bootstrap: [AppComponent]
