@@ -9,11 +9,16 @@ import { LogInStateService } from "./Core/Services/log-in-state.service"
 })
 export class AppComponent {
   title = 'customer-portal';
-  loggedIn:boolean;
+  loggedIn:boolean = false;
 
-  constructor(private data: LogInStateService) { }
+  constructor(private data: LogInStateService) {
+    
+   }
 
   ngOnInit() {
-    this.data.currentMessage.subscribe(message => this.loggedIn = message)
+    //this.data.currentMessage.subscribe(statusData => {this.loggedIn = statusData})
+    this.data.sharedData.subscribe(statusData => {
+      this.loggedIn = statusData; 
+      })
   }
 }

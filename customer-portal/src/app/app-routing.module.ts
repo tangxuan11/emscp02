@@ -1,13 +1,19 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AnalyticsComponent } from './AppFeatures/Analytics/analytics.component';
+import { DashboardComponent } from './AppFeatures/Dashboard/dashboard.component';
 
 const routes: Routes = [
-  { path: 'analytics', component: AnalyticsComponent }
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'analytics', component: AnalyticsComponent },
+  { path: '',
+    redirectTo: '/dashboard',
+    pathMatch: 'full'
+  },
 ];
 
 @NgModule({
-  declarations: [AnalyticsComponent],
+  declarations: [],
   imports: [RouterModule.forRoot(routes),
 
   ],
