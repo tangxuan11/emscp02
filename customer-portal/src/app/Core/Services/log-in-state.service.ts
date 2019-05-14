@@ -5,13 +5,13 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class LogInStateService {
-  sharedData = new BehaviorSubject(false);
+  sharedData = new BehaviorSubject(true);
 
   //private messageSource = new BehaviorSubject(false);
   //sharedData = this.messageSource.asObservable();
 
   constructor() {
-    this.sharedData.next(false);
+    
   }
 
   changeMessage(message: boolean) {
