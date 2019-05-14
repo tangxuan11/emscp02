@@ -20,5 +20,8 @@ export class AppComponent {
     this.data.sharedData.subscribe(statusData => {
       this.loggedIn = statusData; 
       })
+
+    alert('app comp');
   }
+
 }
