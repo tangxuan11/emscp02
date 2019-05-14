@@ -21,7 +21,7 @@ export class AppComponent {
       this.loggedIn = statusData; 
       })
 
-    alert('app comp');
+  
   }
 
 }

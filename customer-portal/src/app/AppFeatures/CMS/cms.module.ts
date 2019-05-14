@@ -14,4 +14,4 @@ import { CMSComponent } from './cms.component';
     CMSComponent
   ]
 })
-export class CMSModule { }
+export class CMSModule {}
