@@ -8,3 +8,44 @@ $backgound-color-2: rgba(0,128,0,0.25);
 .background-color-2 {
     background-color: $backgound-color-2;
 }
+
+.container-fluid {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.col-sm-2, .col-sm-10 {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.router-outlet {
+    width: 100%;
+    background-color: bisque;
+}
+
+.top-nav-bar-feature {
+    height: 5vh;
+    background-color: beige;
+}
+
+.side-bar {
+    height: 100vh;
+    width: 150px;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.top-nav-bar-login {
+    height: 10vh;
+}
+
+.login {
+    height: 45vh;
+}
+
+.footer {
+    height: 45vh;
+}

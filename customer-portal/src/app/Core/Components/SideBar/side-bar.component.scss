@@ -1,0 +1,117 @@
+@import "../../../../styles.scss";
+
+@keyframes collapse {
+    0% {
+        width: 15%;
+        max-width: none;
+        min-width: 175px;
+        height: 100vh;
+        text-align: center;
+    }
+
+    100% {
+        width: 50px;
+        min-width: 50px;
+        height: 100vh;
+        text-align: center;
+    }
+}
+
+
+#sidebar {
+    white-space: nowrap;
+    //display: inline-block;
+	background: $gunmetal_gray;
+	color: $white;
+	height: 100vh;
+    bottom: 0;
+
+    &.collapsed {
+        animation-name: collapse;
+        animation-duration: 1s;
+        animation-iteration-count: 1s;
+        animation-direction: normal;
+        animation-fill-mode: forwards;
+        text-align: center;
+        .sidebar-header {
+            display: none;
+        }
+        ul {
+            p {
+                color: transparent;
+          
+                padding: 10px 0px 10px 0px;
+            }
+            li {
+                a {
+                    padding: 10px 0px 10px 0px;
+                    .linkText {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    &.expanded {
+
+    }
+
+	.sidebar-header {
+        padding-left: 25px;
+		background: $gunmetal_gray;
+		color: $netsfere_red;
+		font-weight: bolder;
+        min-height: 30px;
+        height: 4%;
+        font-size: 30px;
+	}
+	ul {
+		p {
+			color: $white;
+			padding: 10px;
+            padding-left: 25px;
+            font-weight: bold;
+		}
+		li {
+			a {
+				padding: 10px;
+				padding-left: 20px;
+				font-size: 1.1em;
+				display: block;
+				color: $light_neutral_gray;
+				text-decoration: none;
+                .linkText {
+                    display: inline;
+                    padding-left: 5px;
+                }
+				span {
+					padding-right: 5px;
+				}
+				&:hover {
+					color: $white;
+				}
+			}
+			&.active > a {
+				color: $white;
+				background: linear-gradient(90deg, $netsfere_red 5px, $black_chrome 0);
+			}
+		}
+		&.bottom {
+            position: absolute;
+			bottom: -10px;
+			width: 100%;
+            background-color: $gunmetal_gray;
+		}
+	}
+}
+hr {
+	width: 90%;
+	border-color: $dark_neutral_gray;
+	padding: 0;
+	margin: 0 auto;
+}
+a[aria-expanded="true"] {
+	color: $white;
+	background: linear-gradient(90deg, $netsfere_red 2%, $black_chrome 0);
+}
