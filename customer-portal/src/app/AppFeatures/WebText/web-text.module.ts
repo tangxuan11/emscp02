@@ -5,13 +5,13 @@ import { WebTextRoutingModule } from './web-text-routing.module';
 import { WebTextComponent } from './web-text.component';
 
 @NgModule({
-  declarations: [WebTextComponent],
-  imports: [
-    CommonModule,
-    WebTextRoutingModule
-  ],
-  exports: [
-    WebTextComponent
-  ]
+    declarations: [WebTextComponent],
+    imports: [
+        CommonModule,
+        WebTextRoutingModule
+    ],
+    exports: [
+        WebTextComponent
+    ]
 })
 export class WebTextModule { }

@@ -5,14 +5,14 @@ import { CampaignComponent } from './campaign.component';
 
 
 const routes: Routes = [
-  {
-    path: '',
-    component: CampaignComponent
-  }
+    {
+        path: '',
+        component: CampaignComponent
+    }
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forChild(routes)],
+    exports: [RouterModule]
 })
 export class CampaignRoutingModule { }

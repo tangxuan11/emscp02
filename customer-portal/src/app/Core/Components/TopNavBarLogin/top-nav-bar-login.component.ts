@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-top-nav-bar-login',
-  templateUrl: './top-nav-bar-login.component.html',
-  styleUrls: ['./top-nav-bar-login.component.scss']
+    selector: 'app-top-nav-bar-login',
+    templateUrl: './top-nav-bar-login.component.html',
+    styleUrls: ['./top-nav-bar-login.component.scss']
 })
 export class TopNavBarLoginComponent implements OnInit {
 
-  constructor() { }
+    constructor() { }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+    }
 
 }

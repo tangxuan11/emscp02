@@ -7,15 +7,15 @@ import { TopNavBarFeatureComponent } from './Components/TopNavBarFeature/top-nav
 import { TopNavBarLoginComponent } from './Components/TopNavBarLogin/top-nav-bar-login.component';
 
 @NgModule({
-  declarations: [FooterComponent, TopNavBarFeatureComponent, TopNavBarLoginComponent],
-  imports: [
-    CommonModule
-  ],
-  exports: [
-    TopNavBarLoginComponent,
-    TopNavBarFeatureComponent,
-    //SideBarComponent,
-    FooterComponent
-  ]
+    declarations: [FooterComponent, TopNavBarFeatureComponent, TopNavBarLoginComponent],
+    imports: [
+        CommonModule
+    ],
+    exports: [
+        TopNavBarLoginComponent,
+        TopNavBarFeatureComponent,
+        //SideBarComponent,
+        FooterComponent
+    ]
 })
 export class CoreModule { }

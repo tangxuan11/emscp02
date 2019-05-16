@@ -7,14 +7,14 @@ import { ComponentsModule } from '../../Shared/Components/components.module';
 import { DashboardSubAComponent } from './DashboardSubA/dashboard-sub-a.component';
 
 @NgModule({
-  declarations: [DashboardComponent, DashboardSubAComponent],
-  imports: [
-    CommonModule,
-    ComponentsModule,
-    DashboardRoutingModule
-  ],
-  exports: [
-    DashboardComponent
-  ]
+    declarations: [DashboardComponent, DashboardSubAComponent],
+    imports: [
+        CommonModule,
+        ComponentsModule,
+        DashboardRoutingModule
+    ],
+    exports: [
+        DashboardComponent
+    ]
 })
 export class DashboardModule { }

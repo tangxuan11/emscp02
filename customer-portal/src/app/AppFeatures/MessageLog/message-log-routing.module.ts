@@ -4,14 +4,14 @@ import { Routes, RouterModule } from '@angular/router';
 import { MessageLogComponent } from './message-log.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: MessageLogComponent
-  }
+    {
+        path: '',
+        component: MessageLogComponent
+    }
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forChild(routes)],
+    exports: [RouterModule]
 })
 export class MessageLogRoutingModule { }
