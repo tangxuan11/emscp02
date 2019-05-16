@@ -5,13 +5,13 @@ import { CMSRoutingModule } from './cms-routing.module';
 import { CMSComponent } from './cms.component';
 
 @NgModule({
-  declarations: [CMSComponent],
-  imports: [
-    CommonModule,
-    CMSRoutingModule
-  ],
-  exports: [
-    CMSComponent
-  ]
+    declarations: [CMSComponent],
+    imports: [
+        CommonModule,
+        CMSRoutingModule
+    ],
+    exports: [
+        CMSComponent
+    ]
 })
-export class CMSModule {}
+export class CMSModule { }

@@ -69,10 +69,10 @@ export class SideBarComponent implements OnInit {
       }
   ]
 
-  constructor(private navbarData: NavBarDataService) { }
+    constructor(private navbarData: NavBarDataService) { }
 
-  ngOnInit() {
-    this.navbarData.currentNavbarData.subscribe(data => this.compressed = data.sidebarCollapsed)
-  }
+    ngOnInit() {
+        this.navbarData.currentNavbarData.subscribe(data => this.compressed = data.sidebarCollapsed)
+    }
 
 }

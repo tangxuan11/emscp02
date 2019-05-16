@@ -5,14 +5,14 @@ import { WebTextComponent } from './web-text.component';
 
 
 const routes: Routes = [
-  {
-    path: '',
-    component: WebTextComponent
-  }
+    {
+        path: '',
+        component: WebTextComponent
+    }
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forChild(routes)],
+    exports: [RouterModule]
 })
 export class WebTextRoutingModule { }

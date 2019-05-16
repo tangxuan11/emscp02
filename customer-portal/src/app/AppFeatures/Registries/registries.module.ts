@@ -5,13 +5,13 @@ import { RegistriesRoutingModule } from './registries-routing.module';
 import { RegistriesComponent } from './registries.component';
 
 @NgModule({
-  declarations: [RegistriesComponent],
-  imports: [
-    CommonModule,
-    RegistriesRoutingModule
-  ],
-  exports: [
-    RegistriesComponent
-  ]
+    declarations: [RegistriesComponent],
+    imports: [
+        CommonModule,
+        RegistriesRoutingModule
+    ],
+    exports: [
+        RegistriesComponent
+    ]
 })
 export class RegistriesModule { }

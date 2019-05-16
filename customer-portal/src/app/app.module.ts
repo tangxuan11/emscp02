@@ -9,17 +9,17 @@ import { LoginComponent } from './AppFeatures/Login/login.component';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoginComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    CoreModule,
-    SideBarModule
-  ],
-  providers: [{provide:LocationStrategy, useClass:HashLocationStrategy}],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        LoginComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        CoreModule,
+        SideBarModule
+    ],
+    providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
