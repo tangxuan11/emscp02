@@ -1,3 +1,5 @@
+@import "../styles.scss";
+
 $backgound-color-1: rgba(0,0,255,0.25);
 $backgound-color-2: rgba(0,128,0,0.25);
 
@@ -21,17 +23,22 @@ $backgound-color-2: rgba(0,128,0,0.25);
 
 .router-outlet {
     width: 100%;
-    background-color: bisque;
+    background-color: $bright_silver;
 }
 
 .top-nav-bar-feature {
-    height: 5vh;
-    background-color: beige;
+    height: 50px;
+    position: sticky;
+    top: 0;
+    z-index: 2;
 }
 
 .side-bar {
-    height: 100vh;
-    
+    height: calc(100vh - 50px);
+    position: sticky;
+    bottom: 0vh;
+    top: 50px;
+    z-index: 3;
 }
 
 .flex-container {

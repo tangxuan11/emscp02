@@ -1,90 +1,19 @@
 
 <!-- Sidebar Holder -->
 <nav id="sidebar" [ngClass]="{collapsed: compressed === true}">
-    <div class="sidebar-header">
-        EMS
-    </div>
-
-    <hr>
-
-    <ul class="list-unstyled components">
-        <p>Navigation</p>
-        <li (click)="activePanel = 'Home'" [ngClass]="{active: activePanel === 'Home'}">
-            <a routerLink="/dashboard" routerLinkActive="active">
-                <span class="glyphicon glyphicon-home"></span>
-                <div class="linkText">Dashboard</div>
-            </a>
-        </li>
-        <li (click)="activePanel = 'Analytics'" [ngClass]="{active: activePanel === 'Analytics'}">
-            <a routerLink="/analytics" routerLinkActive="active">
-                <span class="glyphicon glyphicon-object-align-bottom"></span>
-                <div class="linkText">Analytics</div>
-            </a>
-        </li>
-        <li (click)="activePanel = 'Message Log'" [ngClass]="{active: activePanel === 'Message Log'}">
-            <a routerLink="/message_log" routerLinkActive="active">
-                <span class="fa fa-tasks"></span>
-                <div class="linkText">Message Log</div>
-            </a>
-        </li>
-        <li (click)="activePanel = 'Web Text'" [ngClass]="{active: activePanel === 'Web Text'}">
-            <a routerLink="/web_text" routerLinkActive="active">
-                <span class="fa fa-comments"></span>
-                <div class="linkText">Web Text</div>
-            </a>
-        </li>
-        <li (click)="activePanel = 'Registries'" [ngClass]="{active: activePanel === 'Registries'}">
-            <a routerLink="/registries" routerLinkActive="active">
-                <span class="fa fa-address-card"></span>
-                <div class="linkText">Registries</div>
-            </a>
-        </li>
-        <li (click)="activePanel = 'Campaign'" [ngClass]="{active: activePanel === 'Campaign'}">
-            <a routerLink="/campaign" routerLinkActive="active">
-                <span class="fa fa-rocket"></span>
-                <div class="linkText">Campaign</div>
-            </a>
-        </li>
-        <li (click)="activePanel = 'CMS'" [ngClass]="{active: activePanel === 'CMS'}">
-            <a routerLink="/cms" routerLinkActive="active">
-                <span class="fa fa-cogs"></span>
-                <div class="linkText">CMS</div>
-            </a>
-        </li>
-        <li (click)="activePanel = 'Contact'" [ngClass]="{active: activePanel === 'Contact'}">
-            <a href="#">
-                <span class="fa fa-building"></span>
-                <div class="linkText">Enterprise</div>
-            </a>
-        </li>
+<ul class="list-unstyled components"
+        *ngFor="let navGroup of sideNav">
+        <p>{{navGroup.heading}}</p>
+        <ng-container *ngFor="let link of navGroup.panels">
+            <app-side-bar-link [title]="link.title"
+                               [icon]="link.icon"
+                               [route]="link.route">
+            </app-side-bar-link>
+        </ng-container>
     </ul>
 
-    <ul class="list-unstyled components">
-        <p>Account</p>
-        <li (click)="activePanel = 'Notifications'" [ngClass]="{active: activePanel === 'Notifications'}">
-            <a href="#">
-                <span class="fa fa-bullhorn"></span>
-                <div class="linkText">Notifications</div>
-            </a>
-        </li>
-        <li (click)="activePanel = 'Settings'" [ngClass]="{active: activePanel === 'Settings'}">
-            <a href="#">
-                <span class="glyphicon glyphicon-cog"></span>
-                <div class="linkText">Settings</div>
-            </a>
-        </li>
-        <li (click)="activePanel = 'Help'" [ngClass]="{active: activePanel === 'Help'}">
-            <a href="#">
-                <span class="fa fa-question-circle"></span>
-                <div class="linkText">Help</div>
-            </a>
-        </li>
-    </ul>
-<!--
     <ul class="list-unstyled bottom">
         <li><hr></li>
         <li><a href="#"><i class="glyphicon glyphicon-off"></i></a></li>
     </ul>
--->
 </nav>
-
