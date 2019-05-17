@@ -8,8 +8,6 @@ import { LogInStateService } from "../../Core/Services/log-in-state.service"
 })
 export class LoginComponent implements OnInit {
 
-    message: boolean;
-
     constructor(private data: LogInStateService) {
 
     }

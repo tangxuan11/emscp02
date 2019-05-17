@@ -16,6 +16,6 @@ export class LogInStateService {
 
     changeMessage(message: boolean) {
         //this.messageSource.next(message)
-        this.sharedData.next(true);
+        this.sharedData.next(message);
     }
 }
