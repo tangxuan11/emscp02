@@ -7,7 +7,10 @@
         <ng-container *ngFor="let link of navGroup.panels">
             <app-side-bar-link [title]="link.title"
                                [icon]="link.icon"
-                               [route]="link.route">
+                               [route]="link.route"
+                               [separator]="link.separator"
+                               [isSubpanel]="link.isSubpanel"
+                               [subPanels]="link.subPanels">
             </app-side-bar-link>
         </ng-container>
     </ul>

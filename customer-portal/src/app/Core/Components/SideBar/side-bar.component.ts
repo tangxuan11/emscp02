@@ -27,7 +27,12 @@ export class SideBarComponent implements OnInit {
                 },
                 { title: "Analytics",
                   icon: "glyphicon glyphicon-object-align-bottom",
-                  route: "/analytics"
+                  route: "/analytics",
+                  subPanels: [
+                      {
+                          title: "tmp1", icon: "", isSubpanel: true
+                      }
+                  ]
                 },
                 { title: "Message Log",
                   icon: "glyphicon glyphicon-home",

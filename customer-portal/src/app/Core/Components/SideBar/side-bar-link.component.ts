@@ -4,6 +4,9 @@ export interface SidebarNavLink {
     title: string;
     icon: string;
     route?: string;
+    separator?: boolean;
+    isSubpanel?: boolean;
+    subPanels?: SidebarNavLink[];
 }
 
 @Component({
@@ -15,11 +18,14 @@ export class SideBarLinkComponent implements OnInit {
   @Input() title: string;
   @Input() icon: string;
   @Input() route: string;
-  @Input() active: boolean;
+  @Input() separator: boolean = false;
+  @Input() isSubpanel: boolean = false;
+  @Input() subPanels: SidebarNavLink[];
 
   constructor() { }
 
   ngOnInit() {
+      if (this.subPanels) this.isSubpanel = false;
   }
 
 }

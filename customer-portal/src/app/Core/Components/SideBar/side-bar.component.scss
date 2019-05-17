@@ -97,10 +97,6 @@
 					color: $white;
 				}
 			}
-			&.active > a {
-				color: $white;
-				background: linear-gradient(90deg, $netsfere_red 5px, $black_chrome 0);
-			}
 		}
 		&.bottom {
             position: absolute;

@@ -20,7 +20,19 @@ li {
         }
         &.active {
             color: $white;
-            background: linear-gradient(90deg, $netsfere_red 5px, $black_chrome 0);
+
+            &.mainPanel {
+                background: linear-gradient(90deg, $netsfere_red 5px, $black_chrome 0);
+            }
+            &.subPanel {
+                background-color: $charcoal_gray;
+            }
         }
+    }
+    hr {
+    	width: 90%;
+    	border-color: $dark_neutral_gray;
+    	padding: 0;
+    	margin: 0 auto;
     }
 }
