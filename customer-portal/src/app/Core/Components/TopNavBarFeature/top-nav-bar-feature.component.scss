@@ -1,83 +1,15 @@
 @import "../../../../styles.scss";
 
-input, textarea {
-	border: none;
-	background: transparent;
-}
-
-#logo {
-    color: $netsfere_red;
-    font-weight: bolder;
-    font-size: 16pt;
-}
-
-.input-group {
-	height: 100%;
-	width: 100%;
-	background-color: $offwhite;
-	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
-	border-radius: 20px;
-	color: $light_neutral_gray;
-}
-
-.input-group-addon {
-	border: none;
-	background: transparent;
-}
-
-.form-control {
-	border-color: transparent;
-	//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
-	box-shadow: none;
-}
-
-.circle-mask {
-	display: inline-block;
-	width: 25px;
-	height: 25px;
-	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
-	border-radius: 50%;
-	overflow: hidden;
-	//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
-	transform: translate(0,-5px);
-	//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
-	box-shadow: 2px 1px 3px;
-}
-
-img {
-	max-height: 100%;
-	//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
-	transform: translateX(-10px);
-}
-
-.navbar-right {
-	padding-right: 10px;
-}
-
-.navbar {
-	background-color: $white;
-    max-height: 50px;
-	//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
-	box-shadow: 0px 10px 40px -10px $silver;
+.mat-toolbar {
+    background-color: $white;
     position: fixed;
     top: 0;
-    right: 0;
-    width: 100%;
-    line-height: 5%;
-    white-space: nowrap;
-}
+    left: 0;
+    z-index: 1;
+    height: 50px;
+    box-shadow: 0px 10px 40px -10px $silver;
 
-.nav {
-    li {
-        a {
-            color: $medium_neutral_gray;
-            &:hover {
-                background-color: transparent;
-                color: $dark_neutral_gray;
-            }
-            &:focus {
-                background-color: transparent;
-            }
-        }
+    button {
+        background-color: $white;
     }
 }

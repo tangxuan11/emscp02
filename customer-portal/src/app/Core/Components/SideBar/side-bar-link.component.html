@@ -1,12 +1,10 @@
-<li>
-    <hr *ngIf="separator; else navLink">
-    <ng-template #navLink>
-        <a routerLink="{{route}}"
-           [routerLinkActive]="route ? ['active'] : ['']"
-           [ngClass]="{'mainPanel': !isSubpanel,
-                       'subPanel': isSubpanel}">
-            <span class="{{icon}}"></span>
-            <div class="linkText">{{title}}</div>
-        </a>
-    </ng-template>
-</li>
+<hr *ngIf="separator; else navLink">
+<ng-template #navLink>
+    <a mat-list-item routerLink="{{route}}"
+       [routerLinkActive]="route ? ['active'] : ['']"
+       [ngClass]="{'mainPanel': !isSubpanel,
+                   'subPanel': isSubpanel}">
+        <mat-icon class="{{iconStyle}}">{{icon}}</mat-icon>
+        <div class="linkText">{{title}}</div>
+    </a>
+</ng-template>

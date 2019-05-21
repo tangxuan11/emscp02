@@ -1,43 +1,10 @@
-<nav class="navbar" [ngClass]="{collapsed: compressed === true}">
-    <div class="container-fluid">
-        <ul class="nav navbar-nav navbar-left">
-            <li>
-                <a (click) = "toggleSidebarCollapse()"
-                   class="navbar-brand">
-                   <span class="glyphicon glyphicon-menu-hamburger"></span>
-                </a>
-            </li>
-            <li>
-                <a class="navbar-brand" id="logo">EMS</a>
-            </li>
-        </ul>
-
-        <form class="nav navbar-form navbar-left">
-            <div class="input-group">
-                <span class="input-group-addon" id="basic-addon1">
-                    <i class="glyphicon glyphicon-search"></i>
-                </span>
-                <input (keyup) = "onKeyUp($event)"
-                       type="text"
-                       class="form-control"
-                       placeholder="Start searching..."
-                       aria-label="Username"
-                       aria-describedby="basic-addon1">
-            </div>
-        </form>
-
-        <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">
-                    <div class="circle-mask">
-                        <img src="../assets/profile.jpg" alt="Profile">
-                    </div>
-            </a></li>
-            <li><a href="#">
-                <i class="glyphicon glyphicon-cog"></i>
-            </a></li>
-            <li><a href="#">
-                <i class="glyphicon glyphicon-bullhorn"></i>
-            </a></li>
-        </ul>
-    </div>
-</nav>
+<mat-toolbar color="primary">
+  <button
+    type="button"
+    aria-label="Toggle sidenav"
+    mat-icon-button
+    (click)="toggleSidebarCollapse()">
+    <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+  </button>
+  <span>blog-app</span>
+</mat-toolbar>

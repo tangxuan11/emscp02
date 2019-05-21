@@ -1,58 +1,13 @@
 @import "../styles.scss";
 
-$backgound-color-1: rgba(0,0,255,0.25);
-$backgound-color-2: rgba(0,128,0,0.25);
+.sidenav-container {
+    position: fixed;
+    height: calc(100% - 50px);
+    bottom: 0;
 
-.background-color-1 {
-    background-color: $backgound-color-1;
-}
-
-.background-color-2 {
-    background-color: $backgound-color-2;
-}
-
-.container-fluid {
-    padding-left: 0px;
-    padding-right: 0px;
-}
-
-.col-sm-2, .col-sm-10 {
-    padding-left: 0px;
-    padding-right: 0px;
-}
-
-.router-outlet {
-    width: 100%;
-    background-color: $bright_silver;
-}
-
-.top-nav-bar-feature {
-    height: 50px;
-    position: sticky;
-    top: 0;
-    z-index: 2;
-}
-
-.side-bar {
-    height: calc(100vh - 50px);
-    position: sticky;
-    bottom: 0vh;
-    top: 50px;
-    z-index: 3;
-}
-
-.flex-container {
-    display: flex;
-}
-
-.top-nav-bar-login {
-    height: 10vh;
-}
-
-.login {
-    height: 45vh;
-}
-
-.footer {
-    height: 45vh;
+    .sidenav {
+        position: absolute;
+        width: 200px;
+        background-color: $gunmetal_gray;
+    }
 }

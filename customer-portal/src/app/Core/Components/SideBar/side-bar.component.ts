@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import { NavBarDataService } from '../../Services/nav-bar-data.service';
 import { LogInStateService } from '../../Services/log-in-state.service';
 import { SidebarNavLink } from './side-bar-link.component';
 
@@ -16,17 +15,17 @@ interface SidebarNavGroup {
 })
 export class SideBarComponent implements OnInit {
     activePanel: string;
-    compressed: boolean;
     private sideNav: SidebarNavGroup[] = [
         {
             heading: "Navigation",
             panels: [
                 { title: "Dashboard",
-                  icon: "glyphicon glyphicon-home",
+                  icon: "home",
+                  iconStyle: "outlined",
                   route: "/dashboard"
                 },
                 { title: "Analytics",
-                  icon: "glyphicon glyphicon-object-align-bottom",
+                  icon: "trending_up",
                   route: "/analytics",
                   subPanels: [
                       {
@@ -35,51 +34,55 @@ export class SideBarComponent implements OnInit {
                   ]
                 },
                 { title: "Message Log",
-                  icon: "glyphicon glyphicon-home",
+                  icon: "list",
                   route: "/message_log"
                 },
                 { title: "Web Text",
-                  icon: "glyphicon glyphicon-home",
+                  icon: "chat",
+                  iconStyle: "outlined",
                   route: "/web_text"
                 },
                 { title: "Registries",
-                  icon: "glyphicon glyphicon-home",
+                  icon: "group",
+                  iconStyle: "outlined",
                   route: "/registries"
                 },
                 { title: "Campaign",
-                  icon: "glyphicon glyphicon-home",
+                  icon: "send",
+                  iconStyle: "outlined",
                   route: "/campaign"
                 },
                 { title: "CMS",
-                  icon: "glyphicon glyphicon-home",
+                  icon: "donut_small",
+                  iconStyle: "outlined",
                   route: "/cms"
                 },
                 { title: "Enterprise",
-                  icon: "glyphicon glyphicon-home",
+                  icon: "domain"
                 }
-          ]
-      },
-      {
-          heading: "Account",
-          panels: [
-              { title: "Notifications",
-                icon: "glyphicon glyphicon-home",
-              },
-              { title: "Settings",
-                icon: "glyphicon glyphicon-cog"
-              },
-              { title: "Help",
-                icon: "glyphicon glyphicon-home",
-              }
-          ]
-      }
-  ]
+            ]
+        },
+        {
+            heading: "Account",
+            panels: [
+                { title: "Notifications",
+                  icon: "notifications",
+                  iconStyle: "outlined",
+                },
+                { title: "Settings",
+                  icon: "settings",
+                  iconStyle: "outlined",
+                },
+                { title: "Help",
+                  icon: "help_outline"
+                }
+            ]
+        }
+    ];
 
-    constructor(private navbarData: NavBarDataService,
-                private loginState: LogInStateService) { }
+    constructor(private loginState: LogInStateService) { }
 
     ngOnInit() {
-        this.navbarData.currentNavbarData.subscribe(data => this.compressed = data.sidebarCollapsed)
     }
 
     logOut() {

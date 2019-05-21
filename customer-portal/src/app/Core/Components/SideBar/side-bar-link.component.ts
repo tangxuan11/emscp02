@@ -3,6 +3,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export interface SidebarNavLink {
     title: string;
     icon: string;
+    iconStyle?: string;
     route?: string;
     separator?: boolean;
     isSubpanel?: boolean;
@@ -17,6 +18,7 @@ export interface SidebarNavLink {
 export class SideBarLinkComponent implements OnInit {
   @Input() title: string;
   @Input() icon: string;
+  @Input() iconStyle: string;
   @Input() route: string;
   @Input() separator: boolean = false;
   @Input() isSubpanel: boolean = false;
@@ -26,6 +28,9 @@ export class SideBarLinkComponent implements OnInit {
 
   ngOnInit() {
       if (this.subPanels) this.isSubpanel = false;
+      
+      if (this.iconStyle) this.iconStyle = "material-icons-" + this.iconStyle;
+      else this.iconStyle = "material-icons";
   }
 
 }

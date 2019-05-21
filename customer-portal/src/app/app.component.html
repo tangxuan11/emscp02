@@ -1,19 +1,17 @@
-<div *ngIf="loggedIn; else loginBlock">
-    <div class="top-nav-bar-feature">
-        <app-top-nav-bar-feature></app-top-nav-bar-feature>
-    </div>
-
-    <div class="flex-container">
-        <div class="side-bar">
-            <app-side-bar></app-side-bar>
-        </div>
-
-        <div class="router-outlet container">
-            <router-outlet></router-outlet>
-        </div>
-
-    </div>
-</div>
+<mat-sidenav-container *ngIf="loggedIn; else loginBlock" class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
+                 [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+                 [mode]="(isHandset$ | async) ? 'over' : 'side'"
+                 [opened]="!(isHandset$ | async)">
+        <app-side-bar></app-side-bar>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <app-top-nav-bar-feature *ngIf="loggedIn"
+                                 (toggleSidebar)="drawer.toggle()">
+        </app-top-nav-bar-feature>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
 
 <ng-template #loginBlock>
     <div class="top-nav-bar-login">
