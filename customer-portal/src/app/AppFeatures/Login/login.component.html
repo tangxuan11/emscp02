@@ -1,20 +1,23 @@
-<div class="container text-center" style="height:50vh">
+<div class="ems-login">
     <H2>Enterprise Messaging Service Customer Portal</H2>
     <p>Please Sign In</p>
-    <form class="ems-center-box">
-        <div class="form-group text-center">
-            <label for="usr">Name:</label>
-            <input type="text" class="form-control" id="usr">
+
+    <div>
+        <div style="display:inline-block">
+    <form>
+        <div class="form-group ems-login-form-row">
+            <label for="usr" class="ems-login-form-text">Name:</label>
+            <input type="text" class="form-control ems-login-form-input" id="usr">
         </div>
-        <div class="form-group text-center">
-            <label for="pwd">Password:</label>
-            <input type="password" class="form-control" id="pwd">
+        <div class="form-group ems-login-form-row">
+            <label for="pwd" class="ems-login-form-text">Password:</label>
+            <input type="password" class="form-control ems-login-form-input" id="pwd">
         </div>
     </form>
+        </div>
+    </div>
 
     <div>
         <button type="button" class="btn" (click)="login()">Login</button>
     </div>
-    <button type="button" class="btn btn-link" *ngIf="xt1">Change Password</button>
-    <button type="button" class="btn btn-link" *ngIf="xt2">Forgot Password</button>
 </div>

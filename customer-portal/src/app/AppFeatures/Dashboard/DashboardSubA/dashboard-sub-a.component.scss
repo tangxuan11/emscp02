@@ -1,0 +1,30 @@
+
+.dashboard-panel-container {
+    //flex: 1;
+    display: flex;
+    width: 300px;
+    //height: 200px;
+    border: solid;
+}
+
+.dashboard-panel-left {
+    flex: 1;
+    height: 200px;
+    
+    background-color: beige;
+    display: flex;
+    //margin: auto;
+}
+
+.dashboard-panel-logo {
+    flex: 1;
+    margin: auto;
+    text-align: center;
+}
+
+.dashboard-panel-right {
+    flex: 2;
+    height: 200px;
+    //border: solid;
+    background-color: bisque;
+}

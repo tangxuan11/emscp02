@@ -1,4 +1,21 @@
-.ems-center-box {
-    width: 10%;
-    margin-left:45%;
+.ems-login {
+    height: 50vh;
+}
+
+div.ems-login * {
+    text-align: center;
+}
+
+.ems-login-form-row {
+    display: flex;
+    width: 250px;
+}
+
+.ems-login-form-text {
+    flex: 1;
+    text-align:left;
+}
+
+.ems-login-form-input {
+    flex: 2;
 }

@@ -1,10 +1,20 @@
-<div class="panel panel-primary">
-    <div class="panel-body" style="height: 200px;">
-        <div class="col-sm-3">
+
+
+        <div class="dashboard-panel-container">
+    <div class="dashboard-panel-left">
+            <!--
             {{featureLogoFileName}}
+            -->
+            <div class="dashboard-panel-logo">
             <img src="favicon.ico">
-        </div>
-        <div class="col-sm-9">
+            </div>
+
+        
+    </div>
+
+    <div class="dashboard-panel-right">
+        
+        <div class="dashboard-panel-content">
             <div>
                 <a routerLink={{featureURL}} routerLinkActive="active">
                     <h2>
@@ -16,5 +26,7 @@
                 {{featureDescription}}
             </div>
         </div>
+        
     </div>
-</div>
+
+        </div>
