@@ -1,23 +1,25 @@
-<div class="dashboard-container">
+<div fxLayout="column">
 
+    <div fxFlex="50px">
     <app-crumb-trail></app-crumb-trail>
+    </div>
 
-    <div class="dashboard-row">
+    <div fxFlex="" fxLayout="row" fxLayoutGap="5%">
 
-    <div class="dashboard-panel">
+    <div fxFlex="300px" class="dashboard-panel">
         <app-dashboard-sub-a [featureTitle]="featureTitle1" [featureURL]="featureURL1"
             [featureDescription]="featureDescription1" [featureLogoFileName]="featureLogoFileName1">
         </app-dashboard-sub-a>
     </div>
 
 
-    <div class="dashboard-panel">
+    <div fxFlex="300px" class="dashboard-panel">
         <app-dashboard-sub-a [featureTitle]="featureTitle2" [featureURL]="featureURL2"
             [featureDescription]="featureDescription2" [featureLogoFileName]="featureLogoFileName2">
         </app-dashboard-sub-a>
     </div>
 
-    <div class="dashboard-panel">
+    <div fxFlex="300px" class="dashboard-panel">
         <app-dashboard-sub-a [featureTitle]="featureTitle3" [featureURL]="featureURL3"
             [featureDescription]="featureDescription3" [featureLogoFileName]="featureLogoFileName3">
         </app-dashboard-sub-a>
@@ -25,25 +27,27 @@
     
     </div>
 
-    <div class="dashboard-row">
-    <div class="dashboard-panel">
+    <div fxFlex="" fxLayout="row" fxLayoutGap="5%">
+            <
+    <div fxFlex="300px" class="dashboard-panel">
         <app-dashboard-sub-a [featureTitle]="featureTitle4" [featureURL]="featureURL4"
             [featureDescription]="featureDescription4" [featureLogoFileName]="featureLogoFileName4">
         </app-dashboard-sub-a>
     </div>
 
-    <div class="dashboard-panel">
+    <div fxFlex="300px" class="dashboard-panel">
         <app-dashboard-sub-a [featureTitle]="featureTitle5" [featureURL]="featureURL5"
             [featureDescription]="featureDescription5" [featureLogoFileName]="featureLogoFileName5">
         </app-dashboard-sub-a>
     </div>
 
-    <div class="dashboard-panel">
+    <div fxFlex="300px" class="dashboard-panel">
         <app-dashboard-sub-a [featureTitle]="featureTitle6" [featureURL]="featureURL6"
             [featureDescription]="featureDescription6" [featureLogoFileName]="featureLogoFileName6">
         </app-dashboard-sub-a>
     </div>
     </div>
+
 
 
 </div>

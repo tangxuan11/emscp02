@@ -6,12 +6,14 @@ import { FooterComponent } from './Components/Footer/footer.component';
 import { TopNavBarFeatureComponent } from './Components/TopNavBarFeature/top-nav-bar-feature.component';
 import { TopNavBarLoginComponent } from './Components/TopNavBarLogin/top-nav-bar-login.component';
 import { NgMaterialModule } from '../Shared/ng-material/ng-material.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
     declarations: [FooterComponent, TopNavBarFeatureComponent, TopNavBarLoginComponent],
     imports: [
         CommonModule,
-        NgMaterialModule
+        NgMaterialModule,
+        FlexLayoutModule
     ],
     exports: [
         TopNavBarLoginComponent,
