@@ -1,4 +1,4 @@
-@import "../styles.scss";
+@import "src/styles.scss";
 
 .sidenav-container {
     position: fixed;
@@ -9,10 +9,10 @@
     .sidenav {
         position: absolute;
         width: 200px;
-        background-color: $gunmetal_gray;
+        //background-color: $gunmetal_gray;
     }
 
     mat-sidenav-content, router-outlet {
-        background-color: $bright_silver;
+        //background-color: $bright_silver;
     }
 }
