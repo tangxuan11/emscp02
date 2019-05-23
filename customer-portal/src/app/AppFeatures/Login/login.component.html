@@ -1,16 +1,26 @@
 <div class="ems-login">
     <H2>Enterprise Messaging Service Customer Portal</H2>
-    <p>Please Sign In</p>
+    <div fxLayout="row" fxLayoutAlign="center center">
+        <div fxFlex="200px" style="height:24px" fxLayout="row">
+            <div fxFlex="40" style="text-align: right">
+                <mat-icon>person</mat-icon>
+            </div>
+            <div fxFlex="60">
+                <div>
+                <p style="margin-top:6px; text-align: left">Please Sign In</p>
+                </div>
+            </div>
+    </div>
+
+    </div>
 
     <div>
         <div style="display:inline-block">
     <form>
         <div class="form-group ems-login-form-row">
-            <label for="usr" class="ems-login-form-text">Name:</label>
             <input type="text" class="form-control ems-login-form-input" id="usr">
         </div>
         <div class="form-group ems-login-form-row">
-            <label for="pwd" class="ems-login-form-text">Password:</label>
             <input type="password" class="form-control ems-login-form-input" id="pwd">
         </div>
     </form>
@@ -18,6 +28,17 @@
     </div>
 
     <div>
-        <button type="button" class="btn" (click)="login()">Login</button>
+        <button mat-stroked-button class="login-button" (click)="login()">Log In</button>
     </div>
+
+    <div fxLayout="row" fxLayoutAlign="center center">
+        <div fxFlex="200px" fxLayout="row">
+            <div fxFlex="">
+                <p>Change Password</p>
+            </div>
+            <div fxFlex="">
+                <p>Forgot Password</p>
+            </div>
+        </div>
+    
 </div>

@@ -8,20 +8,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './Core/core.module';
 import { SideBarModule } from './Core/Components/SideBar/side-bar.module';
-import { LoginComponent } from './AppFeatures/Login/login.component';
+import { LoginModule } from './AppFeatures/Login/login.module';
 import { NgMaterialModule } from './Shared/ng-material/ng-material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
     declarations: [
-        AppComponent,
-        LoginComponent
+        AppComponent
     ],
     imports: [
         BrowserModule,
         BrowserAnimationsModule,
         AppRoutingModule,
         CoreModule,
+        LoginModule,
         SideBarModule,
         NgMaterialModule,
         FlexLayoutModule

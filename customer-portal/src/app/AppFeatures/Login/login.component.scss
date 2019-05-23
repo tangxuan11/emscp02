@@ -1,5 +1,6 @@
 .ems-login {
     height: 50vh;
+    background-color: gainsboro;
 }
 
 div.ems-login * {
@@ -18,4 +19,9 @@ div.ems-login * {
 
 .ems-login-form-input {
     flex: 2;
+}
+
+.login-button {
+    background-color: white;
+    margin: 30px;
 }
