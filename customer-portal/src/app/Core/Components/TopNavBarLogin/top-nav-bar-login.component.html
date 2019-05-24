@@ -1,10 +1,15 @@
 
-<mat-toolbar fxLayout="row" style="height: 70px">
+<mat-toolbar fxLayout="row" style="height: 50px" color="primary">
     <div fxFlex="40">
         <img src="logo.png">
     </div>
+
     <button mat-stroked-button fxFlex="100px">Home</button>
-    <button mat-stroked-button fxFlex="100px">About Us</button>
+    <button mat-stroked-button fxFlex="100px" [matMenuTriggerFor]="menu">About Us</button>
+    <mat-menu #menu="matMenu" color="primary">
+        <button mat-menu-item>Item 1</button>
+        <button mat-menu-item>Item 2</button>
+    </mat-menu>
     <button mat-stroked-button fxFlex="100px">Enterprise</button>
     <button mat-stroked-button fxFlex="100px">Carrier</button>
     <button mat-stroked-button fxFlex="100px">Media</button>
