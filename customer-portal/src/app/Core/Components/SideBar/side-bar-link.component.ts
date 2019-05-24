@@ -28,7 +28,7 @@ export class SideBarLinkComponent implements OnInit {
 
   ngOnInit() {
       if (this.subPanels) this.isSubpanel = false;
-      
+
       if (this.iconStyle) this.iconStyle = "material-icons-" + this.iconStyle;
       else this.iconStyle = "material-icons";
   }

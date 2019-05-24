@@ -139,5 +139,10 @@
       }
     }
   },
-  "defaultProject": "customer-portal"
+  "defaultProject": "customer-portal",
+  "schematics": {
+      "@schematics/angular:component": {
+          "styleext": "scss"
+      }
+  }
 }
