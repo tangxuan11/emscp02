@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import { LogInStateService } from '../../Services/log-in-state.service';
 import { SidebarNavLink } from './side-bar-link.component';
 
 interface SidebarNavGroup {
@@ -107,13 +106,9 @@ export class SideBarComponent implements OnInit {
         }
     ];
 
-    constructor(private loginState: LogInStateService) { }
+    constructor() { }
 
     ngOnInit() {
-    }
 
-    logOut() {
-        this.loginState.changeMessage(false);
     }
-
 }

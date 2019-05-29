@@ -10,6 +10,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 import {
     MatButtonModule,
+    MatDividerModule,
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,
@@ -28,7 +29,8 @@ import {
         FlexLayoutModule,
         MatToolbarModule,
         MatMenuModule,
-        MatButtonModule
+        MatButtonModule,
+        MatDividerModule
     ],
     exports: [
         TopNavBarLoginComponent,
