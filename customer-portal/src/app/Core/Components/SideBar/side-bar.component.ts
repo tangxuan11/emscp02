@@ -14,7 +14,7 @@ interface SidebarNavGroup {
     styleUrls: ['./side-bar.component.scss']
 })
 export class SideBarComponent implements OnInit {
-    activePanel: string;
+    activeMainPanel: string;
     private sideNav: SidebarNavGroup[] = [
         {
             heading: "Navigation",
@@ -29,7 +29,34 @@ export class SideBarComponent implements OnInit {
                   route: "/analytics",
                   subPanels: [
                       {
-                          title: "tmp1", icon: "", isSubpanel: true
+                          title: "tmp2",
+                          icon: "home",
+                          route: "/analytics/tmp2",
+                          isSubpanel: true
+                      },
+                      {
+                          title: "tmp3",
+                          icon: "home",
+                          route: "/analytics/tmp3",
+                          isSubpanel: true
+                      },
+                      {
+                          title: "tmp4",
+                          icon: "home",
+                          route: "/analytics/tmp4",
+                          isSubpanel: true
+                      },
+                      {
+                          title: "tmp5",
+                          icon: "home",
+                          route: "/analytics/tmp5",
+                          isSubpanel: true
+                      },
+                      {
+                          title: "tmp1",
+                          icon: "home",
+                          route: "/analytics/tmp1",
+                          isSubpanel: true
                       }
                   ]
                 },

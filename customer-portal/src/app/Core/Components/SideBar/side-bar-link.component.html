@@ -2,9 +2,27 @@
 <ng-template #navLink>
     <a mat-list-item routerLink="{{route}}"
        [routerLinkActive]="route ? ['active'] : ['']"
+       (click)="handleLinkClick()"
        [ngClass]="{'mainPanel': !isSubpanel,
-                   'subPanel': isSubpanel}">
+                   'subPanel': isSubpanel,
+                   'expanded': expanded}">
         <mat-icon class="{{iconStyle}}">{{icon}}</mat-icon>
         <div class="linkText">{{title}}</div>
+        <mat-icon class="material-icons expandIcon"
+                  *ngIf="!isSubpanel && subPanels">
+                  {{expanded ? "keyboard_arrow_down" : "keyboard_arrow_right"}}
+        </mat-icon>
     </a>
+    <div *ngIf="expanded && !isSubpanel && subPanels">
+        <ng-container *ngFor="let link of subPanels">
+            <app-side-bar-link [title]="link.title"
+                               [icon]="link.icon"
+                               [iconStyle]="link.iconStyle"
+                               [route]="link.route"
+                               [separator]="link.separator"
+                               [isSubpanel]="link.isSubpanel"
+                               [subPanels]="link.subPanels">
+            </app-side-bar-link>
+        </ng-container>
+    </div>
 </ng-template>

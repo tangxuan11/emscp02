@@ -8,10 +8,14 @@ import { TopNavBarLoginComponent } from './Components/TopNavBarLogin/top-nav-bar
 //import { NgMaterialModule } from '../Shared/ng-material/ng-material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
-import { MatIconModule } from '@angular/material/icon';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import {MatMenuModule} from '@angular/material';
-import {MatButtonModule} from '@angular/material/button';
+import {
+    MatButtonModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    MatMenuModule,
+    MatToolbarModule
+} from '@angular/material';
 
 @NgModule({
     declarations: [FooterComponent, TopNavBarFeatureComponent, TopNavBarLoginComponent],
@@ -19,6 +23,8 @@ import {MatButtonModule} from '@angular/material/button';
         CommonModule,
         //NgMaterialModule,
         MatIconModule,
+        MatInputModule,
+        MatFormFieldModule,
         FlexLayoutModule,
         MatToolbarModule,
         MatMenuModule,

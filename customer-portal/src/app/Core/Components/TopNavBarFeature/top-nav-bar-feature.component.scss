@@ -13,7 +13,11 @@
         //background-color: $white;
     }
 
-    span {
+    mat-icon {
+        font-size: 20px;
+    }
+
+    a {
         display: inline-block;
         padding: 0px 10px;
 
@@ -22,8 +26,16 @@
         }
     }
 
+    .mat-form-field {
+        font-size: 10pt;
+    }
+
     .splitter {
         // Splits toolbar/navbar into left and right sides.
         flex: 1 1 auto;
+    }
+
+    .mat-focused .placeholder {
+    color: transparent;
     }
 }

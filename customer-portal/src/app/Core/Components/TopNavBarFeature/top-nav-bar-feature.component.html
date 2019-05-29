@@ -6,12 +6,18 @@
     (click)="toggleSidebarCollapse()">
     <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
   </button>
-  <span><h2>EMS</h2></span>
-
+  <a><h2>EMS</h2></a>
+  <mat-icon class="material-icons">search</mat-icon>
+  <mat-form-field>
+      <input matInput type="search">
+      <mat-placeholder class="placeholder">Start searching...</mat-placeholder>
+  </mat-form-field>
   <!-- This elements splits elements in the toolbar/navbar. All elements
        before this span will be placed on the left side of the toolbar/navbar.
        Elements after this span will be placed on the right side. -->
   <span class="splitter"></span>
 
-  <span><mat-icon>notifications</mat-icon></span>
+  <a><mat-icon>account_circle</mat-icon></a>
+  <a><mat-icon>settings</mat-icon></a>
+  <a><mat-icon>notifications</mat-icon></a>
 </mat-toolbar>

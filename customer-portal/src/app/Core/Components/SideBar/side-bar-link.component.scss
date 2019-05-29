@@ -16,17 +16,28 @@ a {
         padding-right: 5px;
         font-size: 25px;
     }
-    &:hover {
-        //color: $white;
+    .expandIcon {
+        position: absolute;
+        right: 0;
     }
-    &.active {
-        &.mainPanel {
+    &.mainPanel {
+        &.active {
             background: linear-gradient(90deg,
                                         mat-color($default_accent) 5px,
-                                        mat-color($default_primary) 0px)
+                                        mat-color($default_primary) 0px);
         }
-        &.subPanel {
+    }
+    &.subPanel {
+        background-color: mat-color($default_primary, lighter);
+        &.active {
             background-color: mat-color($default_primary, darker);
+
+            &:hover, &:focus {
+                background-color: mat-color($default_primary, darker);
+            }
+        }
+        &:hover, &:focus {
+            background-color: mat-color($default_primary, lighter);
         }
     }
 }
