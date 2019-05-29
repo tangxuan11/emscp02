@@ -7,6 +7,10 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material';
 import {MatToolbarModule} from '@angular/material/toolbar';
 
+import { ReactiveFormsModule } from '@angular/forms';
+
+import { HttpClientModule } from '@angular/common/http';
+
 import { LoginComponent } from './login.component';
 
 @NgModule({
@@ -18,7 +22,9 @@ import { LoginComponent } from './login.component';
         MatButtonModule,
         MatFormFieldModule,
         MatInputModule,
-        MatToolbarModule
+        MatToolbarModule,
+        ReactiveFormsModule,
+        HttpClientModule
     ],
     exports: [
         LoginComponent

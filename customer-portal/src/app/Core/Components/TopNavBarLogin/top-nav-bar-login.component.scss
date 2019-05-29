@@ -1,3 +1,6 @@
+@import "src/styles.scss";
+@import "src/styles/themes";
+
 .top-nav-bar-login {
     display: flex;
 }
@@ -13,4 +16,8 @@
 
 .top-nav-bar-login-item {
     flex: 1;
+}
+
+.drop-menu-item {
+    background-color: mat-color($default_primary);
 }

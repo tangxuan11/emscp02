@@ -21,18 +21,17 @@
 
     
     <div fxLayout="row" fxLayoutAlign="center center">
+        <form [formGroup]="emsLoginFormModel" (ngSubmit)="login()">
             <div fxFlex="300px">
                 <mat-form-field  style="margin:20px;">
-                    <input matInput placeholder="Username">
+                    <input matInput placeholder="Username" type="text" formControlName="username">
                 </mat-form-field>
                 <mat-form-field>
-                    <input matInput placeholder="Password">
+                    <input matInput placeholder="Password" type="text" formControlName="password">
                 </mat-form-field>
+                <button mat-stroked-button class="login-button" type="submit">Log In</button>
             </div>
-    </div>
-
-    <div>
-        <button mat-stroked-button class="login-button" (click)="login()">Log In</button>
+        </form>
     </div>
 
     <div fxLayout="row" fxLayoutAlign="center center">
@@ -44,6 +43,12 @@
                 <p>Forgot Password</p>
             </div>
         </div>
+    <ul>
+    <li *ngFor="let product of products$ | async">
+    {{product.title }} {{product.price | currency}}
+    </li>
+    </ul>
+  {{error}}
     </div>
     
 </div>
