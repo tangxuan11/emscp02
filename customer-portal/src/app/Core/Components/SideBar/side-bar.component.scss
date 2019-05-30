@@ -1,11 +1,12 @@
 @import "src/styles.scss";
 
-mat-nav-list {
+.mat-nav-list {
+    padding-top: 0;
     width: 100%;
 
-    p {
-        //color: $white;
-        font-weight: bold;
-        padding-left: 20px;
+    .mat-divider {
+        width: 90%;
+        padding: 0;
+        margin: 10px auto;
     }
 }

@@ -2,6 +2,11 @@
 @import '~@angular/material/theming';
 @import 'styles/themes';
 
+$theme: $material_theme;
+$primary: map-get($theme, primary);
+$accent: map-get($theme, accent);
+
+/*
 // Global Colors
 $white: #ffffff;
 $black: #000000;
@@ -16,7 +21,7 @@ $light_neutral_gray: #b2b2b2;
 $silver: #d3d6de;
 $cool_gray: #515769;
 $medium_neutral_gray: #656565;
-
+*/
 // Global page styling
 body {
     margin: 0;
@@ -30,19 +35,19 @@ body {
 
 /* Track */
 *::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px mat-color($default_primary);
+    box-shadow: inset 0 0 5px mat-color($primary);
     border-radius: 10px;
-    background-color: mat-color($default_primary, lighter);
+    background-color: mat-color($primary, lighter);
 }
 
 /* Handle */
 *::-webkit-scrollbar-thumb {
-    background: mat-color($default_primary);
-    box-shadow: inset 0 0 5px mat-color($default_primary, darker);
+    background: mat-color($primary);
+    box-shadow: inset 0 0 5px mat-color($primary, darker);
     border-radius: 10px;
 }
 
 /* Handle on hover */
 *::-webkit-scrollbar-thumb:hover {
-    background: mat-color($default_primary, darker);
+    background: mat-color($primary, darker);
 }
