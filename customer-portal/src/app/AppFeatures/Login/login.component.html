@@ -3,6 +3,7 @@
     <div fxLayout="row" fxLayoutAlign="center center">
         <div fxFlex="500px" class="loginTitle">
             <span>Enterprise Messaging Service Customer Portal</span>
+            <app-login-form></app-login-form>
         </div>
     </div>
 
@@ -27,7 +28,7 @@
     </div>
 
     <div fxLayout="row" fxLayoutAlign="center center">
-        <form [formGroup]="emsLoginFormModel" (ngSubmit)="login()">
+        <form [formGroup]="emsLoginFormModel" (ngSubmit)="loginSend()">
             <div fxFlex="300px">
                 <mat-form-field  style="margin:20px;">
                     <input matInput placeholder="Username" type="text" formControlName="username">
@@ -108,6 +109,7 @@
             <span>Enterprise Messaging Service Customer Portal</span>
         </div>
     </div>
+    
 
     <div fxLayout="row" fxLayoutAlign="center center">
         <div fxFlex="200px" style="height:24px" fxLayout="row">

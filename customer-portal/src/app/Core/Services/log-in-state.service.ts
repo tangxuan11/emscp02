@@ -4,6 +4,7 @@ import { BehaviorSubject } from 'rxjs';
 @Injectable({
     providedIn: 'root'
 })
+
 export class LogInStateService {
     sharedData = new BehaviorSubject(false);
 
