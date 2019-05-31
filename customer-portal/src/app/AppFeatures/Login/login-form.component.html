@@ -7,14 +7,14 @@
             </div>
             <div fxFlex="60">
                 <div>
-                    <p style="margin-top:6px; text-align: left">Please Sign In</p>
+                    <p class="login-font" style="margin-top:6px; text-align: left">Please Sign In</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <div *ngIf="showLoginError" fxLayout="row" fxLayoutAlign="center center">
-        <div fxFlex="500px" class="loginError">
+    <div *ngIf="showLoginError" fxLayout="row" fxLayoutAlign="center">
+        <div fxFlex="500px">
             <span>ERROR: Authentication Failed.</span>
         </div>
     </div>
@@ -33,7 +33,7 @@
         </div>
         <div fxLayout="row" fxLayoutAlign="center">
             <div fxFlex="300px">
-                <button mat-stroked-button class="login-button" type="submit">Log In</button>
+                <button mat-raised-button type="submit">Log In</button>
             </div>
         </div>
     </form>
@@ -41,10 +41,10 @@
     <div fxLayout="row" fxLayoutAlign="center">
         <div fxFlex="300px" fxLayout="row"> 
             <div fxFlex="">
-                <p (click)= "changePassword()">Change Password</p>
+                <p class="login-font" (click)= "changePassword()">Change Password</p>
             </div>
         <div fxFlex="">
-            <p (click)="forgotPassword()">Forgot Password</p>
+            <p class="login-font" (click)="forgotPassword()">Forgot Password</p>
         </div>
     </div>
 

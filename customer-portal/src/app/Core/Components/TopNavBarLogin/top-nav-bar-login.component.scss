@@ -1,8 +1,12 @@
 @import "src/styles.scss";
-@import "src/styles/themes";
+
+$theme: $light_theme;
+$primary: map-get($theme, primary);
+$accent: map-get($theme, accent);
 
 .top-nav-bar-login {
-    display: flex;
+    height: 50px;
+    background-color: white;
 }
 
 .top-nav-bar-login-logo {
