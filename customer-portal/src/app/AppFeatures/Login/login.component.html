@@ -1,140 +1,21 @@
-<div *ngIf="showLogin" class="ems-login">
+<div class="ems-login">
     
     <div fxLayout="row" fxLayoutAlign="center center">
         <div fxFlex="500px" class="loginTitle">
             <span>Enterprise Messaging Service Customer Portal</span>
-            <app-login-form></app-login-form>
         </div>
     </div>
 
-    <div *ngIf="showLoginError" fxLayout="row" fxLayoutAlign="center center">
-        <div fxFlex="500px" class="loginError">
-            <span>ERROR: Authentication Failed.</span>
-        </div>
+    <div *ngIf="showLogin">    
+        <app-login-form (eventFromLoginForm)="receiveEventFromLoginForm($event)"></app-login-form>
     </div>
 
-    <div fxLayout="row" fxLayoutAlign="center center">
-        <div fxFlex="200px" style="height:24px" fxLayout="row">
-            <div fxFlex="40" style="text-align: right">
-                <mat-icon>person</mat-icon>
-            </div>
-            <div fxFlex="60">
-                <div>
-                <p style="margin-top:6px; text-align: left">Please Sign In</p>
-                </div>
-            </div>
+    <div *ngIf="showChangePassword">
+        <app-change-password-form (eventFromChangePasswordForm)="receiveEventFromChangePasswordForm($event)"></app-change-password-form>
     </div>
 
+    <div *ngIf="showForgotPassword">
+        <app-forgot-password-form (eventFromForgotPasswordForm)="receiveEventFromForgotPasswordForm($event)"></app-forgot-password-form>
     </div>
-
-    <div fxLayout="row" fxLayoutAlign="center center">
-        <form [formGroup]="emsLoginFormModel" (ngSubmit)="loginSend()">
-            <div fxFlex="300px">
-                <mat-form-field  style="margin:20px;">
-                    <input matInput placeholder="Username" type="text" formControlName="username">
-                </mat-form-field>
-                <mat-form-field>
-                    <input matInput placeholder="Password" type="password" formControlName="password">
-                </mat-form-field>
-                <button mat-stroked-button class="login-button" type="submit">Log In</button>
-            </div>
-        </form>
-    </div>
-
-    <div fxLayout="row" fxLayoutAlign="center center">
-        <div fxFlex="200px" fxLayout="row">
-            <div fxFlex="">
-                <p (click)="changePassword()">Change Password</p>
-            </div>
-            <div fxFlex="">
-                <p (click)="forgotPassword()">Forgot Password</p>
-            </div>
-        </div>
-    </div>
-    
-</div>
-
-<div *ngIf="showChangePassword" class="ems-login">
-    <div fxLayout="row" fxLayoutAlign="center center">
-        <div fxFlex="500px" class="loginTitle">
-            <span>Enterprise Messaging Service Customer Portal</span>
-        </div>
-    </div>
-
-    <div fxLayout="row" fxLayoutAlign="center center">
-            <div fxFlex="200px" style="height:24px">
-                        <p style="margin-top:6px;"> INFO: Change your password</p>
-            </div>
-        </div>
-
-    <div fxLayout="row" fxLayoutAlign="center center">
-        <div fxFlex="200px" style="height:24px" fxLayout="row">
-            <div fxFlex="40" style="text-align: right">
-                <mat-icon>person</mat-icon>
-            </div>
-            <div fxFlex="60">
-                <div>
-                    <p style="margin-top:6px; text-align: left">Reset password</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div fxLayout="row" fxLayoutAlign="center center">
-        <form [formGroup]="emsResetPasswordFormModel" (ngSubmit)="loginPage()">
-            <div fxFlex="300px">
-                <mat-form-field  style="margin:0px;">
-                    <input matInput placeholder="Username" type="text" formControlName="username">
-                </mat-form-field>
-                <mat-form-field>
-                    <input matInput placeholder="Old Password" type="password" formControlName="oldpassword">
-                </mat-form-field>
-                <mat-form-field>
-                    <input matInput placeholder="New Password" type="password" formControlName="newpassword">
-                </mat-form-field>
-                <mat-form-field>
-                    <input matInput placeholder="Confirm Password" type="password" formControlName="confirmpassword">
-                </mat-form-field>
-                <button mat-stroked-button class="login-button" type="submit">Submit</button>
-                <p (click)="loginPage()">Cancel</p>
-            </div>
-        </form>
-    </div>
-
-</div>
-
-<div *ngIf="showForgotPassword" class="ems-login">
-    <div fxLayout="row" fxLayoutAlign="center center">
-        <div fxFlex="500px" class="loginTitle">
-            <span>Enterprise Messaging Service Customer Portal</span>
-        </div>
-    </div>
-    
-
-    <div fxLayout="row" fxLayoutAlign="center center">
-        <div fxFlex="200px" style="height:24px" fxLayout="row">
-            <div fxFlex="40" style="text-align: right">
-                <mat-icon>person</mat-icon>
-            </div>
-            <div fxFlex="60">
-                <div>
-                    <p style="margin-top:6px; text-align: left">Forgot password?</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div fxLayout="row" fxLayoutAlign="center center">
-        <form [formGroup]="emsResetPasswordFormModel" (ngSubmit)="loginPage()">
-            <div fxFlex="300px">
-                <mat-form-field  style="margin:0px;">
-                    <input matInput placeholder="Username" type="text" formControlName="username">
-                </mat-form-field>
-                <button mat-stroked-button class="login-button" type="submit">Reset</button>
-                <p (click)="loginPage()">Login Page</p>
-            </div>
-        </form>
-    </div>
-
 
 </div>

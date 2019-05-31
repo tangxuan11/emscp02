@@ -1,3 +1,51 @@
-<p>
-  login-form works!
-</p>
+<div>
+
+    <div fxLayout="row" fxLayoutAlign="center">
+        <div fxFlex="500px" fxLayout="row">
+            <div fxFlex="40" style="text-align: right">
+                <mat-icon>person</mat-icon>
+            </div>
+            <div fxFlex="60">
+                <div>
+                    <p style="margin-top:6px; text-align: left">Please Sign In</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="showLoginError" fxLayout="row" fxLayoutAlign="center center">
+        <div fxFlex="500px" class="loginError">
+            <span>ERROR: Authentication Failed.</span>
+        </div>
+    </div>
+
+    
+    <form [formGroup]="emsLoginFormModel" (ngSubmit)="loginSend()">
+        <div fxLayout="row" fxLayoutAlign="center">
+            <div fxFlex="300px">
+                <mat-form-field  style="margin:20px;">
+                    <input matInput placeholder="Username" type="text" formControlName="username">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Password" type="password" formControlName="password">
+                </mat-form-field>
+            </div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="center">
+            <div fxFlex="300px">
+                <button mat-stroked-button class="login-button" type="submit">Log In</button>
+            </div>
+        </div>
+    </form>
+    
+    <div fxLayout="row" fxLayoutAlign="center">
+        <div fxFlex="300px" fxLayout="row"> 
+            <div fxFlex="">
+                <p (click)= "changePassword()">Change Password</p>
+            </div>
+        <div fxFlex="">
+            <p (click)="forgotPassword()">Forgot Password</p>
+        </div>
+    </div>
+
+</div>

@@ -1,20 +1,39 @@
 import { Injectable } from '@angular/core';
 
-export interface loginResponse {
-  id: number,
-  title: string,
-  price: number
+export interface loginCredential {
+    username: string,
+    password: string
 }
 
-export interface loginCredential {
-  username: string,
-  password: string
+export interface loginResponse {
+    username: string,
+    result: string
+}
+
+export interface changePasswordCredential {
+    username: string,
+    oldpassword: string,
+    newpassword: string
+}
+
+export interface changePasswordResponse {
+    username: string,
+    result: string
+}
+
+export interface forgotPasswordCredential {
+    username: string
+}
+
+export interface forgotPasswordResponse {
+    username: string,
+    result: string
 }
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class EmsInterfacesService {
 
-  constructor() { }
+    constructor() { }
 }

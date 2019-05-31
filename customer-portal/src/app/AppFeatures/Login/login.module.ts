@@ -13,9 +13,11 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { LoginComponent } from './login.component';
 import { LoginFormComponent } from './login-form.component';
+import { ChangePasswordFormComponent } from './change-password-form.component';
+import { ForgotPasswordFormComponent } from './forgot-password-form.component';
 
 @NgModule({
-    declarations: [LoginComponent, LoginFormComponent],
+    declarations: [LoginComponent, LoginFormComponent, ChangePasswordFormComponent, ForgotPasswordFormComponent],
     imports: [
         CommonModule,
         FlexLayoutModule,
