@@ -1,4 +1,4 @@
-<hr *ngIf="separator; else navLink">
+<mat-divider *ngIf="separator; else navLink"></mat-divider>
 <ng-template #navLink>
     <a mat-list-item routerLink="{{route}}"
        [routerLinkActive]="route ? ['active'] : ['']"

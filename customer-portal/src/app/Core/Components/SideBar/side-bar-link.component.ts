@@ -1,14 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
-export interface SidebarNavLink {
-    title: string;
-    icon: string;
-    iconStyle?: string;
-    route?: string;
-    separator?: boolean;
-    isSubpanel?: boolean;
-    subPanels?: SidebarNavLink[];
-}
+import { SidebarNavLink } from './nav-links';
 
 @Component({
     selector: 'app-side-bar-link',

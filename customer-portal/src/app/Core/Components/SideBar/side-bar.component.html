@@ -1,5 +1,4 @@
-<mat-nav-list *ngFor="let navGroup of sideNav">
-    <p>{{navGroup.heading}}</p>
+<mat-nav-list *ngFor="let navGroup of sideNav; let idx = index">
     <ng-container *ngFor="let link of navGroup.panels">
         <app-side-bar-link [(activeMainPanel)]="activeMainPanel"
                            [title]="link.title"
@@ -11,4 +10,5 @@
                            [subPanels]="link.subPanels">
         </app-side-bar-link>
     </ng-container>
+    <mat-divider *ngIf="idx < (sideNav.length - 1)"></mat-divider>
 </mat-nav-list>
