@@ -23,8 +23,16 @@ $accent: map-get($theme, accent);
     }
 
     mat-icon {
-        font-size: 20px;
-        display: inline;
+        font-size: 22px;
+        display: inline
+    }
+    .mat-badge-content {
+        font-size: 7pt;
+        line-height: 18px;
+        height: 18px;
+        width: 18px;
+        vertical-align: middle;
+        top: -3px;
     }
 
     a {

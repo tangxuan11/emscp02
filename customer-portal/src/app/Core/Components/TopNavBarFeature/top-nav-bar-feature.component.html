@@ -1,41 +1,50 @@
 <mat-toolbar class="theme-default">
-  <button
+    <button
     type="button"
     aria-label="Toggle sidenav"
     mat-icon-button
     (click)="toggleSidebarCollapse()">
-    <mat-icon inline="true" aria-label="Side nav toggle icon">menu</mat-icon>
-  </button>
-  <a><h2>EMS</h2></a>
-  <mat-icon class="material-icons">search</mat-icon>
-  <mat-form-field>
-      <input matInput type="search">
-      <mat-placeholder class="placeholder">Start searching...</mat-placeholder>
-  </mat-form-field>
-  <!-- This elements splits elements in the toolbar/navbar. All elements
+        <mat-icon inline="true" aria-label="Side nav toggle icon">
+            menu
+        </mat-icon>
+    </button>
+    <a><h2>EMS</h2></a>
+    <mat-icon class="material-icons">search</mat-icon>
+    <mat-form-field>
+        <input matInput type="search">
+        <mat-placeholder class="placeholder">
+            Start searching...
+        </mat-placeholder>
+    </mat-form-field>
+    <!-- This elements splits elements in the toolbar/navbar. All elements
        before this span will be placed on the left side of the toolbar/navbar.
        Elements after this span will be placed on the right side. -->
-  <span class="splitter"></span>
+    <span class="splitter"></span>
 
-  <button mat-button [matMenuTriggerFor]="profile_dropdown">
-      <span>JOHN SMITH</span>
-      <mat-icon>keyboard_arrow_down</mat-icon>
-  </button>
-  <mat-menu #profile_dropdown>
-      <button mat-menu-item>
-          <mat-icon color="accent"
-                    class="material-icons-outlined">
-                    settings
-          </mat-icon>
-          <span class="dropdown_text">My Profile</span>
-      </button>
-      <button mat-menu-item (click)="logOut()">
-          <mat-icon color="accent"
-                    class="material-icons">
-                    exit_to_app
-          </mat-icon>
-          <span class="dropdown_text">Log Out</span>
-      </button>
-  </mat-menu>
-  <a><mat-icon class="material-icons-outlined">notifications</mat-icon></a>
+    <button mat-button [matMenuTriggerFor]="profile_dropdown">
+        <span>JOHN SMITH</span>
+        <mat-icon>keyboard_arrow_down</mat-icon>
+    </button>
+    <mat-menu #profile_dropdown>
+        <button mat-menu-item>
+            <mat-icon color="accent"
+                      class="material-icons-outlined">
+                settings
+            </mat-icon>
+            <span class="dropdown_text">My Profile</span>
+        </button>
+        <button mat-menu-item (click)="logOut()">
+            <mat-icon color="accent" class="material-icons">
+                exit_to_app
+            </mat-icon>
+            <span class="dropdown_text">Log Out</span>
+        </button>
+    </mat-menu>
+    <a><mat-icon class="material-icons-outlined"
+                 matBadge="{{numNotifs}}"
+                 matBadgeColor="accent"
+                 matBadgeSize="small"
+                 [matBadgeHidden]="numNotifs <= 0">
+        notifications
+    </mat-icon></a>
 </mat-toolbar>

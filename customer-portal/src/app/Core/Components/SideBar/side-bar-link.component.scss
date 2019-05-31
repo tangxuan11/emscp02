@@ -23,6 +23,7 @@ a {
     .expandIcon {
         position: absolute;
         right: 0;
+        padding-right: 2px;
     }
     &.mainPanel {
         &.active {
@@ -39,14 +40,11 @@ a {
     &.subPanel {
         background-color: mat-color($primary, darker);
         &.active {
-            color: white;
             &:hover, &:focus {
-                color: white;
                 background-color: mat-color($primary, darker);
             }
         }
         &:hover, &:focus {
-            color: white;
             background-color: mat-color($primary, darker);
         }
     }

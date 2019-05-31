@@ -7,14 +7,15 @@ import { SideBarLinkComponent } from './side-bar-link.component';
 import { NgMaterialModule } from '../../../Shared/ng-material/ng-material.module';
 
 @NgModule({
-  declarations: [SideBarComponent, SideBarLinkComponent],
-  imports: [
-    CommonModule,
-    SideBarRoutingModule,
-    NgMaterialModule
-  ],
-  exports: [
-    SideBarComponent
-  ]
+    declarations: [
+        SideBarComponent,
+        SideBarLinkComponent
+    ],
+    imports: [
+        CommonModule,
+        SideBarRoutingModule,
+        NgMaterialModule
+    ],
+    exports: [SideBarComponent]
 })
 export class SideBarModule { }
