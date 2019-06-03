@@ -4,24 +4,20 @@ $theme: $light_theme;
 $primary: map-get($theme, primary);
 $accent: map-get($theme, accent);
 
-.top-nav-bar-login {
-    height: 50px;
-    background-color: white;
+$top-nav-bar-login-height: 50px;
+$button-size: 112px;
+$top-nav-bar-login-logo-size: 40%;
+
+#top-nav-bar-login {
+    height: $top-nav-bar-login-height;
+    background-color: mat-color($primary, 200);
 }
 
-.top-nav-bar-login-logo {
-    flex:1;
+mat-toolbar > button {
+    min-width: $button-size;
+    max-width: $button-size;
 }
 
-.top-nav-bar-login-menu {
-    flex:5;
-    display: flex;
-}
-
-.top-nav-bar-login-item {
-    flex: 1;
-}
-
-.drop-menu-item {
-    background-color: mat-color($default_primary);
+#top-nav-bar-login-logo {
+    max-width: $top-nav-bar-login-logo-size;
 }

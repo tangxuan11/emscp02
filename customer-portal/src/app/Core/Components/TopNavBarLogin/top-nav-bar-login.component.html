@@ -1,19 +1,19 @@
 
-<mat-toolbar fxLayout="row" class="top-nav-bar-login">
-    <div fxFlex="40">
+<mat-toolbar fxLayout="row" id="top-nav-bar-login">
+    <div fxFlex id="top-nav-bar-login-logo">
         <img src="logo.png">
     </div>
 
-    <button mat-stroked-button fxFlex="100px">Home</button>
-    <button mat-stroked-button fxFlex="100px" [matMenuTriggerFor]="menu">About Us</button>
+    <button mat-stroked-button fxFlex>Home</button>
+    <button mat-stroked-button fxFlex [matMenuTriggerFor]="menu">About Us</button>
     <mat-menu #menu="matMenu">
-        <button mat-menu-item class="drop-menu-item">Item 1</button>
-        <button mat-menu-item class="drop-menu-item">Item 2</button>
+        <button mat-menu-item>Item 1</button>
+        <button mat-menu-item>Item 2</button>
     </mat-menu>
-    <button mat-stroked-button fxFlex="100px">Enterprise</button>
-    <button mat-stroked-button fxFlex="100px">Carrier</button>
-    <button mat-stroked-button fxFlex="100px">Media</button>
-    <button mat-stroked-button fxFlex="100px">Support</button>
-    <button mat-stroked-button fxFlex="100px">Contact Us</button>
+    <button mat-stroked-button fxFlex>Enterprise</button>
+    <button mat-stroked-button fxFlex>Carrier</button>
+    <button mat-stroked-button fxFlex>Media</button>
+    <button mat-stroked-button fxFlex>Support</button>
+    <button mat-stroked-button fxFlex>Contact Us</button>
  
 </mat-toolbar>

@@ -1,12 +1,18 @@
+@import "src/styles.scss";
+
+$theme: $default_theme;
+$primary: map-get($theme, primary);
+$accent: map-get($theme, accent);
 
 .dashboard-panel-container {
     width: 300px;
     border: solid;
+    background-color: mat-color($primary, 600);
 }
 
 .dashboard-panel-left {
     height: 200px;
-    background-color: beige;
+    //background-color: beige;
 }
 
 .dashboard-panel-logo {
