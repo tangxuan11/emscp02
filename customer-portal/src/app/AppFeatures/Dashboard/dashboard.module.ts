@@ -7,6 +7,18 @@ import { DashboardComponent } from './dashboard.component';
 import { ComponentsModule } from '../../Shared/Components/components.module';
 import { DashboardSubAComponent } from './DashboardSubA/dashboard-sub-a.component';
 
+import {
+    MatBadgeModule,
+    MatButtonModule,
+    MatCardModule,
+    MatDividerModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    MatMenuModule,
+    MatToolbarModule 
+} from '@angular/material';
+
 
 @NgModule({
     declarations: [DashboardComponent, DashboardSubAComponent],
@@ -14,7 +26,8 @@ import { DashboardSubAComponent } from './DashboardSubA/dashboard-sub-a.componen
         CommonModule,
         ComponentsModule,
         DashboardRoutingModule,
-        FlexLayoutModule
+        FlexLayoutModule,
+        MatToolbarModule
     ],
     exports: [
         DashboardComponent

@@ -2,12 +2,12 @@
 
     <div fxLayout="row" fxLayoutAlign="center">
         <div fxFlex="500px" fxLayout="row">
-            <div fxFlex="40" style="text-align: right">
+            <div fxFlex="40" class="login-form-label-left">
                 <mat-icon>person</mat-icon>
             </div>
             <div fxFlex="60">
                 <div>
-                    <p class="login-font" style="margin-top:6px; text-align: left">Please Sign In</p>
+                    <p class="login-form-label-font login-form-label-right">Please Sign In</p>
                 </div>
             </div>
         </div>
@@ -23,7 +23,7 @@
     <form [formGroup]="emsLoginFormModel" (ngSubmit)="loginSend()">
         <div fxLayout="row" fxLayoutAlign="center">
             <div fxFlex="300px">
-                <mat-form-field  style="margin:20px;">
+                <mat-form-field>
                     <input matInput placeholder="Username" type="text" formControlName="username">
                 </mat-form-field>
                 <mat-form-field>
