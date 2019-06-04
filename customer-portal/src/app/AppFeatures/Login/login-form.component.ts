@@ -19,7 +19,7 @@ export class LoginFormComponent implements OnInit {
     emsLoginFormModel: FormGroup;
 
     error:string;
-    loginRes: loginResponse[] =[];
+    loginRes: loginResponse[] = [];
     loginCred: loginCredential[] = [];
 
     loginResult: string = "";
@@ -27,7 +27,7 @@ export class LoginFormComponent implements OnInit {
 
     @Output() eventFromLoginForm = new EventEmitter<string>();
 
-    constructor(private data: LogInStateService, private loginclient: LogInHttpClientService) {
+    constructor(private loginState: LogInStateService, private loginClient: LogInHttpClientService) {
         this.emsLoginFormModel = new FormGroup({
             username: new FormControl(),
             password: new FormControl()
@@ -37,22 +37,25 @@ export class LoginFormComponent implements OnInit {
     ngOnInit() {
     }
 
+    //Send Login request using HTTP client service
     loginSend() {
         let uname = this.emsLoginFormModel.value["username"];
         let pword = this.emsLoginFormModel.value["password"];
         this.loginCred = [{"username": uname,
                            "password": pword}];
-        this.loginclient.sendLoginHttp(this.loginCred).subscribe(data => this.handleLoginResponse(data),
+        this.loginClient.sendLoginHttp(this.loginCred).subscribe(
+            responseData => this.handleLoginResponse(responseData),
             (err: HttpErrorResponse) => this.error = `Can't get info. Got ${err.message}`);
     }
 
-    handleLoginResponse(da: loginResponse[]) {
-        this.loginRes = da;
+    //Handle the response from HTTP server REST service
+    handleLoginResponse(response: loginResponse[]) {
+        this.loginRes = response;
         this.loginResult = this.loginRes[0]["result"];
         
         if (this.loginResult == "success")
         {
-            this.data.changeMessage(true);
+            this.loginState.changeMessage(true);
         }
         else
         {
@@ -61,10 +64,12 @@ export class LoginFormComponent implements OnInit {
         }
     }
 
+    //When click on Change Password
     changePassword() {
         this.eventFromLoginForm.emit("change_password");
     }
 
+    //When click on Forgot Password
     forgotPassword() {
         this.eventFromLoginForm.emit("forgot_password");
     }
