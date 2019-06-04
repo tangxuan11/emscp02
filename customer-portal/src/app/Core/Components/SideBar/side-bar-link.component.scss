@@ -1,35 +1,56 @@
 @import "src/styles/themes";
 
+// Theming variables
 $theme: $dark_theme;
 $primary: map-get($theme, primary);
 $accent: map-get($theme, accent);
+$foreground: map-get($theme, foreground);
 
-a {
+a.mat-list-item {
     height: 40px!important;
     background-color: mat-color($primary, 600);
 
-    &:hover, &:focus {
-        background-color: mat-color($primary, 600);
-    }
-    .linkText {
-        display: inline;
-        padding-left: 5px;
-        font-size: 10pt;
-    }
-    mat-icon {
-        padding-right: 5px;
-        font-size: 25px;
-    }
-    .expandIcon {
-        position: absolute;
-        right: 0;
-        padding-right: 2px;
-    }
+    // First type of panel, mainPanel
     &.mainPanel {
+
+        // defualt stylings for sub elements
+        mat-icon {
+            padding-right: 5px;
+            font-size: 25px;
+
+            &.expandIcon {
+                position: absolute;
+                right: 0;
+                padding-right: 2px;
+            }
+        }
+        .linkText {
+            display: inline;
+            padding-left: 5px;
+            font-size: 10pt;
+        }
+        mat-icon, .linkText {
+            color: mat-color($primary, 50);
+        }
+
+        // stylings on hover and focus for mainPanel
+        &:hover, &:focus {
+            background-color: mat-color($primary, 600);
+            mat-icon, .linkText {
+                color: mat-color($foreground, text);
+            }
+        }
+
+        // stylings when mainPanel is active
         &.active {
             background: linear-gradient(90deg,
                                         mat-color($accent) 5px,
                                         mat-color($primary, 800) 0px);
+
+            mat-icon, .linkText {
+                color: mat-color($foreground, text);
+            }
+
             &:hover, &:focus {
                 background: linear-gradient(90deg,
                                             mat-color($accent) 5px,
@@ -37,18 +58,46 @@ a {
             }
         }
     }
+
+    // second type of panel, subPanel
     &.subPanel {
         background-color: mat-color($primary, darker);
+
+        // default stylings for sub elements
+        mat-icon {
+            padding-right: 5px;
+            font-size: 25px;
+        }
+        .linkText {
+            display: inline;
+            padding-left: 5px;
+            font-size: 10pt;
+        }
+        mat-icon, .linkText {
+            color: mat-color($primary, 50);
+        }
+
+        // stylings on hover and focus for subPanel
+        &:hover, &:focus {
+            background-color: mat-color($primary, darker);
+            mat-icon, .linkText {
+                color: mat-color($foreground, text);
+            }
+        }
+
+        // stylings when subPanel is active
         &.active {
             &:hover, &:focus {
                 background-color: mat-color($primary, darker);
             }
-        }
-        &:hover, &:focus {
-            background-color: mat-color($primary, darker);
+
+            mat-icon, .linkText {
+                color: mat-color($foreground, text);
+            }
         }
     }
 }
+
 .mat-divider {
 	width: 90%;
 	padding: 0;
