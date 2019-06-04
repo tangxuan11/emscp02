@@ -1,28 +1,28 @@
 <div>
 
+    <!-- The label on top of the login form -->
     <div fxLayout="row" fxLayoutAlign="center">
-        <div fxFlex="500px" fxLayout="row">
-            <div fxFlex="40" class="login-form-label-left">
+        <div fxFlex fxLayout="row" class="login-form">
+            <div fxFlex id="login-form-label-left">
                 <mat-icon>person</mat-icon>
             </div>
-            <div fxFlex="60">
-                <div>
-                    <p class="login-form-label-font login-form-label-right">Please Sign In</p>
-                </div>
+            <div fxFlex id="login-form-label-right">
+                Please Sign In
             </div>
         </div>
     </div>
 
+    <!-- The login error message -->
     <div *ngIf="showLoginError" fxLayout="row" fxLayoutAlign="center">
-        <div fxFlex="500px">
+        <div fxFlex id="login-form-error">
             <span>ERROR: Authentication Failed.</span>
         </div>
     </div>
 
-    
+    <!-- The username and password login form -->
     <form [formGroup]="emsLoginFormModel" (ngSubmit)="loginSend()">
         <div fxLayout="row" fxLayoutAlign="center">
-            <div fxFlex="300px">
+            <div fxFlex class="login-form">
                 <mat-form-field>
                     <input matInput placeholder="Username" type="text" formControlName="username">
                 </mat-form-field>
@@ -32,19 +32,17 @@
             </div>
         </div>
         <div fxLayout="row" fxLayoutAlign="center">
-            <div fxFlex="300px">
+            <div fxFlex class="login-form">
                 <button mat-raised-button type="submit">Log In</button>
             </div>
         </div>
     </form>
     
+    <!--Forgot password and Change password-->
     <div fxLayout="row" fxLayoutAlign="center">
-        <div fxFlex="300px" fxLayout="row"> 
-            <div fxFlex="">
-                <p class="login-font" (click)= "changePassword()">Change Password</p>
-            </div>
-        <div fxFlex="">
-            <p class="login-font" (click)="forgotPassword()">Forgot Password</p>
+        <div fxFlex class="login-form"> 
+            <p (click)= "changePassword()">Change Password</p>
+            <p (click)="forgotPassword()">Forgot Password</p>
         </div>
     </div>
 
