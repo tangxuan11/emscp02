@@ -4,23 +4,24 @@ $theme: $light_theme;
 $primary: map-get($theme, primary);
 $accent: map-get($theme, accent);
 
+$ems-login-height: 500px;
+$login-title-font-size: 25px;
+$login-title-font-family: Arial, Helvetica, sans-serif;
+$login-title-padding: 30px;
+$login-title-width: 700px;
+
+
 .ems-login {
-    height: 500px;
+    height: $ems-login-height;
     background-color: mat-color($primary, 200);
 }
 
 .loginTitle {
-    font-size: 25px;
-    padding: 30px;
-    font-family: Arial, Helvetica, sans-serif;
-    
-    max-width: 740px; 
-    min-width: 740px;
-}
-
-.loginError {
-    font-size: 15px;
-    padding: 30px;
+    font-size: $login-title-font-size;
+    padding: $login-title-padding;
+    font-family: $login-title-font-family;
+    max-width: $login-title-width; 
+    min-width: $login-title-width;
 }
 
 div.ems-login * {
