@@ -6,23 +6,28 @@ import { Notification } from './ems-interfaces.service';
     providedIn: 'root'
 })
 export class NotificationsService {
-    private notificationList: Notification[] = [];
+    private notifications: Notification[] = [];
     private notificationSource = new BehaviorSubject<Notification[]>([]);
-    notifications = this.notificationSource.asObservable();
+    notifications$ = this.notificationSource.asObservable();
 
     constructor() { }
 
     addNotification(n: Notification) {
-        this.notificationList.push(n);
-        this.notificationSource.next(this.notificationList);
+        this.notifications.push(n);
+        this.notificationSource.next(this.notifications);
     }
 
     removeNotification(n: Notification) {
-        let idx = this.notificationList.indexOf(n);
+        let idx = this.notifications.indexOf(n);
 
         if (idx >= 0) {
-            this.notificationList.splice(idx,1);
-            this.notificationSource.next(this.notificationList);
+            this.notifications.splice(idx,1);
+            this.notificationSource.next(this.notifications);
         }
+    }
+
+    clearNotifications() {
+        this.notifications = [];
+        this.notificationSource.next([]);
     }
 }

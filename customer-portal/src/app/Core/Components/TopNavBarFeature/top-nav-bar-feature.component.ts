@@ -17,7 +17,7 @@ export class TopNavBarFeatureComponent implements OnInit {
                 private notifService: NotificationsService) { }
 
     ngOnInit() {
-        this.notifService.notifications.subscribe( notifs => {
+        this.notifService.notifications$.subscribe( notifs => {
             this.notifications = notifs;
         });
     }
@@ -27,6 +27,7 @@ export class TopNavBarFeatureComponent implements OnInit {
     }
 
     logOut() {
+        this.notifService.clearNotifications();
         this.loginState.changeMessage(false);
     }
 
