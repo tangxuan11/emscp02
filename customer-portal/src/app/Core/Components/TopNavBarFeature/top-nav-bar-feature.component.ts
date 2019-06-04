@@ -1,6 +1,8 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 import { LogInStateService } from '../../Services/log-in-state.service';
+import { Notification } from '../../Services/ems-interfaces.service';
+import { NotificationsService } from '../../Services/notifications.service';
 
 @Component({
     selector: 'app-top-nav-bar-feature',
@@ -8,13 +10,16 @@ import { LogInStateService } from '../../Services/log-in-state.service';
     styleUrls: ['./top-nav-bar-feature.component.scss']
 })
 export class TopNavBarFeatureComponent implements OnInit {
-    numNotifs: string;
+    notifications: Notification[];
     @Output() toggleSidebar = new EventEmitter<void>();
 
-    constructor(private loginState: LogInStateService) { }
+    constructor(private loginState: LogInStateService,
+                private notifService: NotificationsService) { }
 
     ngOnInit() {
-        this.numNotifs = "1";
+        this.notifService.notifications.subscribe( notifs => {
+            this.notifications = notifs;
+        });
     }
 
     toggleSidebarCollapse(): void {
@@ -23,5 +28,9 @@ export class TopNavBarFeatureComponent implements OnInit {
 
     logOut() {
         this.loginState.changeMessage(false);
+    }
+
+    addNotif() {
+        this.notifService.addNotification({message: "Hello"});
     }
 }

@@ -30,6 +30,10 @@ export interface forgotPasswordResponse {
     result: string
 }
 
+export interface Notification {
+    message: string;
+}
+
 @Injectable({
     providedIn: 'root'
 })
