@@ -75,7 +75,7 @@ export let navLinks = [
                   },
                   {
                       title: "Templates",
-                      icon: "web",
+                      icon: "dashboard",
                       route: "/campaign/templates",
                       isSubpanel: true
                   },
@@ -91,7 +91,42 @@ export let navLinks = [
             { title: "CMS",
               icon: "donut_small",
               iconStyle: "outlined",
-              route: "/cms"
+              route: "/cms",
+              subPanels: [
+                  {
+                      title: "About",
+                      icon: "info",
+                      iconStyle: "outlined",
+                      route: "/cms/about",
+                      isSubpanel: true
+                  },
+                  {
+                      title: "Change Management",
+                      icon: "work_outline",
+                      route: "/cms/change_management",
+                      isSubpanel: true
+                  },
+                  {
+                      title: "Template Editor",
+                      icon: "edit",
+                      iconStyle: "outlined",
+                      route: "/cms/template_editor",
+                      isSubpanel: true
+                  },
+                  {
+                      title: "Package Management",
+                      icon: "web",
+                      route: "/cms/package_management",
+                      isSubpanel: true
+                  },
+                  {
+                      title: "Package Installation",
+                      icon: "launch",
+                      iconStyle: "outlined",
+                      route: "/cms/package_installation",
+                      isSubpanel: true
+                  }
+              ]
             },
             { title: "Enterprise",
               icon: "domain"

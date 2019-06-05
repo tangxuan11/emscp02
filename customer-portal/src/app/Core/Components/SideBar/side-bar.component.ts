@@ -9,7 +9,7 @@ import { SidebarNavGroup, navLinks } from './nav-links';
 })
 export class SideBarComponent implements OnInit {
     activeMainPanel: string;
-    private sideNav: SidebarNavGroup[] = navLinks;
+    sideNav: SidebarNavGroup[] = navLinks;
 
     constructor() { }
 
