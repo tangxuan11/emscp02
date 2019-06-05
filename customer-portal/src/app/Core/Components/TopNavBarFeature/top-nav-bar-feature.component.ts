@@ -8,13 +8,13 @@ import { LogInStateService } from '../../Services/log-in-state.service';
     styleUrls: ['./top-nav-bar-feature.component.scss']
 })
 export class TopNavBarFeatureComponent implements OnInit {
-    numNotifs: string;
+    numNotifs: number;
     @Output() toggleSidebar = new EventEmitter<void>();
 
     constructor(private loginState: LogInStateService) { }
 
     ngOnInit() {
-        this.numNotifs = "1";
+        this.numNotifs = 1;
     }
 
     toggleSidebarCollapse(): void {

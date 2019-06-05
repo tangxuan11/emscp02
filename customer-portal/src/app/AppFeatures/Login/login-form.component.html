@@ -15,7 +15,7 @@
     <!-- The login error message -->
     <div *ngIf="showLoginError" fxLayout="row" fxLayoutAlign="center">
         <div fxFlex id="login-form-error">
-            <span>ERROR: Authentication Failed.</span>
+            <span>{{loginErrorMessage}}</span>
         </div>
     </div>
 
