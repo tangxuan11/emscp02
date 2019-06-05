@@ -1,6 +1,8 @@
 <mat-divider *ngIf="separator; else navLink"></mat-divider>
 <ng-template #navLink>
-    <a mat-list-item routerLink="{{route}}"
+    <a mat-list-item disableRipple
+       class="theme-dark"
+       routerLink="{{route}}"
        [routerLinkActive]="route ? ['active'] : ['']"
        (click)="handleLinkClick()"
        [ngClass]="{'mainPanel': !isSubpanel,

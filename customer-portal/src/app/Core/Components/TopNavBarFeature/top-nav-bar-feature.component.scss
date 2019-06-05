@@ -1,6 +1,6 @@
 @import "src/styles.scss";
 
-$theme: $light_theme;
+$theme: $material_theme;
 $primary: map-get($theme, primary);
 $accent: map-get($theme, accent);
 

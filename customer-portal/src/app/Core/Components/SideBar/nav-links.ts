@@ -25,72 +25,24 @@ export let navLinks = [
               route: "/analytics",
               subPanels: [
                   {
-                      title: "tmp2",
-                      icon: "home",
-                      route: "/analytics/tmp2",
+                      title: "Reports",
+                      icon: "assessment",
+                      iconStyle: "outlined",
+                      route: "/analytics/reports",
                       isSubpanel: true
                   },
                   {
-                      title: "tmp3",
-                      icon: "home",
-                      route: "/analytics/tmp3",
-                      isSubpanel: true
-                  },
-                  {
-                      title: "tmp4",
-                      icon: "home",
-                      route: "/analytics/tmp4",
-                      isSubpanel: true
-                  },
-                  {
-                      title: "tmp5",
-                      icon: "home",
-                      route: "/analytics/tmp5",
-                      isSubpanel: true
-                  },
-                  {
-                      title: "tmp1",
-                      icon: "home",
-                      route: "/analytics/tmp1",
+                      title: "Usage Summary",
+                      icon: "pie_chart",
+                      iconStyle: "outlined",
+                      route: "/analytics/usage_summary",
                       isSubpanel: true
                   }
               ]
             },
             { title: "Message Log",
               icon: "list",
-              route: "/message_log",
-              subPanels: [
-                  {
-                      title: "tmp2",
-                      icon: "home",
-                      route: "/analytics/tmp2",
-                      isSubpanel: true
-                  },
-                  {
-                      title: "tmp3",
-                      icon: "home",
-                      route: "/analytics/tmp3",
-                      isSubpanel: true
-                  },
-                  {
-                      title: "tmp4",
-                      icon: "home",
-                      route: "/analytics/tmp4",
-                      isSubpanel: true
-                  },
-                  {
-                      title: "tmp5",
-                      icon: "home",
-                      route: "/analytics/tmp5",
-                      isSubpanel: true
-                  },
-                  {
-                      title: "tmp1",
-                      icon: "home",
-                      route: "/analytics/tmp1",
-                      isSubpanel: true
-                  }
-              ]
+              route: "/message_log"
             },
             { title: "Web Text",
               icon: "chat",
@@ -105,12 +57,76 @@ export let navLinks = [
             { title: "Campaign",
               icon: "send",
               iconStyle: "outlined",
-              route: "/campaign"
+              route: "/campaign",
+              subPanels: [
+                  {
+                      title: "Getting Started",
+                      icon: "play_circle_outline",
+                      iconStyle: "outlined",
+                      route: "/campaign/getting_started",
+                      isSubpanel: true
+                  },
+                  {
+                      title: "Address Book",
+                      icon: "contacts",
+                      iconStyle: "outlined",
+                      route: "/campaign/address_book",
+                      isSubpanel: true
+                  },
+                  {
+                      title: "Templates",
+                      icon: "dashboard",
+                      route: "/campaign/templates",
+                      isSubpanel: true
+                  },
+                  {
+                      title: "Campaigns",
+                      icon: "send",
+                      iconStyle: "outlined",
+                      route: "/campaign/campaigns",
+                      isSubpanel: true
+                  }
+              ]
             },
             { title: "CMS",
               icon: "donut_small",
               iconStyle: "outlined",
-              route: "/cms"
+              route: "/cms",
+              subPanels: [
+                  {
+                      title: "About",
+                      icon: "info",
+                      iconStyle: "outlined",
+                      route: "/cms/about",
+                      isSubpanel: true
+                  },
+                  {
+                      title: "Change Management",
+                      icon: "work_outline",
+                      route: "/cms/change_management",
+                      isSubpanel: true
+                  },
+                  {
+                      title: "Template Editor",
+                      icon: "edit",
+                      iconStyle: "outlined",
+                      route: "/cms/template_editor",
+                      isSubpanel: true
+                  },
+                  {
+                      title: "Package Management",
+                      icon: "web",
+                      route: "/cms/package_management",
+                      isSubpanel: true
+                  },
+                  {
+                      title: "Package Installation",
+                      icon: "launch",
+                      iconStyle: "outlined",
+                      route: "/cms/package_installation",
+                      isSubpanel: true
+                  }
+              ]
             },
             { title: "Enterprise",
               icon: "domain"

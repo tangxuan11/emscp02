@@ -1,4 +1,5 @@
-<mat-nav-list *ngFor="let navGroup of sideNav; let idx = index">
+<mat-nav-list *ngFor="let navGroup of sideNav; let idx = index"
+              class="theme-dark">
     <ng-container *ngFor="let link of navGroup.panels">
         <app-side-bar-link [(activeMainPanel)]="activeMainPanel"
                            [title]="link.title"
