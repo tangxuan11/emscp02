@@ -3,6 +3,7 @@
 $theme: $light_theme;
 $primary: map-get($theme, primary);
 $accent: map-get($theme, accent);
+$foreground: map-get($theme, foreground);
 
 $top-nav-bar-login-height: 64px;
 $button-size: 112px;
@@ -22,6 +23,34 @@ mat-toolbar {
         height: 90%;
         img {
             max-height: 100%;
+        }
+    }
+
+    ul {
+        height: $top-nav-bar-login-height;
+
+        li {
+            list-style: none;
+            height: 100%;
+            z-index: 1050;
+
+            a {
+                color: mat-color($foreground, text);
+                height: 100%;
+                line-height: $top-nav-bar-login-height;
+                z-index: 1050;
+
+                mat-icon {
+                    padding-bottom: 3px;
+                }
+            }
+
+            &:hover {
+                background-color: mat-color($accent);
+                a {
+                    color: mat-color($primary, lighter);
+                }
+            }
         }
     }
 }

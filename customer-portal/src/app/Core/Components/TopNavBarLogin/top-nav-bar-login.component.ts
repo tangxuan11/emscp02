@@ -8,25 +8,31 @@ import { Component, OnInit } from '@angular/core';
 export class TopNavBarLoginComponent implements OnInit {
     topNav = [
         {
-            title: "Home"
+            title: "Home",
+            href: "https://infinite-convergence.com/index"
         },
         {
             title: "About Us",
             subLinks: [
                 {
-                    title: "About Us"
+                    title: "About Us",
+                    href: "https://infinite-convergence.com/aboutus"
                 },
                 {
-                    title: "Leadership Team"
+                    title: "Leadership Team",
+                    href: "https://infinite-convergence.com/leadership-team"
                 },
                 {
-                    title: "Awards & Recognitions"
+                    title: "Awards & Recognitions",
+                    href: "https://infinite-convergence.com/awards"
                 },
                 {
-                    title: "Partners"
+                    title: "Partners",
+                    href: "https://infinite-convergence.com/partners"
                 },
                 {
-                    title: "Careers"
+                    title: "Careers",
+                    href: "https://infinite-convergence.com/careers"
                 },
             ]
         },
@@ -34,37 +40,51 @@ export class TopNavBarLoginComponent implements OnInit {
             title: "Enterprise",
             subLinks: [
                 {
-                    title: "Enterprise"
+                    title: "Enterprise",
+                    href: "https://infinite-convergence.com/enterprise-messaging-service"
                 },
                 {
-                    title: "1-Way & 2-Way Messaging"
+                    title: "1-Way & 2-Way Messaging",
+                    href: "https://infinite-convergence.com/1-Way-and-2-Way-Messaging"
                 },
                 {
-                    title: "Text-2-Speech"
+                    title: "Text-2-Speech",
+                    href: "https://infinite-convergence.com/Text-2-Speech"
                 },
                 {
-                    title: "One Time Passcodes"
+                    title: "One Time Passcodes",
+                    href: "https://infinite-convergence.com/One-Time-Passcodes"
                 },
                 {
-                    title: "Two Factor Authentication (2-FA)"
+                    title: "Two Factor Authentication (2-FA)",
+                    href: "https://infinite-convergence.com/Two-Factor-Authentication"
                 },
                 {
-                    title: "Campaign Manager"
+                    title: "Campaign Manager",
+                    href: "https://infinite-convergence.com/campaign-manager"
                 },
                 {
-                    title: "Content Management System"
+                    title: "Content Management System",
+                    href: "https://infinite-convergence.com/Content-Management-System"
                 },
                 {
-                    title: "NetSfere"
+                    separator: true
                 },
                 {
-                    title: "EMS Plus"
+                    title: "NetSfere",
+                    href: "http://www.netsfere.com"
                 },
                 {
-                    title: "EMS Flex"
+                    title: "EMS Plus",
+                    href: "https://www.infinite-convergence.com/enterprise-messaging-service-plus"
                 },
                 {
-                    title: "EMS API"
+                    title: "EMS Flex",
+                    href: "https://www.infinite-convergence.com/ems-flex"
+                },
+                {
+                    title: "EMS API",
+                    href: "https://www.infinite-convergence.com/ems-api"
                 }
             ]
         },
@@ -72,25 +92,32 @@ export class TopNavBarLoginComponent implements OnInit {
             title: "Carrier",
             subLinks: [
                 {
-                    title: "Carrier"
+                    title: "Carrier",
+                    href: "https://www.infinite-convergence.com/carrier"
                 },
                 {
-                    title: "Rich Communication Services"
+                    title: "Rich Communication Services",
+                    href: "https://www.infinite-convergence.com/rich-communication-suite"
                 },
                 {
-                    title: "Personal Messaging Cloud"
+                    title: "Personal Messaging Cloud",
+                    href: "https://www.infinite-convergence.com/personal-messaging-cloud"
                 },
                 {
-                    title: "MMS Center"
+                    title: "MMS Center",
+                    href: "https://www.infinite-convergence.com/mmsc"
                 },
                 {
-                    title: "Short Messaging Service Center"
+                    title: "Short Messaging Service Center",
+                    href: "https://www.infinite-convergence.com/smsc"
                 },
                 {
-                    title: "Short Messaging Service Gateway"
+                    title: "Short Messaging Service Gateway",
+                    href: "https://www.infinite-convergence.com/sms-gateway"
                 },
                 {
-                    title: "Public Safety Messaging"
+                    title: "Public Safety Messaging",
+                    href: "https://www.infinite-convergence.com/public-safety-multimedia-messaging"
                 }
             ]
         },
@@ -98,27 +125,34 @@ export class TopNavBarLoginComponent implements OnInit {
             title: "Media",
             subLinks: [
                 {
-                    title: "News"
+                    title: "News",
+                    href: "https://www.infinite-convergence.com/news"
                 },
                 {
-                    title: "In the News"
+                    title: "In the News",
+                    href: "https://www.infinite-convergence.com/in-the-news"
                 },
                 {
-                    title: "Messaging Insights"
+                    title: "Messaging Insights",
+                    href: "https://infinite-convergence.com/messaging_insights"
                 },
                 {
-                    title: "CEO's Corner"
+                    title: "CEO's Corner",
+                    href: "https://infinite-convergence.com/anurag_lal_ceos_corner"
                 },
                 {
-                    title: "CIO e-Book"
+                    title: "CIO e-Book",
+                    href: "https://infinite-convergence.com/CIO_e-Book"
                 }
             ]
         },
         {
-            title: "Support"
+            title: "Support",
+            href: "https://www.infinite-convergence.com/support"
         },
         {
-            title: "Contact Us"
+            title: "Contact Us",
+            href: "https://www.infinite-convergence.com/contact"
         }
     ];
 

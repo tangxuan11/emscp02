@@ -5,13 +5,29 @@
     </div>
 
     <div fxFlex="70">
-        <div fxLayout="row" fxLayoutAlign="end center">
-            <ng-container *ngFor="let link of topNav">
-                <a mat-button [matMenuTriggerFor]="linkMenu">{{link.title}}</a>
+        <ul fxLayout="row" fxLayoutAlign="end center">
+            <li fxFlexAlign="center"
+                *ngFor="let link of topNav">
+                <a mat-button
+                   href="{{link.href ? link.href : 'javascript:void(0)'}}"
+                   [matMenuTriggerFor]="linkMenu">
+                   {{link.title}}
+                   <mat-icon *ngIf="link.subLinks">arrow_drop_down</mat-icon>
+                </a>
                 <mat-menu #linkMenu>
-                    <button mat-menu-item *ngFor="let subLink of link.subLinks">{{subLink.title}}</button>
+                    <ng-container *ngFor="let subLink of link.subLinks">
+                        <mat-divider *ngIf="subLink.separator; else navLink">
+                        </mat-divider>
+                        <ng-template #navLink>
+                            <a mat-menu-item
+                               href="{{subLink.href ?
+                                       subLink.href : 'javascript:void(0)'}}">
+                               {{subLink.title}}
+                            </a>
+                        </ng-template>
+                    </ng-container>
                 </mat-menu>
-            </ng-container>
-        </div>
+            </li>
+        </ul>
     </div>
 </mat-toolbar>
