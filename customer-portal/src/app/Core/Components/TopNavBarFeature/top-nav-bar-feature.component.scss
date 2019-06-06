@@ -43,12 +43,12 @@ $accent: map-get($theme, accent);
             font-size: 22pt;
             height: 28px;
             line-height: 28px;
-            font-weight: bold;
+            font-weight: bolder;
         }
         p {
             color: mat-color(map-get($dark_theme, primary));
             font-size: 7pt;
-            font-weight: bold;
+            font-weight: bolder;
             height: 10px;
             line-height: 10px;
             margin: 0;

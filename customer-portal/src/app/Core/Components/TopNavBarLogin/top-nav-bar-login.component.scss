@@ -11,6 +11,7 @@ $top-nav-bar-login-logo-size: 40%;
 
 mat-toolbar {
     height: $top-nav-bar-login-height;
+    width: 100%;
     background-color: mat-color($primary, lighter);
     padding: 0 5%;
     position: fixed;

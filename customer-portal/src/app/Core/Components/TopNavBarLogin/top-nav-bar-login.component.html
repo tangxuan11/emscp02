@@ -9,7 +9,7 @@
             <li fxFlexAlign="center"
                 *ngFor="let link of topNav">
                 <a mat-button
-                   href="{{link.href ? link.href : 'javascript:void(0)'}}"
+                   [attr.href]="link.href ? link.href : null"
                    [matMenuTriggerFor]="linkMenu">
                    {{link.title}}
                    <mat-icon *ngIf="link.subLinks">arrow_drop_down</mat-icon>
@@ -20,8 +20,7 @@
                         </mat-divider>
                         <ng-template #navLink>
                             <a mat-menu-item
-                               href="{{subLink.href ?
-                                       subLink.href : 'javascript:void(0)'}}">
+                               [attr.href]="subLink.href ? subLink.href : null">
                                {{subLink.title}}
                             </a>
                         </ng-template>
