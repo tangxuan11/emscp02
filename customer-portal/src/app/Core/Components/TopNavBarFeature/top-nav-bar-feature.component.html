@@ -8,7 +8,7 @@
             menu
         </mat-icon>
     </button>
-    <a><h2>EMS</h2><p>ENTERPRISE MESSAGING SERVICES</p></a>
+    <a (click)="addNotif()"><h2>EMS</h2><p>ENTERPRISE MESSAGING SERVICES</p></a>
 
     <!-- This elements splits elements in the toolbar/navbar. All elements
        before this span will be placed on the left side of the toolbar/navbar.
@@ -34,7 +34,9 @@
             <span class="dropdown_text">Log Out</span>
         </button>
     </mat-menu>
-    <button mat-icon-button (click)="addNotif()">
+    <button mat-icon-button
+            [matMenuTriggerFor]="notifMenu"
+            id="notifButton">
         <mat-icon class="material-icons-outlined"
                   matBadge="{{(notifications.length > 99) ?
                             '99+' : notifications.length}}"
@@ -43,5 +45,11 @@
                   [matBadgeHidden]="notifications.length <= 0">
                   notifications
         </mat-icon>
+        <mat-menu #notifMenu="matMenu">
+            <button mat-menu-item
+                    *ngFor="let n of notifications">
+                    <span>{{n.title}}: </span>{{n.message}}
+            </button>
+        </mat-menu>
     </button>
 </mat-toolbar>

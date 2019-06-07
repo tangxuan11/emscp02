@@ -6,7 +6,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 
 export class LogInStateService {
-    sharedData = new BehaviorSubject(false); 
+    sharedData = new BehaviorSubject(true); 
 
     //private messageSource = new BehaviorSubject(false);
     //sharedData = this.messageSource.asObservable();

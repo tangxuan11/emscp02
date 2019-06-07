@@ -5,7 +5,7 @@ $primary: map-get($theme, primary);
 $accent: map-get($theme, accent);
 $foreground: map-get($theme, foreground);
 
-$top-nav-bar-login-height: 64px;
+$top-nav-bar-login-height: 54px;
 $button-size: 112px;
 $top-nav-bar-login-logo-size: 40%;
 
@@ -32,14 +32,14 @@ mat-toolbar {
 
         li {
             list-style: none;
-            height: 100%;
+            height: 120%;
             z-index: 1050;
 
             a {
                 color: mat-color($foreground, text);
                 height: 100%;
-                line-height: $top-nav-bar-login-height;
-                z-index: 1050;
+                line-height: calc(1.2 * #{$top-nav-bar-login-height});
+                font-weight: bold;
 
                 mat-icon {
                     padding-bottom: 3px;
