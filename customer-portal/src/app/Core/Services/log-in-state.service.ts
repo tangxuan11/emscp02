@@ -7,6 +7,8 @@ import { BehaviorSubject } from 'rxjs';
 
 export class LogInStateService {
     sharedData = new BehaviorSubject(false);
+    private currentUser = new BehaviorSubject("");
+    currentUser$ = this.currentUser.asObservable();
 
     //private messageSource = new BehaviorSubject(false);
     //sharedData = this.messageSource.asObservable();
@@ -18,5 +20,9 @@ export class LogInStateService {
     changeMessage(message: boolean) {
         //this.messageSource.next(message)
         this.sharedData.next(message);
+    }
+
+    updateLoggedInUser(username: string) {
+        this.currentUser.next(username);
     }
 }

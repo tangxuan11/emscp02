@@ -10,11 +10,16 @@ import { NotificationsService } from '../../Services/notifications.service';
     styleUrls: ['./top-nav-bar-feature.component.scss']
 })
 export class TopNavBarFeatureComponent implements OnInit {
+    currentUser: string;
     notifications: Notification[];
     @Output() toggleSidebar = new EventEmitter<void>();
 
     constructor(private loginState: LogInStateService,
-                private notifService: NotificationsService) { }
+                private notifService: NotificationsService) {
+        this.loginState.currentUser$.subscribe( username => {
+            this.currentUser = username;
+        });
+    }
 
     ngOnInit() {
         this.notifService.notifications$.subscribe( notifs => {
@@ -29,6 +34,7 @@ export class TopNavBarFeatureComponent implements OnInit {
     logOut() {
         this.notifService.clearNotifications();
         this.loginState.changeMessage(false);
+        this.loginState.updateLoggedInUser("");
     }
 
     addNotif() {
