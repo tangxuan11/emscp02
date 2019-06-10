@@ -9,6 +9,7 @@
             <li fxFlexAlign="center"
                 *ngFor="let link of topNav">
                 <a mat-button
+                   fxFlexAlign="center"
                    [attr.href]="link.href ? link.href : null"
                    [matMenuTriggerFor]="linkMenu">
                    {{link.title | uppercase}}
