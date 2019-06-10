@@ -76,6 +76,7 @@ export let navLinks = [
                   {
                       title: "Templates",
                       icon: "dashboard",
+                      iconStyle: "outlined",
                       route: "/campaign/templates",
                       isSubpanel: true
                   },

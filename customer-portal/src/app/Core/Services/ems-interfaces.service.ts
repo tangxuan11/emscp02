@@ -31,6 +31,7 @@ export interface forgotPasswordResponse {
 }
 
 export interface Notification {
+    title: string;
     message: string;
 }
 

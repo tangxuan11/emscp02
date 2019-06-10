@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, ViewEncapsulation } from '@angular/core';
 
 import { LogInStateService } from '../../Services/log-in-state.service';
 import { Notification } from '../../Services/ems-interfaces.service';
@@ -32,6 +32,9 @@ export class TopNavBarFeatureComponent implements OnInit {
     }
 
     addNotif() {
-        this.notifService.addNotification({message: "Hello"});
+        this.notifService.addNotification({
+            title: "Notification " + this.notifications.length,
+            message: "Hello, you have a notification here."
+        });
     }
 }

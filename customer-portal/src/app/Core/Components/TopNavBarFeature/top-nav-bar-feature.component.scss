@@ -16,7 +16,6 @@ $accent: map-get($theme, accent);
     .mat-button {
         padding: 0 0 0 5px;
         span {
-            padding-right: 10px;
             color: mat-color($accent);
             font-weight: bold;
         }
@@ -41,13 +40,19 @@ $accent: map-get($theme, accent);
 
         h2 {
             color: mat-color($accent);
-            font-size: 14pt;
-            font-weight: bold;
+            font-size: 22pt;
+            height: 28px;
+            line-height: 28px;
+            font-weight: bolder;
         }
-    }
-
-    .mat-form-field {
-        font-size: 10pt;
+        p {
+            color: mat-color(map-get($dark_theme, primary));
+            font-size: 7pt;
+            font-weight: bolder;
+            height: 10px;
+            line-height: 10px;
+            margin: 0;
+        }
     }
 
     .splitter {
@@ -56,8 +61,9 @@ $accent: map-get($theme, accent);
     }
 
     .mat-focused .placeholder {
-    color: transparent;
+        color: transparent;
     }
+
 }
 
 .dropdown_text {

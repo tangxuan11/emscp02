@@ -1,19 +1,32 @@
 
-<mat-toolbar fxLayout="row" id="top-nav-bar-login">
-    <div fxFlex id="top-nav-bar-login-logo">
+<mat-toolbar fxLayout="row" fxLayoutAlign="space-between center">
+    <div id="logo" fxFlex="30" fxFlexAlign="center">
         <img src="logo.png">
     </div>
 
-    <button mat-stroked-button fxFlex>Home</button>
-    <button mat-stroked-button fxFlex [matMenuTriggerFor]="menu">About Us</button>
-    <mat-menu #menu="matMenu">
-        <button mat-menu-item>Item 1</button>
-        <button mat-menu-item>Item 2</button>
-    </mat-menu>
-    <button mat-stroked-button fxFlex>Enterprise</button>
-    <button mat-stroked-button fxFlex>Carrier</button>
-    <button mat-stroked-button fxFlex>Media</button>
-    <button mat-stroked-button fxFlex>Support</button>
-    <button mat-stroked-button fxFlex>Contact Us</button>
- 
+    <div fxFlex="70">
+        <ul fxLayout="row" fxLayoutAlign="end center">
+            <li fxFlexAlign="center"
+                *ngFor="let link of topNav">
+                <a mat-button
+                   [attr.href]="link.href ? link.href : null"
+                   [matMenuTriggerFor]="linkMenu">
+                   {{link.title | uppercase}}
+                   <mat-icon *ngIf="link.subLinks">arrow_drop_down</mat-icon>
+                </a>
+                <mat-menu #linkMenu>
+                    <ng-container *ngFor="let subLink of link.subLinks">
+                        <mat-divider *ngIf="subLink.separator; else navLink">
+                        </mat-divider>
+                        <ng-template #navLink>
+                            <a mat-menu-item
+                               [attr.href]="subLink.href ? subLink.href : null">
+                               {{subLink.title}}
+                            </a>
+                        </ng-template>
+                    </ng-container>
+                </mat-menu>
+            </li>
+        </ul>
+    </div>
 </mat-toolbar>
