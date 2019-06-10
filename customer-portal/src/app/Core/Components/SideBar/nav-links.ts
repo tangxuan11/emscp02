@@ -130,7 +130,8 @@ export let navLinks = [
               ]
             },
             { title: "Enterprise",
-              icon: "domain"
+              icon: "domain",
+              route: "/enterprise"
             }
         ]
     },

@@ -3,7 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { WebTextComponent } from './web-text.component';
 
-
 const routes: Routes = [
     {
         path: '',
