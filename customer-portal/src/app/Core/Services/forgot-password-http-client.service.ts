@@ -16,8 +16,8 @@ export class ForgotPasswordHttpClientService {
   sendForgotPasswordHttp(indata: forgotPasswordCredential[]) {
       this.forgotPasswordCred = indata;
       let uname = this.forgotPasswordCred[0]["username"];
-      let httpParams = new HttpParams().set("username", uname);
-      this.forgotPasswordData$ = this.httpClient.get<forgotPasswordResponse[]>('https://ems-portal.mpvm37.mp.ics.com/tang2.php', { params: httpParams });
+      let httpParams = new HttpParams().set("wlUsr", uname).set("wlLogin","Reset").set("wlFormat","json");
+      this.forgotPasswordData$ = this.httpClient.get<forgotPasswordResponse[]>('https://ems-portal.mpvm37.mp.ics.com/auth_forgot_tang.php', { params: httpParams });
       return this.forgotPasswordData$;
   }
 }
