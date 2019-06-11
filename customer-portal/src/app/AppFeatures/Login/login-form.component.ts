@@ -85,6 +85,7 @@ export class LoginFormComponent implements OnInit {
 
         if (this.loginResult == "success") {
             this.loginState.changeMessage(true);
+            this.loginState.setUsername(this.loginCred[0]["username"]);
         }
         else {
             this.showLoginError = true;

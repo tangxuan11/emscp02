@@ -21,6 +21,8 @@ const routes: Routes = [
     { path: 'cms/package_management', loadChildren: './AppFeatures/CMS/PackageManagement/package-management.module#PackageManagementModule' },
     { path: 'cms/package_installation', loadChildren: './AppFeatures/CMS/PackageInstallation/package-installation.module#PackageInstallationModule' },
     { path: 'enterprise', loadChildren: './AppFeatures/Enterprise/enterprise.module#EnterpriseModule' },
+    { path: 'settings', loadChildren: './AppFeatures/Settings/settings.module#SettingsModule' },
+    { path: 'help', loadChildren: './AppFeatures/Help/help.module#HelpModule' },
 
     {
         path: '',

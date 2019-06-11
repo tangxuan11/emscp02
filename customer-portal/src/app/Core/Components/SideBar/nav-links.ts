@@ -144,9 +144,11 @@ export let navLinks = [
             { title: "Settings",
               icon: "settings",
               iconStyle: "outlined",
+              route: "/settings"
             },
             { title: "Help",
-              icon: "help_outline"
+              icon: "help_outline",
+              route: "/help"
             }
         ]
     }

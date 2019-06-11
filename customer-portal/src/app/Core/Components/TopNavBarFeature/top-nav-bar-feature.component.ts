@@ -13,6 +13,8 @@ export class TopNavBarFeatureComponent implements OnInit {
     notifications: Notification[];
     @Output() toggleSidebar = new EventEmitter<void>();
 
+    userName: string = "";
+
     constructor(private loginState: LogInStateService,
                 private notifService: NotificationsService) { }
 
@@ -20,6 +22,7 @@ export class TopNavBarFeatureComponent implements OnInit {
         this.notifService.notifications$.subscribe( notifs => {
             this.notifications = notifs;
         });
+        this.userName = this.loginState.getUsername();
     }
 
     toggleSidebarCollapse(): void {
