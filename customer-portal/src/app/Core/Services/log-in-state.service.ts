@@ -7,6 +7,8 @@ import { BehaviorSubject } from 'rxjs';
 
 export class LogInStateService {
     sharedData = new BehaviorSubject(false);
+    private currentUser = new BehaviorSubject("");
+    currentUser$ = this.currentUser.asObservable();
 
     userName: string = "some_user";
 
@@ -22,11 +24,7 @@ export class LogInStateService {
         this.sharedData.next(message);
     }
 
-    setUsername(uname: string) {
-        this.userName = uname;
-    }
-
-    getUsername() {
-        return this.userName;
+    updateLoggedInUser(username: string) {
+        this.currentUser.next(username);
     }
 }

@@ -66,6 +66,7 @@ export class LoginFormComponent implements OnInit {
                 }
             } else {
                 //Both username and password are in valid format. Now send to server.
+                this.loginState.updateLoggedInUser(uname);
                 this.loginCred = [{
                     "username": uname,
                     "password": pword
@@ -85,9 +86,9 @@ export class LoginFormComponent implements OnInit {
 
         if (this.loginResult == "success") {
             this.loginState.changeMessage(true);
-            this.loginState.setUsername(this.loginCred[0]["username"]);
         }
         else {
+            this.loginState.updateLoggedInUser("");
             this.showLoginError = true;
             this.loginErrorMessage = "Error: Authentication Failed."
             this.emsLoginFormModel.reset();

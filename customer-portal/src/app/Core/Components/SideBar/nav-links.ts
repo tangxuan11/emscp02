@@ -128,18 +128,14 @@ export let navLinks = [
                       isSubpanel: true
                   }
               ]
-            },
-            { title: "Enterprise",
-              icon: "domain",
-              route: "/enterprise"
             }
         ]
     },
     {
         panels: [
-            { title: "Notifications",
-              icon: "notifications",
-              iconStyle: "outlined",
+            { title: "Enterprise",
+              icon: "domain",
+              route: "/enterprise"
             },
             { title: "Settings",
               icon: "settings",
