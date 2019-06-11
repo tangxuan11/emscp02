@@ -25,15 +25,12 @@ export class LogInHttpClientService {
         this.loginCred = indata;
         let uname = this.loginCred[0]["username"];
         let pword = this.loginCred[0]["password"];
-        let httpParams = new HttpParams().set("username", uname).set("password", pword);
-        let post_data = {"username":uname,"password":pword};
-        //this.loginData$ = this.httpClient.get<loginResponse[]>('https://ems-portal.mpvm37.mp.ics.com/tang.php', { params: httpParams });
         
-        let httpParams1 = new HttpParams().set("wlUsr", "xt@abc.com").
-                                           set("wlPwd","ems@1234").
+        let httpParams = new HttpParams().set("wlUsr", uname).
+                                           set("wlPwd", pword).
                                            set("wlLogin","Login").
                                            set("wlFormat","json");
-        this.loginData$ = this.httpClient.get<loginResponse[]>('https://ems-portal.mpvm37.mp.ics.com/auth_tang1.php', { params: httpParams1 });
+        this.loginData$ = this.httpClient.get<loginResponse[]>('https://ems-portal.mpvm37.mp.ics.com/auth_tang1.php', { params: httpParams });
         
         return this.loginData$;
     }

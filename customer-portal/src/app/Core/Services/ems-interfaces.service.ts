@@ -13,7 +13,8 @@ export interface loginResponse {
 export interface changePasswordCredential {
     username: string,
     oldpassword: string,
-    newpassword: string
+    newpassword: string,
+    confirmpassword: string
 }
 
 export interface changePasswordResponse {

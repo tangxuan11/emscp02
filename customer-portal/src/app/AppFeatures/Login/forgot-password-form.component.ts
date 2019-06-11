@@ -42,6 +42,7 @@ export class ForgotPasswordFormComponent implements OnInit {
         let unameIsValid: Boolean = this.emsForgotPasswordFormModel.controls.username.valid;
         if (unameIsValid != true) {
             this.showForgotPasswordError = true;
+            this.showServerResponse = false;
             if (this.emsForgotPasswordFormModel.controls.username.hasError('required')) {
                 this.forgotPasswordMessage = "Username can not be empty.";
             } else if (this.emsForgotPasswordFormModel.controls.username.hasError('email')) {
@@ -65,6 +66,7 @@ export class ForgotPasswordFormComponent implements OnInit {
         if (this.forgotPasswordResult = "success") {
             this.serverResponseMessage = server_response["statusMsg"];
             this.showServerResponse = true;
+            this.showForgotPasswordError = false;
         }
         else {
             this.showForgotPasswordFailure();

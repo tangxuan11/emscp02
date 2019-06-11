@@ -81,7 +81,6 @@ export class LoginFormComponent implements OnInit {
     //Handle the response from HTTP server REST service
     handleLoginResponse(response: loginResponse[]) {
         this.loginRes = response;
-        //this.loginResult = this.loginRes[0]["result"];
         this.loginResult = this.loginRes["result"];
 
         if (this.loginResult == "success") {
@@ -90,7 +89,7 @@ export class LoginFormComponent implements OnInit {
         else {
             this.loginState.updateLoggedInUser("");
             this.showLoginError = true;
-            this.loginErrorMessage = "Error: Authentication Failed."
+            this.loginErrorMessage = this.loginRes["statusMsg"];
             this.emsLoginFormModel.reset();
         }
     }
