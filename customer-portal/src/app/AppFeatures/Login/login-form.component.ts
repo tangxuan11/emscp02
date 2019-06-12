@@ -96,6 +96,10 @@ export class LoginFormComponent implements OnInit {
             this.showLoginError = true;
             this.loginErrorMessage = this.loginRes["statusMsg"];
             this.emsLoginFormModel.reset();
+            if (this.loginErrorMessage == "You must change your temporary password before proceeding further.")
+            {
+                this.changePassword();
+            }
         }
     }
 

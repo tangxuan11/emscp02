@@ -18,10 +18,8 @@ export class ChangePasswordFormComponent implements OnInit {
     changePasswordCred: changePasswordCredential[] = [];
 
     changePasswordResult: string = "";
-    showChangePasswordError: boolean = false;
-    changePasswordMessage = "";
-    showServerResponse: boolean = false;
-    serverResponseMessage = "";
+    showChangePasswordInfoMessage: boolean = false;
+    changePasswordInfoMessage = "";
 
     @Output() eventFromChangePasswordForm = new EventEmitter<string>();
     emsChangePasswordFormModel: FormGroup;
@@ -48,44 +46,40 @@ export class ChangePasswordFormComponent implements OnInit {
         //Validation of username
         let unameIsValid: Boolean = this.emsChangePasswordFormModel.controls.username.valid;
         if (unameIsValid != true) {
-            this.showChangePasswordError = true;
-            this.showServerResponse = false;
+            this.showChangePasswordInfoMessage = true;
             if (this.emsChangePasswordFormModel.controls.username.hasError('required')) {
-                this.changePasswordMessage = "Username can not be empty.";
+                this.changePasswordInfoMessage = "Username can not be empty.";
             } else if (this.emsChangePasswordFormModel.controls.username.hasError('email')) {
-                this.changePasswordMessage = "Username needs to be an Email address.";
+                this.changePasswordInfoMessage = "Username needs to be an Email address.";
             } else {
-                this.changePasswordMessage = "Unknown error.";
+                this.changePasswordInfoMessage = "Unknown error.";
             }
         } else {
             let opwordIsValid: Boolean = this.emsChangePasswordFormModel.controls.oldpassword.valid;
             if (opwordIsValid != true) {
-                this.showChangePasswordError = true;
-                this.showServerResponse = false;
+                this.showChangePasswordInfoMessage = true;
                 if (this.emsChangePasswordFormModel.controls.oldpassword.hasError('required')) {
-                    this.changePasswordMessage = "Old password can not be empty.";
+                    this.changePasswordInfoMessage = "Old password can not be empty.";
                 } else {
-                    this.changePasswordMessage = "Unknown error.";
+                    this.changePasswordInfoMessage = "Unknown error.";
                 }
             } else {
                 let npwordIsValid: Boolean = this.emsChangePasswordFormModel.controls.newpassword.valid;
                 if (npwordIsValid != true) {
-                    this.showChangePasswordError = true;
-                    this.showServerResponse = false;
+                    this.showChangePasswordInfoMessage = true;
                     if (this.emsChangePasswordFormModel.controls.newpassword.hasError('required')) {
-                        this.changePasswordMessage = "New password can not be empty.";
+                        this.changePasswordInfoMessage = "New password can not be empty.";
                     } else {
-                        this.changePasswordMessage = "Unknown error.";
+                        this.changePasswordInfoMessage = "Unknown error.";
                     }
                 } else {
                     let cpwordIsValid: Boolean = this.emsChangePasswordFormModel.controls.confirmpassword.valid;
                     if (cpwordIsValid != true) {
-                        this.showChangePasswordError = true;
-                        this.showServerResponse = false;
+                        this.showChangePasswordInfoMessage = true;
                         if (this.emsChangePasswordFormModel.controls.confirmpassword.hasError('required')) {
-                            this.changePasswordMessage = "Confirm password can not be empty.";
+                            this.changePasswordInfoMessage = "Confirm password can not be empty.";
                         } else {
-                            this.changePasswordMessage = "Unknown error.";
+                            this.changePasswordInfoMessage = "Unknown error.";
                         }
                     } else {
                         this.changePasswordCred = [{
@@ -106,10 +100,9 @@ export class ChangePasswordFormComponent implements OnInit {
     handleChangePasswordResponse(server_response: changePasswordResponse[]) {
         this.changePasswordResult = server_response["result"];
 
-        if (this.changePasswordResult = "success") {
-            this.serverResponseMessage = server_response["statusMsg"];
-            this.showServerResponse = true;
-            this.showChangePasswordError = false;
+        if (this.changePasswordResult == "success") {
+            this.changePasswordInfoMessage = server_response["statusMsg"];
+            this.showChangePasswordInfoMessage = true;
         }
         else {
             this.showChangePasswordFailure();
@@ -122,8 +115,8 @@ export class ChangePasswordFormComponent implements OnInit {
     }
 
     showChangePasswordFailure() {
-        this.changePasswordMessage = "Request failed to change password.";
-        this.showChangePasswordError = true;
+        this.changePasswordInfoMessage = "Request failed to change password.";
+        this.showChangePasswordInfoMessage = true;
     }
 
 }

@@ -18,10 +18,8 @@ export class ForgotPasswordFormComponent implements OnInit {
     forgotPasswordCred: forgotPasswordCredential[] = [];
 
     forgotPasswordResult: string = "";
-    showForgotPasswordError: boolean = false;
-    forgotPasswordMessage = "";
-    showServerResponse: boolean = false;
-    serverResponseMessage = "";
+    showForgotPasswordInfoMessage: boolean = false;
+    forgotPasswordInfoMessage = "";
 
     @Output() eventFromForgotPasswordForm = new EventEmitter<string>();
     emsForgotPasswordFormModel: FormGroup;
@@ -41,14 +39,13 @@ export class ForgotPasswordFormComponent implements OnInit {
         //Validation of username
         let unameIsValid: Boolean = this.emsForgotPasswordFormModel.controls.username.valid;
         if (unameIsValid != true) {
-            this.showForgotPasswordError = true;
-            this.showServerResponse = false;
+            this.showForgotPasswordInfoMessage = true;
             if (this.emsForgotPasswordFormModel.controls.username.hasError('required')) {
-                this.forgotPasswordMessage = "Username can not be empty.";
+                this.forgotPasswordInfoMessage = "Username can not be empty.";
             } else if (this.emsForgotPasswordFormModel.controls.username.hasError('email')) {
-                this.forgotPasswordMessage = "Username needs to be an Email address.";
+                this.forgotPasswordInfoMessage = "Username needs to be an Email address.";
             } else {
-                this.forgotPasswordMessage = "Unknown error.";
+                this.forgotPasswordInfoMessage = "Unknown error.";
             }
         } else {
             //username in valid format. Now send to server.
@@ -63,10 +60,9 @@ export class ForgotPasswordFormComponent implements OnInit {
     handleForgotPasswordResponse(server_response: forgotPasswordResponse[]) {
         this.forgotPasswordResult = server_response["result"];
 
-        if (this.forgotPasswordResult = "success") {
-            this.serverResponseMessage = server_response["statusMsg"];
-            this.showServerResponse = true;
-            this.showForgotPasswordError = false;
+        if (this.forgotPasswordResult == "success") {
+            this.forgotPasswordInfoMessage = server_response["statusMsg"];
+            this.showForgotPasswordInfoMessage = true;
         }
         else {
             this.showForgotPasswordFailure();
@@ -79,7 +75,7 @@ export class ForgotPasswordFormComponent implements OnInit {
     }
 
     showForgotPasswordFailure() {
-        this.forgotPasswordMessage = "Request failed to reset password.";
-        this.showForgotPasswordError = true;
+        this.forgotPasswordInfoMessage = "Request failed to reset password.";
+        this.showForgotPasswordInfoMessage = true;
     }
 }
