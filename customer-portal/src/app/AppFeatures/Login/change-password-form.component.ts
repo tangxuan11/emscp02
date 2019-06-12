@@ -18,8 +18,8 @@ export class ChangePasswordFormComponent implements OnInit {
     changePasswordCred: changePasswordCredential[] = [];
 
     changePasswordResult: string = "";
-    showChangePasswordInfoMessage: boolean = false;
-    changePasswordInfoMessage = "";
+    showChangePasswordInfoMessage: boolean = true;
+    changePasswordInfoMessage = "You must change your temporary password before proceeding further.";
 
     @Output() eventFromChangePasswordForm = new EventEmitter<string>();
     emsChangePasswordFormModel: FormGroup;
