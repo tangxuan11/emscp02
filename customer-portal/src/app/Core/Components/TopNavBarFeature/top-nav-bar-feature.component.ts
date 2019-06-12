@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 import { LogInStateService } from '../../Services/log-in-state.service';
 import { Notification } from '../../Services/ems-interfaces.service';
@@ -10,7 +10,8 @@ import { NotificationsService } from '../../Services/notifications.service';
     styleUrls: ['./top-nav-bar-feature.component.scss']
 })
 export class TopNavBarFeatureComponent implements OnInit {
-    currentUser: string;
+    username: string;
+    usernameIsEmail: boolean;
     notifications: Notification[];
     @Output() toggleSidebar = new EventEmitter<void>();
 
@@ -19,7 +20,8 @@ export class TopNavBarFeatureComponent implements OnInit {
     constructor(private loginState: LogInStateService,
                 private notifService: NotificationsService) {
         this.loginState.currentUser$.subscribe( username => {
-            this.currentUser = username;
+            this.username = username;
+            this.usernameIsEmail = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/.test(username);
         });
     }
 

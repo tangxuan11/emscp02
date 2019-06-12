@@ -65,7 +65,6 @@ export class LoginFormComponent implements OnInit {
                 }
             } else {
                 //Both username and password are in valid format. Now send to server.
-                this.loginState.updateLoggedInUser(uname);
                 this.loginCred = [{
                     "username": uname,
                     "password": pword
@@ -86,10 +85,12 @@ export class LoginFormComponent implements OnInit {
             let rolesArr: string[] = this.loginRes["data"]["roles"];
             let isEngineeringUser = rolesArr.includes("EMH APPLICATION ADMINISTRATOR");
             // if engineering user, redirect to engineering portal
-            if (isEngineeringUser)
+            if (isEngineeringUser) {
                 this.redirectFormRef.nativeElement.submit();
-            else
+            } else {
                 this.loginState.changeMessage(true);
+                this.loginState.updateLoggedInUser(this.loginRes["data"]["username"]);
+            }
         }
         else {
             this.loginState.updateLoggedInUser("");
