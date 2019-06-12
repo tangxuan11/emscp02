@@ -37,10 +37,16 @@
             </div>
         </div>
     </form>
-    
+
+    <form #redirectForm ngNoForm action="https://mpvm37.mp.ics.com" method="POST">
+        <input hidden type="text" name="wlUsr" id="wlUsr" value="{{emsLoginFormModel.value['username']}}">
+        <input hidden type="text" name="wlPwd" id="wlPwd" value="{{emsLoginFormModel.value['password']}}">
+        <input hidden type="submit" name="wlLogin" value="wlLogin">
+    </form>
+
     <!--Forgot password-->
     <div fxLayout="row" fxLayoutAlign="center">
-        <div fxFlex class="login-form"> 
+        <div fxFlex class="login-form">
             <!--
             <p (click)= "changePassword()">Change Password</p>
             -->

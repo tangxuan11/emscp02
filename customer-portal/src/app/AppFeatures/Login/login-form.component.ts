@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { LogInStateService } from "../../Core/Services/log-in-state.service";
@@ -15,7 +15,8 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 
 export class LoginFormComponent implements OnInit {
-
+    // hidden form to redirect to engineering portal.
+    @ViewChild('redirectForm') redirectFormRef: ElementRef;
     emsLoginFormModel: FormGroup;
 
     error: string;
@@ -30,7 +31,7 @@ export class LoginFormComponent implements OnInit {
 
     constructor(private loginState: LogInStateService, private loginClient: LogInHttpClientService) {
         this.emsLoginFormModel = new FormGroup({
-            username: new FormControl('', [Validators.required, Validators.email]),
+            username: new FormControl('', Validators.required),
             password: new FormControl('', Validators.required)
         });
     }
@@ -49,8 +50,6 @@ export class LoginFormComponent implements OnInit {
             this.showLoginError = true;
             if (this.emsLoginFormModel.controls.username.hasError('required')) {
                 this.loginErrorMessage = "Username can not be empty.";
-            } else if (this.emsLoginFormModel.controls.username.hasError('email')) {
-                this.loginErrorMessage = "Username needs to be an Email address.";
             } else {
                 this.loginErrorMessage = "Unknown error.";
             }
@@ -84,7 +83,13 @@ export class LoginFormComponent implements OnInit {
         this.loginResult = this.loginRes["result"];
 
         if (this.loginResult == "success") {
-            this.loginState.changeMessage(true);
+            let rolesArr: string[] = this.loginRes["data"]["roles"];
+            let isEngineeringUser = rolesArr.includes("EMH APPLICATION ADMINISTRATOR");
+            // if engineering user, redirect to engineering portal
+            if (isEngineeringUser)
+                this.redirectFormRef.nativeElement.submit();
+            else
+                this.loginState.changeMessage(true);
         }
         else {
             this.loginState.updateLoggedInUser("");
