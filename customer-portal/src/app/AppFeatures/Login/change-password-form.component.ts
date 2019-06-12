@@ -3,7 +3,9 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { ChangePasswordHttpClientService } from "../../Core/Services/change-password-http-client.service";
-import { changePasswordResponse, changePasswordCredential } from "../../Core/Services/ems-interfaces.service"
+import { changePasswordResponse, changePasswordCredential } from "../../Core/Services/ems-interfaces.service";
+
+import { LogInStateService } from "../../Core/Services/log-in-state.service";
 
 import { HttpErrorResponse } from '@angular/common/http';
 
@@ -19,14 +21,16 @@ export class ChangePasswordFormComponent implements OnInit {
 
     changePasswordResult: string = "";
     showChangePasswordInfoMessage: boolean = true;
-    changePasswordInfoMessage = "You must change your temporary password before proceeding further.";
+    changePasswordInfoMessage = "";
 
     @Output() eventFromChangePasswordForm = new EventEmitter<string>();
     emsChangePasswordFormModel: FormGroup;
 
-    constructor(private changepasswordclient: ChangePasswordHttpClientService) {
+    constructor(private loginState: LogInStateService, private changepasswordclient: ChangePasswordHttpClientService) {
+        let loginInfo = this.loginState.getLoginInfo();
+        this.changePasswordInfoMessage = loginInfo[1];
         this.emsChangePasswordFormModel = new FormGroup({
-            username: new FormControl('', [Validators.required, Validators.email]),
+            username: new FormControl(loginInfo[0], [Validators.required, Validators.email]),
             oldpassword: new FormControl('', [Validators.required]),
             newpassword: new FormControl('', [Validators.required]),
             confirmpassword: new FormControl('', [Validators.required])
@@ -41,7 +45,6 @@ export class ChangePasswordFormComponent implements OnInit {
         let opword = this.emsChangePasswordFormModel.value["oldpassword"];
         let npword = this.emsChangePasswordFormModel.value["newpassword"];
         let cpword = this.emsChangePasswordFormModel.value["confirmpassword"];
-
 
         //Validation of username
         let unameIsValid: Boolean = this.emsChangePasswordFormModel.controls.username.valid;

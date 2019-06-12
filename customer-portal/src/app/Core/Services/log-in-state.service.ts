@@ -11,6 +11,7 @@ export class LogInStateService {
     currentUser$ = this.currentUser.asObservable();
 
     userName: string = "some_user";
+    loginInfo: string = "";
 
     //private messageSource = new BehaviorSubject(false);
     //sharedData = this.messageSource.asObservable();
@@ -26,5 +27,14 @@ export class LogInStateService {
 
     updateLoggedInUser(username: string) {
         this.currentUser.next(username);
+    }
+
+    getLoginInfo() {
+        return [this.userName, this.loginInfo];
+    }
+
+    setLoginInfo(username: string, info: string) {
+        this.userName = username;
+        this.loginInfo = info;
     }
 }
