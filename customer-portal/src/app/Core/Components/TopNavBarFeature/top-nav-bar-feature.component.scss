@@ -59,7 +59,7 @@ $accent: map-get($theme, accent);
         height: 18px;
         width: 18px;
         vertical-align: middle;
-        top: -3px;
+        top: 0; left: 20px;
     }
 }
 

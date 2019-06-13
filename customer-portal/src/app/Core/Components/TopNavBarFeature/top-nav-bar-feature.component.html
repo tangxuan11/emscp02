@@ -35,16 +35,14 @@
         </button>
     </mat-menu>
     <button mat-icon-button
+            matBadge="{{(notifications.length > 99) ?
+                      '99+' : notifications.length}}"
+            matBadgeColor="accent"
+            matBadgeSize="small"
+            [matBadgeHidden]="notifications.length <= 0"
             [matMenuTriggerFor]="notifMenu"
             id="notifButton">
-        <mat-icon class="material-icons-outlined"
-                  matBadge="{{(notifications.length > 99) ?
-                            '99+' : notifications.length}}"
-                  matBadgeColor="accent"
-                  matBadgeSize="small"
-                  [matBadgeHidden]="notifications.length <= 0">
-                  notifications
-        </mat-icon>
+        <img src="assets/icons/notification_header_icon.png" />
         <mat-menu #notifMenu="matMenu">
             <button mat-menu-item
                     *ngFor="let n of notifications">

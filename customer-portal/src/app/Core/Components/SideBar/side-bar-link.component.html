@@ -4,11 +4,19 @@
        class="theme-dark"
        routerLink="{{route}}"
        [routerLinkActive]="route ? ['active'] : ['']"
+       #sideNavLink="routerLinkActive"
        (click)="handleLinkClick()"
        [ngClass]="{'mainPanel': !isSubpanel,
                    'subPanel': isSubpanel,
                    'expanded': expanded}">
-        <mat-icon class="{{iconStyle}}">{{icon}}</mat-icon>
+        <!-- <img src="{{(expanded || activeMainPanelName === title) ?
+                    ('assets/icons/' + icon + '_active' + '.png') :
+                    ('assets/icons/' + icon + '_inactive' + '.png')}}"
+             alt="{{icon}}"> -->
+        <mat-icon class="{{(sideNavLink.isActive || expanded) ?
+                            activeIconStyle : iconStyle}}">
+                  {{(sideNavLink.isActive || expanded) ? activeIcon : icon }}
+        </mat-icon>
         <div class="linkText">{{title}}</div>
         <mat-icon class="material-icons expandIcon"
                   *ngIf="!isSubpanel && subPanels">
@@ -20,6 +28,8 @@
             <app-side-bar-link [title]="link.title"
                                [icon]="link.icon"
                                [iconStyle]="link.iconStyle"
+                               [activeIcon]="link.activeIcon"
+                               [activeIconStyle]="link.activeIconStyle"
                                [route]="link.route"
                                [separator]="link.separator"
                                [isSubpanel]="link.isSubpanel"

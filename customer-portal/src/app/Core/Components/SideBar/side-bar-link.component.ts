@@ -11,6 +11,8 @@ export class SideBarLinkComponent implements OnInit {
     @Input() title: string;
     @Input() icon: string;
     @Input() iconStyle: string;
+    @Input() activeIcon: string;
+    @Input() activeIconStyle: string;
     @Input() route: string;
     @Input() separator: boolean = false;
     @Input() isSubpanel: boolean = false;
@@ -24,10 +26,23 @@ export class SideBarLinkComponent implements OnInit {
 
     ngOnInit() {
         this.expanded = false;
-        if (this.subPanels) this.isSubpanel = false;
+        if (this.subPanels)
+            this.isSubpanel = false;
 
-        if (this.iconStyle) this.iconStyle = "material-icons-" + this.iconStyle;
-        else this.iconStyle = "material-icons";
+        if (this.iconStyle && this.iconStyle !== "filled")
+            this.iconStyle = "material-icons-" + this.iconStyle;
+        else
+            this.iconStyle = "material-icons";
+
+        if (!this.activeIcon)
+            this.activeIcon = this.icon;
+
+        if (this.activeIconStyle && this.activeIconStyle !== "filled")
+            this.activeIconStyle = "material-icons-" + this.activeIconStyle;
+        else if (this.activeIconStyle === "filled")
+            this.activeIconStyle = "material-icons";
+        else
+            this.activeIconStyle = this.iconStyle;
     }
 
     @Input() get activeMainPanel() : string {
