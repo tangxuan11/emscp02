@@ -156,7 +156,6 @@ export let navLinks = [
     }
 ];
 */
-
 export let navLinks = [
     {
         panels: [
@@ -262,7 +261,7 @@ export let navLinks = [
                   {
                       title: "Change Management",
                       icon: "work_outline",
-                      activeIconStyle: "filled",
+                      activeIcon: "work",
                       route: "/cms/change_management",
                       isSubpanel: true
                   },
@@ -277,7 +276,6 @@ export let navLinks = [
                   {
                       title: "Package Management",
                       icon: "web",
-                      activeIconStyle: "outlined",
                       route: "/cms/package_management",
                       isSubpanel: true
                   },
