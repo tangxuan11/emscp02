@@ -2,7 +2,7 @@
 
     <!-- The label on top of the login form -->
     <div fxLayout="row" fxLayoutAlign="center">
-        <div fxFlex fxLayout="row" class="login-form">
+        <div fxFlex fxLayout="row" class="login-form login-form-label">
             <div fxFlex id="login-form-label-left">
                 <mat-icon>person</mat-icon>
             </div>
@@ -14,7 +14,7 @@
 
     <!-- The login error message -->
     <div *ngIf="showLoginError" fxLayout="row" fxLayoutAlign="center">
-        <div fxFlex id="login-form-error">
+        <div fxFlex class="login-form-error">
             <span>{{loginErrorMessage}}</span>
         </div>
     </div>
@@ -22,7 +22,7 @@
     <!-- The username and password login form -->
     <form [formGroup]="emsLoginFormModel" (ngSubmit)="loginSend()">
         <div fxLayout="row" fxLayoutAlign="center">
-            <div fxFlex class="login-form">
+            <div fxFlex class="login-form login-form-label">
                 <mat-form-field>
                     <input matInput placeholder="Username" type="text" formControlName="username">
                 </mat-form-field>
@@ -32,8 +32,8 @@
             </div>
         </div>
         <div fxLayout="row" fxLayoutAlign="center">
-            <div fxFlex class="login-form">
-                <button mat-raised-button type="submit">Log In</button>
+            <div fxFlex class="login-form login-form-label">
+                <button mat-stroked-button type="submit">Log In</button>
             </div>
         </div>
     </form>
@@ -45,13 +45,15 @@
     </form>
 
     <!--Forgot password-->
+    <a class="login-form-clickable">
     <div fxLayout="row" fxLayoutAlign="center">
         <div fxFlex class="login-form">
             <!--
             <p (click)= "changePassword()">Change Password</p>
             -->
-            <p (click)="forgotPassword()">Forgot Password</p>
+            <span (click)="forgotPassword()">Forgot Password</span>
         </div>
     </div>
+    </a>
 
 </div>
