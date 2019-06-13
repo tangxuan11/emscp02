@@ -11,13 +11,17 @@ $dashboard-panel-right-width: 200px;
 $dashboard-panel-title-font-size: 25px;
 $dashboard-panel-title-font-family: Arial, Helvetica, sans-serif;
 $dashboard-panel-desc-font-size: 15px;
+$dashboard-panel-icon-img-size: 72px;
 
 #dashboard-panel-container {
     width: $dashboard-panel-container-width;
-    border: solid;
-    border-radius: 15px;
-    background-color: mat-color($primary, 600);
+    border-radius: 10px;
+    background-color: mat-color($primary, 200);
 }
+
+#dashboard-panel-container:hover { 
+    background-color: mat-color($primary, 600);
+  }
 
 .dashboard-panel-left {
     width: $dashboard-panel-left-width;
@@ -26,7 +30,8 @@ $dashboard-panel-desc-font-size: 15px;
 
 .dashboard-panel-logo {
     margin: auto;
-    text-align: center;
+    max-height: $dashboard-panel-icon-img-size;
+    min-height: $dashboard-panel-icon-img-size;
 }
 
 .dashboard-panel-right {
@@ -41,6 +46,7 @@ $dashboard-panel-desc-font-size: 15px;
 .dashboard-panel-desc {
     font-size: $dashboard-panel-desc-font-size;
     font-family: $dashboard-panel-title-font-family;
+    margin-left: 10px;
 }
 
 //Remove the underline for the link
@@ -49,6 +55,7 @@ A {
 }
 
 P {
-    margin-top: 50px;
+    margin-top: 60px;
     margin-bottom: 0px;
+    margin-left: 10px;
 }

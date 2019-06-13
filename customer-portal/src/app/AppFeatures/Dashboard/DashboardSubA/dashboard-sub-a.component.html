@@ -1,23 +1,21 @@
+<a routerLink={{featureURL}} routerLinkActive="active">
 <div fxLayout="row" id="dashboard-panel-container">
     <div fxFlex fxLayout="column" class="dashboard-panel-left">
-        <!--
-            {{featureLogoFileName}}
-            -->
-        <div fxFlex="32px" fxLayoutAlign="center" class="dashboard-panel-logo">
-            <img src="favicon.ico">
+        
+        <div fxFlex class="dashboard-panel-logo">
+            <img src={{featureLogoFileName}}>
         </div>
-
-
     </div>
 
+    
     <div fxLayout="column" class="dashboard-panel-right">
 
         <div fxFlex class="dashboard-panel-title">
-            <a routerLink={{featureURL}} routerLinkActive="active">
+            
                 <p>
                 {{featureTitle}}
                 </p>
-            </a>
+            
         </div>
         <div fxFlex class="dashboard-panel-desc">
             {{featureDescription}}
@@ -26,3 +24,4 @@
     </div>
 
 </div>
+</a>
