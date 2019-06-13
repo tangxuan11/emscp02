@@ -1,13 +1,24 @@
+@import "src/styles.scss";
+
+$theme: $light_theme;
+$primary: map-get($theme, primary);
+$accent: map-get($theme, accent);
 
 $login-form-width: 300px;
+$login-form-label-padding-bottom: 20px;
 $login-form-label-left-width: 30%;
 $login-form-label-right-width: 70%;
 $login-form-font-family: Arial, Helvetica, sans-serif;
 $login-form-font-size: 15px;
+$login-form-error-padding-bottom: 20px;
 
 .login-form {
     min-width: $login-form-width;
     max-width: $login-form-width;
+}
+
+.login-form-label {
+    padding-bottom: $login-form-label-padding-bottom;
 }
 
 #login-form-label-left {
@@ -25,7 +36,18 @@ $login-form-font-size: 15px;
     font-family: $login-form-font-family;
 } 
 
-#login-form-error {
+.login-form-error {
     font-size: $login-form-font-size;
     font-family: $login-form-font-family;
+    padding-bottom: $login-form-error-padding-bottom;
+}
+
+.login-form-clickable {
+    font-size: $login-form-font-size;
+    font-family: $login-form-font-family;
+}
+
+.login-form-clickable:hover {
+    cursor: pointer; 
+    color: mat-color($primary, 900);
 }
