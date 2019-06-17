@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { DashboardLink, dashboardLinksTop, dashboardLinksBottom } from './dashboard-links';
+
 @Component({
     selector: 'app-dashboard',
     templateUrl: './dashboard.component.html',
@@ -7,6 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
+    dashboardElementsTop: DashboardLink[] = dashboardLinksTop;
+    dashboardElementsBottom: DashboardLink[] = dashboardLinksBottom;
+
+    /*
     featureTitle1: string = "Analytics";
     featureURL1: string = "/analytics";
     featureDescription1: string = "Analyze Traffic Performance";
@@ -36,6 +42,8 @@ export class DashboardComponent implements OnInit {
     featureURL6: string = "/cms";
     featureDescription6: string = "Customized workflows via templates using Content Management System";
     featureLogoFileName6: string = "assets/icons/cms_thumbnail.png";
+
+    */
 
     constructor() { }
 

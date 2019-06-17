@@ -27,7 +27,8 @@ import {
         ComponentsModule,
         DashboardRoutingModule,
         FlexLayoutModule,
-        MatToolbarModule
+        MatToolbarModule,
+        MatIconModule
     ],
     exports: [
         DashboardComponent

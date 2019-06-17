@@ -11,6 +11,7 @@ export class DashboardSubAComponent implements OnInit {
     @Input() featureURL: string;
     @Input() featureDescription: string;
     @Input() featureLogoFileName: string;
+    @Input() featureIcon: string;
 
     constructor() { }
 

@@ -1,5 +1,5 @@
 <div fxLayout="column">
-
+    <!--
     <div fxFlex="" fxLayout="row wrap" fxLayoutGap="5%">
 
     <div fxFlex class="dashboard-panel">
@@ -41,6 +41,31 @@
             [featureDescription]="featureDescription6" [featureLogoFileName]="featureLogoFileName6">
         </app-dashboard-sub-a>
     </div>
+    </div>
+-->
+
+    <div fxFlex="" fxLayout="row wrap" fxLayoutGap="5%">
+
+        <div *ngFor="let dashboardElem of dashboardElementsTop">
+            <div fxFlex class="dashboard-panel">
+                <app-dashboard-sub-a [featureTitle]="dashboardElem.title" [featureURL]="dashboardElem.href"
+                    [featureDescription]="dashboardElem.description" [featureIcon]="dashboardElem.icon">
+                </app-dashboard-sub-a>
+            </div>
+        </div>
+
+    </div>
+
+    <div fxFlex="" fxLayout="row wrap" fxLayoutGap="5%">
+
+        <div *ngFor="let dashboardElem of dashboardElementsBottom">
+            <div fxFlex class="dashboard-panel">
+                <app-dashboard-sub-a [featureTitle]="dashboardElem.title" [featureURL]="dashboardElem.href"
+                    [featureDescription]="dashboardElem.description" [featureIcon]="dashboardElem.icon">
+                </app-dashboard-sub-a>
+            </div>
+        </div>
+
     </div>
 
 

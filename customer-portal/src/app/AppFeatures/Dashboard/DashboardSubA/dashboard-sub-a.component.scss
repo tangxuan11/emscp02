@@ -32,6 +32,7 @@ $dashboard-panel-icon-img-size: 72px;
     margin: auto;
     max-height: $dashboard-panel-icon-img-size;
     min-height: $dashboard-panel-icon-img-size;
+    padding-right: 30px;
 }
 
 .dashboard-panel-right {
@@ -59,3 +60,9 @@ P {
     margin-bottom: 0px;
     margin-left: 10px;
 }
+
+.mat-icon {
+    font-size: 72px;
+    color: mat-color($accent);
+    
+  }
