@@ -9,11 +9,6 @@
        [ngClass]="{'mainPanel': !isSubpanel,
                    'subPanel': isSubpanel,
                    'expanded': expanded}">
-        <!-- <img src="{{(expanded || activeMainPanelName === title) ?
-                    ('assets/icons/' + icon + '_active' + '.png') :
-                    ('assets/icons/' + icon + '_inactive' + '.png')}}"
-             alt="{{icon}}"> -->
-             
         <mat-icon class="{{(sideNavLink.isActive || expanded) ?
                             activeIconStyle : iconStyle}}">
                   {{(sideNavLink.isActive || expanded) ? activeIcon : icon }}

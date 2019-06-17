@@ -1,0 +1,12 @@
+<a mat-menu-item
+   class="notif-menu-item"
+   (click)="handleNotifClick()">
+    <span [class.active]="active">
+        <mat-icon [ngClass]="{'material-icons': active,
+                              'material-icons-outlined': !active}">
+            {{active ? activeIcon : icon}}
+        </mat-icon>
+        {{title}}
+    </span>
+    <p>{{message}}</p>
+</a>

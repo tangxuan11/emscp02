@@ -17,9 +17,10 @@ import {
     MatMenuModule,
     MatToolbarModule
 } from '@angular/material';
+import { NotificationComponent } from './Components/TopNavBarFeature/notification/notification.component';
 
 @NgModule({
-    declarations: [FooterComponent, TopNavBarFeatureComponent, TopNavBarLoginComponent],
+    declarations: [FooterComponent, TopNavBarFeatureComponent, TopNavBarLoginComponent, NotificationComponent],
     imports: [
         CommonModule,
         FlexLayoutModule,

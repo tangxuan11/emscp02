@@ -24,17 +24,13 @@ a.mat-list-item {
                 padding-right: 2px;
             }
         }
-
-        img {
-            padding-right: 5px;
-        }
-
+        
         .linkText {
             display: inline;
             padding-left: 5px;
             font-size: 10pt;
         }
-        mat-icon, img, .linkText {
+        mat-icon, .linkText {
             color: mat-color($primary, 50);
         }
 
@@ -52,7 +48,7 @@ a.mat-list-item {
                                         mat-color($accent) 5px,
                                         mat-color($primary, 800) 0px);
 
-            mat-icon, img, .linkText {
+            mat-icon, .linkText {
                 color: mat-color($foreground, text);
             }
 
@@ -80,18 +76,14 @@ a.mat-list-item {
             font-size: 10pt;
         }
 
-        img {
-            padding-right: 5px;
-        }
-
-        mat-icon, img, .linkText {
+        mat-icon, .linkText {
             color: mat-color($primary, 50);
         }
 
         // stylings on hover and focus for subPanel
         &:hover, &:focus {
             background-color: mat-color($primary, darker);
-            mat-icon, img, .linkText {
+            mat-icon, .linkText {
                 color: mat-color($foreground, text);
             }
         }
