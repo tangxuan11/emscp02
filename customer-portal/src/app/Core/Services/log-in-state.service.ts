@@ -6,7 +6,10 @@ import { BehaviorSubject } from 'rxjs';
 })
 
 export class LogInStateService {
-    sharedData = new BehaviorSubject(false);
+
+    currentState = this.getCurrentState();
+
+    sharedData = new BehaviorSubject(this.currentState);
     private currentUser = new BehaviorSubject("");
     currentUser$ = this.currentUser.asObservable();
 
@@ -22,6 +25,11 @@ export class LogInStateService {
 
     changeMessage(message: boolean) {
         //this.messageSource.next(message)
+        if (message == true) {
+            localStorage.setItem('login_state', 'logged_in');
+        } else {
+            localStorage.setItem('login_state', 'logged_out');
+        }
         this.sharedData.next(message);
     }
 
@@ -36,5 +44,19 @@ export class LogInStateService {
     setLoginInfo(username: string, info: string) {
         this.userName = username;
         this.loginInfo = info;
+    }
+
+    getCurrentState() {
+        let currentLoginState = localStorage.getItem('login_state');
+
+        if (currentLoginState == 'logged_in') {
+            return true;
+        }
+        else if (currentLoginState == null) {
+            localStorage.setItem('login_state', 'logged_out');
+            return false;
+        } else {
+            return false;
+        }
     }
 }

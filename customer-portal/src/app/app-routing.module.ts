@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
+import { Routes, RouterModule, PreloadAllModules, CanActivate } from '@angular/router';
+import { AuthGuardService } from './Core/Services/auth-guard.service';
 
 const routes: Routes = [
-    { path: 'dashboard', loadChildren: './AppFeatures/Dashboard/dashboard.module#DashboardModule' },
+    { path: 'dashboard', loadChildren: './AppFeatures/Dashboard/dashboard.module#DashboardModule', canActivate: [AuthGuardService], runGuardsAndResolvers: 'always' },
     { path: 'analytics', loadChildren: './AppFeatures/Analytics/analytics.module#AnalyticsModule' },
     { path: 'analytics/reports', loadChildren: './AppFeatures/Analytics/Reports/reports.module#ReportsModule' },
     { path: 'analytics/usage_summary', loadChildren: './AppFeatures/Analytics/UsageSummary/usage-summary.module#UsageSummaryModule' },
@@ -34,7 +35,7 @@ const routes: Routes = [
 @NgModule({
     declarations: [],
     //imports: [RouterModule.forRoot(routes,{preloadingStrategy: PreloadAllModules}),],
-    imports: [RouterModule.forRoot(routes)],
+    imports: [RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'})],
     exports: [RouterModule]
 })
 export class AppRoutingModule { }
