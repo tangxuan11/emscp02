@@ -1,0 +1,61 @@
+@import "src/styles.scss";
+
+$theme: $material_theme;
+$primary: map-get($theme, primary);
+$accent: map-get($theme, accent);
+
+.notif-menu-item {
+    white-space: normal;
+    overflow: hidden;
+    height: auto;
+    line-height: 32px;
+
+    &:hover {
+        background-color: mat-color($primary);
+        p {
+            // for ellipsis for large notifications
+            &:after {
+                background-color: mat-color($primary);
+            }
+        }
+    }
+
+    span {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        font-weight: bold;
+        .mat-icon {
+            color: mat-color($accent);
+            margin-right: 8px;
+        }
+    }
+    p {
+        margin: 0;
+        padding: 0 10px 0 5px;
+        line-height: 18px;
+        font-size: 12px;
+        max-height: 72px;
+        overflow: hidden;
+        font-style: italic;
+
+        // before and after are used to place ellipsis on long notifications.
+        &:before {
+            content: '...';
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            right: 0;
+            font-weight: bold;
+            width: 1em;
+            height: 1em;
+            margin-top: 0.2em;
+            background: white;
+        }
+    }
+}

@@ -44,7 +44,7 @@ export class TopNavBarFeatureComponent implements OnInit {
     addNotif() {
         this.notifService.addNotification({
             title: "Notification " + this.notifications.length,
-            message: "Hello, you have a notification here."
+            message: "Hello, you have a notification here. This is a new notification notifying you of something that requires notifying you through notification. Click on this notification to read more details about this notification."
         });
     }
 }

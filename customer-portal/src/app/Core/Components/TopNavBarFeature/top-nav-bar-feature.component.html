@@ -22,7 +22,7 @@
     <mat-menu #profile_dropdown>
         <button mat-menu-item>
             <mat-icon color="accent"
-                      class="material-icons-outlined">
+                      class="material-icons">
                 settings
             </mat-icon>
             <span class="dropdown_text">Settings</span>
@@ -43,11 +43,17 @@
             [matMenuTriggerFor]="notifMenu"
             id="notifButton">
         <img src="assets/icons/notification_header_icon.png" />
-        <mat-menu #notifMenu="matMenu">
-            <button mat-menu-item
-                    *ngFor="let n of notifications">
-                    <span>{{n.title}}: </span>{{n.message}}
-            </button>
+        <mat-menu class="notifMenu" #notifMenu="matMenu">
+            <ng-container *ngFor="let n of notifications; let idx = index">
+                <app-notification [title]="n.title"
+                                  [message]="n.message"
+                                  [icon]="'notifications'"
+                                  [activeIcon]="'notifications_active'">
+                </app-notification>
+                <mat-divider *ngIf="idx < (notifications.length - 1)"
+                             class="notif-menu-divider">
+                </mat-divider>
+            </ng-container>
         </mat-menu>
     </button>
 </mat-toolbar>
