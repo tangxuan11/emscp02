@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 
 import { DashboardLink, dashboardLinksTop, dashboardLinksBottom } from './dashboard-links';
 
@@ -7,47 +8,37 @@ import { DashboardLink, dashboardLinksTop, dashboardLinksBottom } from './dashbo
     templateUrl: './dashboard.component.html',
     styleUrls: ['./dashboard.component.scss']
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent implements OnInit, OnDestroy {
 
     dashboardElementsTop: DashboardLink[] = dashboardLinksTop;
     dashboardElementsBottom: DashboardLink[] = dashboardLinksBottom;
 
-    /*
-    featureTitle1: string = "Analytics";
-    featureURL1: string = "/analytics";
-    featureDescription1: string = "Analyze Traffic Performance";
-    featureLogoFileName1: string = "assets/icons/analytics_thumbnail.png";
+    navigationSubscription: any;
 
-    featureTitle2: string = "Message Log";
-    featureURL2: string = "/message_log";
-    featureDescription2: string = "View Message History";
-    featureLogoFileName2: string = "assets/icons/message log_thumbnail.png";
-
-    featureTitle3: string = "Web Text";
-    featureURL3: string = "/web_text";
-    featureDescription3: string = "Send a message from your browser";
-    featureLogoFileName3: string = "assets/icons/webtext_thumbnail.png";
-
-    featureTitle4: string = "Registries";
-    featureURL4: string = "/registries";
-    featureDescription4: string = "Manage Opt-in & Opt-out registries";
-    featureLogoFileName4: string = "assets/icons/registries_thumbnail.png";
-
-    featureTitle5: string = "Campaign";
-    featureURL5: string = "/campaign";
-    featureDescription5: string = "Manage & launch campaigns";
-    featureLogoFileName5: string = "assets/icons/campaign_thumbnail.png";
-
-    featureTitle6: string = "CMS";
-    featureURL6: string = "/cms";
-    featureDescription6: string = "Customized workflows via templates using Content Management System";
-    featureLogoFileName6: string = "assets/icons/cms_thumbnail.png";
-
-    */
-
-    constructor() { }
+    constructor(private router: Router) {
+        // subscribe to the router events - storing the subscription so we can unsubscribe later. 
+        this.navigationSubscription = this.router.events.subscribe((e: any) => {
+            // If it is a NavigationEnd event re-initalise the component
+            if (e instanceof NavigationEnd) {
+                this.initializeDashboard();
+            }
+        });
+    }
 
     ngOnInit() {
+    }
+
+    initializeDashboard() {
+        // Set default values and re-fetch any data you need.
+
+    }
+    ngOnDestroy() {
+        // avoid memory leaks here by cleaning up after ourselves. If we  
+        // don't then we will continue to run our initialiseInvites()   
+        // method on every navigationEnd event.
+        if (this.navigationSubscription) {
+            this.navigationSubscription.unsubscribe();
+        }
     }
 
 }
