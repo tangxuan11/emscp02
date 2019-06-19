@@ -25,6 +25,11 @@ export class ChangePasswordFormComponent implements OnInit {
 
     @Output() eventFromChangePasswordForm = new EventEmitter<string>();
     emsChangePasswordFormModel: FormGroup;
+    passwordFieldType = {
+        old: "password",
+        new: "password",
+        confirm: "password"
+    };
 
     constructor(private loginState: LogInStateService, private changepasswordclient: ChangePasswordHttpClientService) {
         let loginInfo = this.loginState.getLoginInfo();
@@ -120,6 +125,25 @@ export class ChangePasswordFormComponent implements OnInit {
     showChangePasswordFailure() {
         this.changePasswordInfoMessage = "Request failed to change password.";
         this.showChangePasswordInfoMessage = true;
+    }
+
+    togglePasswordVisibility(field: string) {
+        switch (field) {
+            case 'old':
+                this.passwordFieldType.old = (this.passwordFieldType.old === "password") ?
+                    "text" : "password";
+                break;
+
+            case 'new':
+                this.passwordFieldType.new = (this.passwordFieldType.new === "password") ?
+                    "text" : "password";
+                break;
+
+            case 'confirm':
+                this.passwordFieldType.confirm = (this.passwordFieldType.confirm === "password") ?
+                    "text" : "password";
+                break;
+        }
     }
 
 }

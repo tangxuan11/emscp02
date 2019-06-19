@@ -4,7 +4,7 @@ $theme: $light_theme;
 $primary: map-get($theme, primary);
 $accent: map-get($theme, accent);
 
-$ems-login-height: 525px;
+$ems-login-height: 500px;
 $login-title-font-size: 25px;
 $login-title-font-family: Arial, Helvetica, sans-serif;
 $login-title-padding: 50px;
@@ -12,11 +12,13 @@ $login-title-width: 700px;
 
 .ems-login {
     height: auto;
+    max-height: $ems-login-height;
     background-color: mat-color($primary);
 }
 
 .loginTitle {
     font-size: $login-title-font-size;
+    font-weight: 600;
     padding: $login-title-padding;
     font-family: $login-title-font-family;
     max-width: $login-title-width;

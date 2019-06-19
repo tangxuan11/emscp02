@@ -23,7 +23,7 @@ $login-form-error-padding-bottom: 20px;
 
 .login-form-error {
     font-size: $login-form-font-size;
-    padding-bottom: $login-form-error-padding-bottom;
+    margin-bottom: 0!important;
 }
 
 .login-form-clickable {

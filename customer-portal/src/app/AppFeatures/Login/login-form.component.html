@@ -6,9 +6,9 @@
     </div>
 
     <!-- The login error message -->
-    <div *ngIf="showLoginError" fxFlex="20px" class="login-form-error">
+    <mat-error *ngIf="showLoginError" fxFlex="20px" class="login-form-error">
         {{loginErrorMessage}}
-    </div>
+    </mat-error>
 
     <!-- The username and password login form -->
     <form fxFlex="" [formGroup]="emsLoginFormModel" (ngSubmit)="loginSend()">
@@ -18,7 +18,7 @@
                        placeholder="Username"
                        type="text"
                        formControlName="username">
-                <button matSuffix 
+                <button matSuffix
                         type="button"
                         mat-icon-button>
                     <mat-icon matSuffix>email</mat-icon>
