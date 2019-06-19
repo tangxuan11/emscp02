@@ -1,59 +1,61 @@
-<div>
+<div fxLayout="column" fxLayoutAlign="space-evenly center" fxLayoutGap="20px">
 
     <!-- The label on top of the login form -->
-    <div fxLayout="row" fxLayoutAlign="center">
-        <div fxFlex fxLayout="row" class="login-form login-form-label">
-            <div fxFlex id="login-form-label-left">
-                <mat-icon>person</mat-icon>
-            </div>
-            <div fxFlex id="login-form-label-right">
-                Please Sign In
-            </div>
-        </div>
+    <div fxFlex="20px">
+        <p id="login-form-label">SIGN IN</p>
     </div>
 
     <!-- The login error message -->
-    <div *ngIf="showLoginError" fxLayout="row" fxLayoutAlign="center">
-        <div fxFlex class="login-form-error">
-            <span>{{loginErrorMessage}}</span>
-        </div>
+    <div *ngIf="showLoginError" fxFlex="20px" class="login-form-error">
+        {{loginErrorMessage}}
     </div>
 
     <!-- The username and password login form -->
-    <form [formGroup]="emsLoginFormModel" (ngSubmit)="loginSend()">
-        <div fxLayout="row" fxLayoutAlign="center">
-            <div fxFlex class="login-form login-form-label">
-                <mat-form-field>
-                    <input matInput placeholder="Username" type="text" formControlName="username">
-                </mat-form-field>
-                <mat-form-field>
-                    <input matInput placeholder="Password" type="password" formControlName="password">
-                </mat-form-field>
-            </div>
-        </div>
-        <div fxLayout="row" fxLayoutAlign="center">
-            <div fxFlex class="login-form login-form-label">
-                <button mat-stroked-button type="submit">Log In</button>
-            </div>
+    <form fxFlex="" [formGroup]="emsLoginFormModel" (ngSubmit)="loginSend()">
+        <div fxLayout="column" fxLayoutAlign="center center" class="login-form">
+            <mat-form-field fxFlex>
+                <input matInput
+                       placeholder="Username"
+                       type="text"
+                       formControlName="username">
+                <button matSuffix 
+                        type="button"
+                        mat-icon-button>
+                    <mat-icon matSuffix>email</mat-icon>
+                </button>
+            </mat-form-field>
+            <mat-form-field fxFlex>
+                <input matInput
+                       placeholder="Password"
+                       type="{{passwordFieldType}}"
+                       formControlName="password">
+                <button matSuffix
+                        type="button"
+                        mat-icon-button
+                        (click)="togglePasswordVisibility()">
+                    <mat-icon matSuffix>
+                        {{(passwordFieldType === 'password') ?
+                           'visibility_off' : 'visibility_on'}}
+                    </mat-icon>
+                </button>
+            </mat-form-field>
+            <button fxFlex
+                    mat-raised-button
+                    type="submit"
+                    color="accent"
+                    [disabled]=emsLoginFormModel.invalid>
+                    LOG IN
+            </button>
         </div>
     </form>
 
-    <form #redirectForm ngNoForm action="https://mpvm37.mp.ics.com" method="POST">
-        <input hidden type="text" name="wlUsr" id="wlUsr" value="{{emsLoginFormModel.value['username']}}">
-        <input hidden type="text" name="wlPwd" id="wlPwd" value="{{emsLoginFormModel.value['password']}}">
-        <input hidden type="submit" name="wlLogin" value="wlLogin">
-    </form>
-
-    <!--Forgot password-->
-    <a class="login-form-clickable">
-    <div fxLayout="row" fxLayoutAlign="center">
-        <div fxFlex class="login-form">
-            <!--
-            <p (click)= "changePassword()">Change Password</p>
-            -->
-            <span (click)="forgotPassword()">Forgot Password</span>
-        </div>
-    </div>
+    <a fxFlex="20px" class="login-form-clickable" (click)="forgotPassword()">
+        FORGOT PASSWORD
     </a>
-
 </div>
+
+<form #redirectForm ngNoForm action="https://mpvm37.mp.ics.com" method="POST">
+    <input hidden type="text" name="wlUsr" id="wlUsr" value="{{emsLoginFormModel.value['username']}}">
+    <input hidden type="text" name="wlPwd" id="wlPwd" value="{{emsLoginFormModel.value['password']}}">
+    <input hidden type="submit" name="wlLogin" value="wlLogin">
+</form>

@@ -11,19 +11,15 @@ $login-title-padding: 50px;
 $login-title-width: 700px;
 
 .ems-login {
-    height: $ems-login-height;
-    background-color: mat-color($primary, 200);
+    height: auto;
+    background-color: mat-color($primary);
 }
 
 .loginTitle {
     font-size: $login-title-font-size;
     padding: $login-title-padding;
     font-family: $login-title-font-family;
-    max-width: $login-title-width; 
+    max-width: $login-title-width;
     min-width: $login-title-width;
-}
-
-div.ems-login * {
     text-align: center;
 }
-

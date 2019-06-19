@@ -1,6 +1,10 @@
 @import "src/styles.scss";
 @import "src/styles/variables";
 
+$theme: $material_theme;
+$primary: map-get($theme, primary);
+$accent: map-get($theme, accent);
+
 .sidenav-container {
     position: fixed;
     height: calc(100% - #{$top-nav-bar-height});
@@ -25,4 +29,9 @@
 
 .login {
     margin-top: $top-nav-bar-height;
+}
+
+.login-container {
+    height: auto;
+    background-color: mat-color($primary);
 }

@@ -1,21 +1,21 @@
-<div class="ems-login">
-    
-    <div fxLayout="row" fxLayoutAlign="center">
-        <div fxFlex class="loginTitle">
-            <span>Enterprise Messaging Service Customer Portal</span>
-        </div>
+<div class="ems-login" fxLayout="column" fxLayoutAlign="start center">
+
+    <div class="loginTitle" fxFlex="75px">
+        Enterprise Messaging Service Customer Portal
     </div>
 
-    <div *ngIf="showLogin">    
-        <app-login-form (eventFromLoginForm)="receiveEventFromLoginForm($event)"></app-login-form>
-    </div>
+    <div id="formArea" fxFlex="">
+        <mat-card *ngIf="showLogin">
+            <app-login-form (eventFromLoginForm)="receiveEventFromLoginForm($event)"></app-login-form>
+        </mat-card>
 
-    <div *ngIf="showChangePassword">
-        <app-change-password-form (eventFromChangePasswordForm)="receiveEventFromChangePasswordForm($event)"></app-change-password-form>
-    </div>
+        <mat-card *ngIf="showChangePassword">
+            <app-change-password-form (eventFromChangePasswordForm)="receiveEventFromChangePasswordForm($event)"></app-change-password-form>
+        </mat-card>
 
-    <div *ngIf="showForgotPassword">
-        <app-forgot-password-form (eventFromForgotPasswordForm)="receiveEventFromForgotPasswordForm($event)"></app-forgot-password-form>
+        <mat-card *ngIf="showForgotPassword">
+            <app-forgot-password-form (eventFromForgotPasswordForm)="receiveEventFromForgotPasswordForm($event)"></app-forgot-password-form>
+        </mat-card>
     </div>
 
 </div>

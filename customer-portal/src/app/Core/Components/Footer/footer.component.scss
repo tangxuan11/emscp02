@@ -6,13 +6,12 @@ $accent: map-get($theme, accent);
 $foreground: map-get($theme, foreground);
 
 .footer-container {
-    height: 400px;
+    height: 100%;
 }
 
 .footer-image {
-    height: 350px;
-    background-image: url("../../../../chicago.jpg");
-    background-size: cover;
+    height: auto;
+    width: 100%;
 }
 
 .mat-toolbar {
@@ -22,46 +21,48 @@ $foreground: map-get($theme, foreground);
 
     div {
         height: 100%;
-    }
 
-    p {
-        max-height: 100%;
-        color: mat-color($foreground, text);
-        font-size: 12px;
-
-        &.separator {
-            font-size: 1.1em;
+        * {
+            max-height: 100%;
         }
-    }
 
-    a {
-        max-height: 100%;
-        text-decoration: none !important;
-        color: mat-color($foreground, text);
-        font-size: 12px;
-
-        &:hover {
-            color: mat-color($accent);
-        }
-    }
-
-    .mat-icon {
-        font-size: 16px;
-        line-height: 16px;
-        height: 16px;
-        color: mat-color($foreground, text);
-    }
-
-    .social-media-link {
-        height: 25px;
-
-        img {
-            min-width: 21px;
-            min-height: 21px;
-            max-height: 21px;
-            height: auto;
-            width: auto;
+        p {
             color: mat-color($foreground, text);
+            font-size: 12px;
+
+            &.separator {
+                font-size: 1.1em;
+            }
+        }
+
+        a {
+            text-decoration: none !important;
+            color: mat-color($foreground, text);
+            font-size: 12px;
+
+            &:hover {
+                color: mat-color($accent);
+            }
+        }
+
+        .mat-icon {
+            font-size: 16px;
+            line-height: 16px;
+            height: 16px;
+            color: mat-color($foreground, text);
+        }
+
+        .social-media-link {
+            height: 25px;
+
+            img {
+                min-width: 21px;
+                min-height: 21px;
+                max-height: 21px;
+                height: auto;
+                width: auto;
+                color: mat-color($foreground, text);
+            }
         }
     }
 }

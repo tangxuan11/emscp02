@@ -4,11 +4,10 @@ $theme: $light_theme;
 $primary: map-get($theme, primary);
 $accent: map-get($theme, accent);
 
-$login-form-width: 300px;
+$login-form-width: 450px;
 $login-form-label-padding-bottom: 20px;
 $login-form-label-left-width: 30%;
 $login-form-label-right-width: 70%;
-$login-form-font-family: Arial, Helvetica, sans-serif;
 $login-form-font-size: 15px;
 $login-form-error-padding-bottom: 20px;
 
@@ -17,37 +16,35 @@ $login-form-error-padding-bottom: 20px;
     max-width: $login-form-width;
 }
 
-.login-form-label {
-    padding-bottom: $login-form-label-padding-bottom;
-}
-
-#login-form-label-left {
-    text-align: right;
-    min-width: $login-form-label-left-width;
-    max-width: $login-form-label-left-width;
-}
-
-#login-form-label-right {
-    margin-top:6px; 
-    text-align: left;
-    min-width: $login-form-label-right-width;
-    max-width: $login-form-label-right-width;
+#login-form-label {
     font-size: $login-form-font-size;
-    font-family: $login-form-font-family;
-} 
+    font-weight: bold;
+}
 
 .login-form-error {
     font-size: $login-form-font-size;
-    font-family: $login-form-font-family;
     padding-bottom: $login-form-error-padding-bottom;
 }
 
 .login-form-clickable {
     font-size: $login-form-font-size;
-    font-family: $login-form-font-family;
+    font-weight: 500;
 }
 
 .login-form-clickable:hover {
-    cursor: pointer; 
+    cursor: pointer;
     color: mat-color($primary, 900);
+}
+
+.mat-form-field {
+    width: 70%;
+}
+
+button {
+    &[mat-raised-button] {
+        &[disabled] {
+            background-color: mat-color($accent, 300);
+            color: mat-color($primary, lighter);
+        }
+    }
 }

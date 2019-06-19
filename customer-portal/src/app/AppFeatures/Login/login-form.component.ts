@@ -18,6 +18,7 @@ export class LoginFormComponent implements OnInit {
     // hidden form to redirect to engineering portal.
     @ViewChild('redirectForm') redirectFormRef: ElementRef;
     emsLoginFormModel: FormGroup;
+    passwordFieldType: string = "password";
 
     error: string;
     loginRes: loginResponse[] = [];
@@ -103,6 +104,10 @@ export class LoginFormComponent implements OnInit {
                 this.changePassword();
             }
         }
+    }
+
+    togglePasswordVisibility() {
+        this.passwordFieldType = (this.passwordFieldType === "password") ? "text" : "password";
     }
 
     //When click on Change Password
