@@ -26,7 +26,7 @@ export class AppComponent {
     }
 
     ngOnInit() {
-        this.logInState.sharedData.subscribe(statusData => {
+        this.logInState.sharedLoginState.subscribe(statusData => {
             this.loggedIn = statusData;
         })
 

@@ -1,15 +1,19 @@
 import { Injectable } from '@angular/core';
-import { Observable, Subscription } from 'rxjs';
-import { HttpClient, HttpParams, HttpErrorResponse } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { HttpClient, HttpParams } from '@angular/common/http';
+
 import { changePasswordResponse, changePasswordCredential } from "./ems-interfaces.service";
 
 @Injectable({
     providedIn: 'root'
 })
+
 export class ChangePasswordHttpClientService {
     changePasswordCred: changePasswordCredential[] = [];
     changePasswordRes: changePasswordResponse[] = [];
     changePasswordData$: Observable<changePasswordResponse[]>;
+
+    changePasswordServerURL: string = 'https://ems-portal.mpvm37.mp.ics.com/auth_reset_tang.php';
 
     constructor(private httpClient: HttpClient) { }
 
@@ -26,7 +30,7 @@ export class ChangePasswordHttpClientService {
                                          .set("wlPasswordChange", "")
                                          .set("wlSubmitPasswordChange", "Submit")
                                          .set("wlFormat", "json");
-        this.changePasswordData$ = this.httpClient.get<changePasswordResponse[]>('https://ems-portal.mpvm37.mp.ics.com/auth_reset_tang.php', { params: httpParams });
+        this.changePasswordData$ = this.httpClient.get<changePasswordResponse[]>(this.changePasswordServerURL, { params: httpParams });
         return this.changePasswordData$;
     }
 

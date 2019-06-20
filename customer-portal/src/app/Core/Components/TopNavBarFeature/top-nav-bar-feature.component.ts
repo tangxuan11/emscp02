@@ -19,7 +19,7 @@ export class TopNavBarFeatureComponent implements OnInit {
 
     constructor(private loginState: LogInStateService,
                 private notifService: NotificationsService) {
-        this.loginState.currentUser$.subscribe( username => {
+        this.loginState.sharedCurrentUser.subscribe( username => {
             this.username = username;
             this.usernameIsEmail = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/.test(username);
         });
