@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { FooterComponent } from './Components/Footer/footer.component';
 import { TopNavBarFeatureComponent } from './Components/TopNavBarFeature/top-nav-bar-feature.component';
 import { TopNavBarLoginComponent } from './Components/TopNavBarLogin/top-nav-bar-login.component';
-import { FlexLayoutModule } from '@angular/flex-layout';
+
 
 import {
     MatBadgeModule,

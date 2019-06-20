@@ -45,11 +45,11 @@ export class SideBarLinkComponent implements OnInit {
             this.activeIconStyle = this.iconStyle;
     }
 
-    @Input() get activeMainPanel() : string {
+    @Input() get activeMainPanel(): string {
         return this.activeMainPanelName;
     }
 
-    set activeMainPanel(panelName : string) {
+    set activeMainPanel(panelName: string) {
         this.activeMainPanelName = panelName;
         if (this.activeMainPanelName !== this.title)
             this.collapseLink();
@@ -57,22 +57,22 @@ export class SideBarLinkComponent implements OnInit {
             this.activeMainPanelChange.emit(this.title);
     }
 
-    handleLinkClick() : void {
+    handleLinkClick(): void {
         if (this.activeMainPanel !== this.title)
             this.activeMainPanel = this.title;
         this.toggleExpand();
     }
 
-    toggleExpand() : void {
+    toggleExpand(): void {
         if (this.subPanels) this.expanded = !this.expanded;
     }
 
-    expandLink() : void {
+    expandLink(): void {
         if (this.subPanels)
             this.expanded = true;
     }
 
-    collapseLink() : void {
+    collapseLink(): void {
         this.expanded = false;
     }
 
