@@ -1,17 +1,16 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { HttpErrorResponse } from '@angular/common/http';
 
 import { ForgotPasswordHttpClientService } from "../../Core/Services/forgot-password-http-client.service";
 import { forgotPasswordResponse, forgotPasswordCredential } from "../../Core/Services/ems-interfaces.service"
-
-import { HttpErrorResponse } from '@angular/common/http';
-
 
 @Component({
     selector: 'app-forgot-password-form',
     templateUrl: './forgot-password-form.component.html',
     styleUrls: ['./forgot-password-form.component.scss']
 })
+
 export class ForgotPasswordFormComponent implements OnInit {
     error: string;
     forgotPasswordRes: forgotPasswordResponse[] = [];

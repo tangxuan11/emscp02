@@ -1,12 +1,10 @@
 import { Component, OnInit, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { HttpErrorResponse } from '@angular/common/http';
 
 import { LogInStateService } from "../../Core/Services/log-in-state.service";
 import { LogInHttpClientService } from "../../Core/Services/log-in-http-client.service";
 import { loginResponse, loginCredential } from "../../Core/Services/ems-interfaces.service"
-
-import { HttpErrorResponse } from '@angular/common/http';
-
 
 @Component({
     selector: 'app-login-form',
@@ -98,8 +96,7 @@ export class LoginFormComponent implements OnInit {
             this.showLoginError = true;
             this.loginErrorMessage = this.loginRes["statusMsg"];
             this.emsLoginFormModel.reset();
-            if (this.loginErrorMessage == "You must change your temporary password before proceeding further.")
-            {
+            if (this.loginErrorMessage == "You must change your temporary password before proceeding further.") {
                 this.loginState.setLoginInfo(this.loginCred[0]["username"], this.loginErrorMessage);
                 this.changePassword();
             }

@@ -1,19 +1,17 @@
-
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { HttpErrorResponse } from '@angular/common/http';
 
 import { ChangePasswordHttpClientService } from "../../Core/Services/change-password-http-client.service";
 import { changePasswordResponse, changePasswordCredential } from "../../Core/Services/ems-interfaces.service";
-
 import { LogInStateService } from "../../Core/Services/log-in-state.service";
-
-import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
     selector: 'app-change-password-form',
     templateUrl: './change-password-form.component.html',
     styleUrls: ['./change-password-form.component.scss']
 })
+
 export class ChangePasswordFormComponent implements OnInit {
     error: string;
     changePasswordRes: changePasswordResponse[] = [];
