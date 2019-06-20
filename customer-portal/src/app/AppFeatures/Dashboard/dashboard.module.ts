@@ -4,7 +4,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
-import { ComponentsModule } from '../../Shared/Components/components.module';
 import { DashboardSubAComponent } from './DashboardSubA/dashboard-sub-a.component';
 
 import {
@@ -24,7 +23,6 @@ import {
     declarations: [DashboardComponent, DashboardSubAComponent],
     imports: [
         CommonModule,
-        ComponentsModule,
         DashboardRoutingModule,
         FlexLayoutModule,
         MatToolbarModule,
