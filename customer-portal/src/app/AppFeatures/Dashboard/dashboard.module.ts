@@ -7,14 +7,7 @@ import { DashboardComponent } from './dashboard.component';
 import { DashboardSubAComponent } from './DashboardSubA/dashboard-sub-a.component';
 
 import {
-    MatBadgeModule,
-    MatButtonModule,
-    MatCardModule,
-    MatDividerModule,
-    MatFormFieldModule,
     MatIconModule,
-    MatInputModule,
-    MatMenuModule,
     MatToolbarModule 
 } from '@angular/material';
 

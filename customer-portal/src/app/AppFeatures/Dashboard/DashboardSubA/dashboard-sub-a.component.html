@@ -1,32 +1,21 @@
 <a routerLink={{featureURL}} routerLinkActive="active">
-<div fxLayout="row" id="dashboard-panel-container">
-    <div fxFlex fxLayout="column" class="dashboard-panel-left">
-        
-        <div fxFlex class="dashboard-panel-logo">
-            <!--
-            <img src={{featureLogoFileName}}>
-           
-            <mat-icon>trending-up</mat-icon>
-             -->
-             <mat-icon class="material-icons-outlined">{{featureIcon}}</mat-icon>
+    <div fxLayout="row" id="dashboard-panel-container">
+        <div fxFlex fxLayout="column" class="dashboard-panel-left">
+            <div fxFlex class="dashboard-panel-logo">
+                <mat-icon class="material-icons-outlined">{{featureIcon}}</mat-icon>
+            </div>
         </div>
-    </div>
 
-    
-    <div fxLayout="column" class="dashboard-panel-right">
-
-        <div fxFlex class="dashboard-panel-title">
-            
+        <div fxLayout="column" class="dashboard-panel-right">
+            <div fxFlex class="dashboard-panel-title">
                 <p>
-                {{featureTitle}}
+                    {{featureTitle}}
                 </p>
-            
-        </div>
-        <div fxFlex class="dashboard-panel-desc">
-            {{featureDescription}}
+            </div>
+            <div fxFlex class="dashboard-panel-desc">
+                {{featureDescription}}
+            </div>
         </div>
 
     </div>
-
-</div>
 </a>

@@ -5,6 +5,7 @@ import { Component, OnInit, Input } from '@angular/core';
     templateUrl: './dashboard-sub-a.component.html',
     styleUrls: ['./dashboard-sub-a.component.scss']
 })
+
 export class DashboardSubAComponent implements OnInit {
 
     @Input() featureTitle: string;
