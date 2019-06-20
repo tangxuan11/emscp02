@@ -10,23 +10,26 @@ import { LogInStateService } from "./Core/Services/log-in-state.service"
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss']
 })
+
 export class AppComponent {
     title = 'customer-portal';
     loggedIn: boolean = false;
+    
     isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
-    .pipe(
-      map(result => result.matches)
-    );
+        .pipe(
+            map(result => result.matches)
+        );
 
-    constructor(private data: LogInStateService,
-                private breakpointObserver: BreakpointObserver) {
+    constructor(private logInState: LogInStateService,
+        private breakpointObserver: BreakpointObserver) {
 
     }
 
     ngOnInit() {
-        this.data.sharedData.subscribe(statusData => {
+        this.logInState.sharedData.subscribe(statusData => {
             this.loggedIn = statusData;
         })
+
     }
 
 }

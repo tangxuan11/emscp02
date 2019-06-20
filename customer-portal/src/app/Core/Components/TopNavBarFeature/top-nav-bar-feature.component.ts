@@ -37,7 +37,7 @@ export class TopNavBarFeatureComponent implements OnInit {
 
     logOut() {
         this.notifService.clearNotifications();
-        this.loginState.changeMessage(false);
+        this.loginState.changeLoginState(false);
         this.loginState.updateLoggedInUser("");
     }
 

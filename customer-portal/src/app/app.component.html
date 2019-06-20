@@ -1,13 +1,11 @@
 <mat-sidenav-container *ngIf="loggedIn; else loginBlock" class="theme-dark sidenav-container">
     <mat-sidenav #drawer class="theme-dark sidenav" fixedInViewport="true"
-                 [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-                 [mode]="(isHandset$ | async) ? 'over' : 'side'"
-                 [opened]="!(isHandset$ | async)">
+        [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
+        [opened]="!(isHandset$ | async)">
         <app-side-bar></app-side-bar>
     </mat-sidenav>
     <mat-sidenav-content class="theme-default">
-        <app-top-nav-bar-feature *ngIf="loggedIn"
-                                 (toggleSidebar)="drawer.toggle()">
+        <app-top-nav-bar-feature *ngIf="loggedIn" (toggleSidebar)="drawer.toggle()">
         </app-top-nav-bar-feature>
         <router-outlet></router-outlet>
     </mat-sidenav-content>
@@ -17,10 +15,7 @@
     <div class="top-nav-bar-login">
         <app-top-nav-bar-login></app-top-nav-bar-login>
     </div>
-    <div class="login-container"
-         fxLayout="column"
-         fxLayoutAlign="space-evenly stretch"
-         fxLayoutGap="20px">
+    <div class="login-container" fxLayout="column" fxLayoutAlign="space-evenly stretch" fxLayoutGap="20px">
         <div class="login" fxFlex="480px">
             <app-login></app-login>
         </div>

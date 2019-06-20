@@ -89,7 +89,7 @@ export class LoginFormComponent implements OnInit {
             if (isEngineeringUser) {
                 this.redirectFormRef.nativeElement.submit();
             } else {
-                this.loginState.changeMessage(true);
+                this.loginState.changeLoginState(true);
                 this.loginState.updateLoggedInUser(this.loginRes["data"]["username"]);
             }
         }

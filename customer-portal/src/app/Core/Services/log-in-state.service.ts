@@ -23,14 +23,14 @@ export class LogInStateService {
 
     }
 
-    changeMessage(message: boolean) {
+    changeLoginState(newLoginState: boolean) {
         //this.messageSource.next(message)
-        if (message == true) {
-            localStorage.setItem('login_state', 'logged_in');
+        if (newLoginState == true) {
+            sessionStorage.setItem('login_state', 'logged_in');
         } else {
-            localStorage.setItem('login_state', 'logged_out');
+            sessionStorage.setItem('login_state', 'logged_out');
         }
-        this.sharedData.next(message);
+        this.sharedData.next(newLoginState);
     }
 
     updateLoggedInUser(username: string) {
@@ -47,13 +47,13 @@ export class LogInStateService {
     }
 
     getCurrentState() {
-        let currentLoginState = localStorage.getItem('login_state');
+        let currentLoginState = sessionStorage.getItem('login_state');
 
         if (currentLoginState == 'logged_in') {
             return true;
         }
         else if (currentLoginState == null) {
-            localStorage.setItem('login_state', 'logged_out');
+            sessionStorage.setItem('login_state', 'logged_out');
             return false;
         } else {
             return false;
