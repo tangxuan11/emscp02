@@ -8,10 +8,6 @@
         <mat-card *ngIf="showLogin">
             <app-login-form (eventFromLoginForm)="receiveEventFromLoginForm($event)"></app-login-form>
         </mat-card>
-
-        <mat-card *ngIf="showChangePassword">
-            <app-change-password-form (eventFromChangePasswordForm)="receiveEventFromChangePasswordForm($event)"></app-change-password-form>
-        </mat-card>
     </div>
 
 </div>

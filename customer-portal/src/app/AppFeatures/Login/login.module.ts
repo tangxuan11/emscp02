@@ -35,7 +35,8 @@ import { ForgotPasswordFormComponent } from './forgot-password-form.component';
         LoginComponent
     ],
     entryComponents: [
-        ForgotPasswordFormComponent
+        ForgotPasswordFormComponent,
+        ChangePasswordFormComponent
     ]
     
 })

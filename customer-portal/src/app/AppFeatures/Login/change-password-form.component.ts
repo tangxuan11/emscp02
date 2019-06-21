@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HttpErrorResponse } from '@angular/common/http';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 import { ChangePasswordHttpClientService } from "../../Core/Services/change-password-http-client.service";
 import { changePasswordResponse, changePasswordCredential } from "../../Core/Services/ems-interfaces.service";
@@ -21,7 +22,6 @@ export class ChangePasswordFormComponent implements OnInit {
     showChangePasswordInfoMessage: boolean = true;
     changePasswordInfoMessage = "";
 
-    @Output() eventFromChangePasswordForm = new EventEmitter<string>();
     emsChangePasswordFormModel: FormGroup;
     passwordFieldType = {
         old: "password",
@@ -29,7 +29,10 @@ export class ChangePasswordFormComponent implements OnInit {
         confirm: "password"
     };
 
-    constructor(private loginState: LogInStateService, private changepasswordclient: ChangePasswordHttpClientService) {
+    constructor(
+        public dialogRef: MatDialogRef<ChangePasswordFormComponent>,
+        private loginState: LogInStateService, 
+        private changepasswordclient: ChangePasswordHttpClientService) {
         let loginInfo = this.loginState.getLoginInfo();
         this.changePasswordInfoMessage = loginInfo[1];
         this.emsChangePasswordFormModel = new FormGroup({
@@ -41,6 +44,10 @@ export class ChangePasswordFormComponent implements OnInit {
     }
 
     ngOnInit() {
+    }
+
+    onLoginPage(): void {
+        this.dialogRef.close();
     }
 
     changePasswordSend() {
@@ -114,10 +121,6 @@ export class ChangePasswordFormComponent implements OnInit {
             this.showChangePasswordFailure();
             this.emsChangePasswordFormModel.reset();
         }
-    }
-
-    loginPage() {
-        this.eventFromChangePasswordForm.emit("login_page");
     }
 
     showChangePasswordFailure() {
