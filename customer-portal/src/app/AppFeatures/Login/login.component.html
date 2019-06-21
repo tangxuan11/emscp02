@@ -12,10 +12,6 @@
         <mat-card *ngIf="showChangePassword">
             <app-change-password-form (eventFromChangePasswordForm)="receiveEventFromChangePasswordForm($event)"></app-change-password-form>
         </mat-card>
-
-        <mat-card *ngIf="showForgotPassword">
-            <app-forgot-password-form (eventFromForgotPasswordForm)="receiveEventFromForgotPasswordForm($event)"></app-forgot-password-form>
-        </mat-card>
     </div>
 
 </div>

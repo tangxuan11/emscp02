@@ -17,23 +17,26 @@
                 <input matInput
                        placeholder="Username"
                        type="text"
-                       formControlName="username">
+                       formControlName="username"
+                       tabindex="1">
                 <button matSuffix
                         type="button"
                         mat-icon-button>
-                    <mat-icon matSuffix>email</mat-icon>
+                    <mat-icon matSuffix tabindex="-1">email</mat-icon>
                 </button>
             </mat-form-field>
             <mat-form-field fxFlex>
                 <input matInput
                        placeholder="Password"
                        type="{{passwordFieldType}}"
-                       formControlName="password">
+                       formControlName="password"
+                       tabindex="2">
                 <button matSuffix
                         type="button"
                         mat-icon-button
-                        (click)="togglePasswordVisibility()">
-                    <mat-icon matSuffix>
+                        (click)="togglePasswordVisibility()"
+                        tabindex="-1">
+                    <mat-icon matSuffix tabindex="-1">
                         {{(passwordFieldType === 'password') ?
                            'visibility_off' : 'visibility_on'}}
                     </mat-icon>
@@ -43,7 +46,8 @@
                     mat-raised-button
                     type="submit"
                     color="accent"
-                    [disabled]=emsLoginFormModel.invalid>
+                    [disabled]=emsLoginFormModel.invalid
+                    tabindex="3">
                     LOG IN
             </button>
         </div>

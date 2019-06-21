@@ -33,6 +33,10 @@ import { ForgotPasswordFormComponent } from './forgot-password-form.component';
     ],
     exports: [
         LoginComponent
+    ],
+    entryComponents: [
+        ForgotPasswordFormComponent
     ]
+    
 })
 export class LoginModule { }

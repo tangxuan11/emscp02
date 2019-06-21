@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { ForgotPasswordFormComponent } from './forgot-password-form.component';
 
 @Component({
     selector: 'app-login',
@@ -12,13 +14,25 @@ export class LoginComponent implements OnInit {
 
     showLogin: boolean = true;
     showChangePassword: boolean = false;
-    showForgotPassword: boolean = false;
     showLoginError: boolean = false;
 
-    constructor() {
+    constructor(public dialog: MatDialog) {
     }
 
     ngOnInit() {
+    }
+
+    openForgotPasswordDialog() {
+        this.showLogin = false;
+        const dialogRef = this.dialog.open(ForgotPasswordFormComponent, {
+            width: '482px',
+            data: {},
+            disableClose: true,
+            position: {top: '11%'}
+        });
+        dialogRef.afterClosed().subscribe(result => {
+            this.showLogin = true;
+        })
     }
 
     //Handle the event sent from Login Form component
@@ -27,7 +41,7 @@ export class LoginComponent implements OnInit {
             this.changePassword();
         }
         else if ($event == "forgot_password") {
-            this.forgotPassword();
+            this.openForgotPasswordDialog();
         }
     }
 
@@ -38,31 +52,15 @@ export class LoginComponent implements OnInit {
         }
     }
 
-    //Handle the event from Forgot Password component
-    receiveEventFromForgotPasswordForm($event) {
-        if ($event == "login_page") {
-            this.loginPage();
-        }
-    }
-
     //Display Change Password page
     changePassword() {
         this.showLogin = false;
-        this.showForgotPassword = false;
         this.showChangePassword = true;
-    }
-
-    //Display Forgot Password page
-    forgotPassword() {
-        this.showLogin = false;
-        this.showChangePassword = false;
-        this.showForgotPassword = true;
     }
 
     //Display Login page
     loginPage() {
         this.showChangePassword = false;
-        this.showForgotPassword = false;
         this.showLogin = true;
         this.showLoginError = false;
     }

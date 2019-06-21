@@ -1,9 +1,15 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Inject } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HttpErrorResponse } from '@angular/common/http';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 import { ForgotPasswordHttpClientService } from "../../Core/Services/forgot-password-http-client.service";
 import { forgotPasswordResponse, forgotPasswordCredential } from "../../Core/Services/ems-interfaces.service"
+
+//dialog data for binding
+export interface DialogData {
+    dialogText: string;
+}
 
 @Component({
     selector: 'app-forgot-password-form',
@@ -12,25 +18,31 @@ import { forgotPasswordResponse, forgotPasswordCredential } from "../../Core/Ser
 })
 
 export class ForgotPasswordFormComponent implements OnInit {
+
     error: string;
     forgotPasswordRes: forgotPasswordResponse[] = [];
     forgotPasswordCred: forgotPasswordCredential[] = [];
-
     forgotPasswordResult: string = "";
     showForgotPasswordInfoMessage: boolean = false;
     forgotPasswordInfoMessage = "";
-
-    @Output() eventFromForgotPasswordForm = new EventEmitter<string>();
     emsForgotPasswordFormModel: FormGroup;
 
-    constructor(private ForgotPasswordclient: ForgotPasswordHttpClientService) {
+
+    constructor(
+        public dialogRef: MatDialogRef<ForgotPasswordFormComponent>,
+        private ForgotPasswordclient: ForgotPasswordHttpClientService,
+        @Inject(MAT_DIALOG_DATA) public data: DialogData) {
         this.emsForgotPasswordFormModel = new FormGroup({
             username: new FormControl('', [Validators.required, Validators.email])
         });
     }
 
-    ngOnInit() {
+    onLoginPage(): void {
+        this.dialogRef.close();
     }
+
+    ngOnInit() {
+    };
 
     forgotPasswordSend() {
         let uname = this.emsForgotPasswordFormModel.value["username"];
@@ -69,12 +81,9 @@ export class ForgotPasswordFormComponent implements OnInit {
         }
     }
 
-    loginPage() {
-        this.eventFromForgotPasswordForm.emit("login_page");
-    }
-
     showForgotPasswordFailure() {
         this.forgotPasswordInfoMessage = "Request failed to reset password.";
         this.showForgotPasswordInfoMessage = true;
     }
+
 }
