@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit {
     ngOnInit() {
     }
 
+    //Open the popup for forgot password
     openForgotPasswordDialog() {
         this.showLogin = false;
         const dialogRef = this.dialog.open(ForgotPasswordFormComponent, {
