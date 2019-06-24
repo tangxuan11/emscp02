@@ -53,7 +53,7 @@
         </div>
     </form>
 
-    <a fxFlex="20px" class="login-form-clickable" (click)="forgotPassword()">
+    <a fxFlex="20px" class="login-form-clickable" [class.disabled]=forgotPasswordDisabled (click)="forgotPassword()">
         FORGOT PASSWORD
     </a>
 </div>
