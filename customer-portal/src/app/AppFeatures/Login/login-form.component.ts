@@ -26,6 +26,8 @@ export class LoginFormComponent implements OnInit {
     showLoginError: boolean = false;
     loginErrorMessage = "";
 
+    loginButtonEnabled = true;
+
     @Output() eventFromLoginForm = new EventEmitter<string>();
 
     constructor(private loginState: LogInStateService, private loginClient: LogInHttpClientService) {
@@ -68,6 +70,10 @@ export class LoginFormComponent implements OnInit {
                     "username": uname,
                     "password": pword
                 }];
+
+                //Disable the Login button to prevent duplicated request
+                this.loginButtonEnabled = false;
+                
                 this.loginClient.sendLoginHttp(this.loginCred).subscribe(
                     responseData => this.handleLoginResponse(responseData),
                     (err: HttpErrorResponse) => this.error = `Can't get info. Got ${err.message}`);
@@ -79,6 +85,9 @@ export class LoginFormComponent implements OnInit {
     handleLoginResponse(response: loginResponse[]) {
         this.loginRes = response;
         this.loginResult = this.loginRes["result"];
+
+        //After receiving response, enable the Login button again
+        this.loginButtonEnabled = true;
 
         if (this.loginResult == "success") {
             let rolesArr: string[] = this.loginRes["data"]["roles"];
@@ -115,6 +124,17 @@ export class LoginFormComponent implements OnInit {
     //When click on Forgot Password
     forgotPassword() {
         this.eventFromLoginForm.emit("forgot_password");
+        
+    }
+
+    //If Login form is invalid or waiting for response from server, disable Login button
+    isLoginButtonDisabled () {
+        if (this.loginButtonEnabled && this.emsLoginFormModel.valid)
+        {
+            return false;
+        } else {
+            return true;
+        }
     }
 
 }
