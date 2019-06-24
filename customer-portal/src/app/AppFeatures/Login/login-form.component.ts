@@ -26,8 +26,7 @@ export class LoginFormComponent implements OnInit {
     showLoginError: boolean = false;
     loginErrorMessage = "";
 
-    loginButtonEnabled = true;
-    forgotPasswordDisabled = false;
+    userActionDisabled = false;
 
     @Output() eventFromLoginForm = new EventEmitter<string>();
 
@@ -71,12 +70,9 @@ export class LoginFormComponent implements OnInit {
                     "username": uname,
                     "password": pword
                 }];
-
-                //Disable the Login button to prevent duplicated request
-                this.loginButtonEnabled = false;
                 
-                //Disable the Forgot Password link before response from server
-                this.forgotPasswordDisabled = true;
+                //Disable user action before response from server
+                this.userActionDisabled = true;
                 
                 this.loginClient.sendLoginHttp(this.loginCred).subscribe(
                     responseData => this.handleLoginResponse(responseData),
@@ -90,9 +86,8 @@ export class LoginFormComponent implements OnInit {
         this.loginRes = response;
         this.loginResult = this.loginRes["result"];
 
-        //After receiving response, enable the Login button and Forgot Password link again
-        this.loginButtonEnabled = true;
-        this.forgotPasswordDisabled = false;
+        //After receiving response, enable user action again
+        this.userActionDisabled = false;
 
         if (this.loginResult == "success") {
             let rolesArr: string[] = this.loginRes["data"]["roles"];
@@ -134,7 +129,7 @@ export class LoginFormComponent implements OnInit {
 
     //If Login form is invalid or waiting for response from server, disable Login button
     isLoginButtonDisabled () {
-        if (this.loginButtonEnabled && this.emsLoginFormModel.valid)
+        if (!this.userActionDisabled && this.emsLoginFormModel.valid)
         {
             return false;
         } else {

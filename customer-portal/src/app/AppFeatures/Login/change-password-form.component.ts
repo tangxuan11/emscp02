@@ -22,6 +22,8 @@ export class ChangePasswordFormComponent implements OnInit {
     showChangePasswordInfoMessage: boolean = true;
     changePasswordInfoMessage = "";
 
+    userActionDisabled = false;
+
     emsChangePasswordFormModel: FormGroup;
     passwordFieldType = {
         old: "password",
@@ -95,6 +97,9 @@ export class ChangePasswordFormComponent implements OnInit {
                             this.changePasswordInfoMessage = "Unknown error.";
                         }
                     } else {
+                        //Disable user action before response from server
+                        this.userActionDisabled = true;
+                        
                         this.changePasswordCred = [{
                             "username": uname,
                             "oldpassword": opword,
@@ -112,6 +117,9 @@ export class ChangePasswordFormComponent implements OnInit {
 
     handleChangePasswordResponse(server_response: changePasswordResponse[]) {
         this.changePasswordResult = server_response["result"];
+
+        //After receiving response, enable user action again
+        this.userActionDisabled = false;
 
         if (this.changePasswordResult == "success") {
             this.changePasswordInfoMessage = server_response["statusMsg"];
@@ -144,6 +152,16 @@ export class ChangePasswordFormComponent implements OnInit {
                 this.passwordFieldType.confirm = (this.passwordFieldType.confirm === "password") ?
                     "text" : "password";
                 break;
+        }
+    }
+
+    //If Login form is invalid or waiting for response from server, disable Submit button
+    isSubmitButtonDisabled () {
+        if (!this.userActionDisabled && this.emsChangePasswordFormModel.valid)
+        {
+            return false;
+        } else {
+            return true;
         }
     }
 

@@ -27,6 +27,7 @@ export class ForgotPasswordFormComponent implements OnInit {
     forgotPasswordInfoMessage = "";
     emsForgotPasswordFormModel: FormGroup;
 
+    userActionDisabled = false;
 
     constructor(
         public dialogRef: MatDialogRef<ForgotPasswordFormComponent>,
@@ -63,6 +64,10 @@ export class ForgotPasswordFormComponent implements OnInit {
             this.forgotPasswordCred = [{
                 "username": uname
             }];
+
+            //Disable user action before response from server
+            this.userActionDisabled = true;
+            
             this.ForgotPasswordclient.sendForgotPasswordHttp(this.forgotPasswordCred).subscribe(data => this.handleForgotPasswordResponse(data),
                 (err: HttpErrorResponse) => this.error = `Can't get info. Got ${err.message}`);
         }
@@ -70,6 +75,9 @@ export class ForgotPasswordFormComponent implements OnInit {
 
     handleForgotPasswordResponse(server_response: forgotPasswordResponse[]) {
         this.forgotPasswordResult = server_response["result"];
+
+        //After receiving response, enable user action again
+        this.userActionDisabled = false;
 
         if (this.forgotPasswordResult == "success") {
             this.forgotPasswordInfoMessage = server_response["statusMsg"];
@@ -84,6 +92,16 @@ export class ForgotPasswordFormComponent implements OnInit {
     showForgotPasswordFailure() {
         this.forgotPasswordInfoMessage = "Request failed to reset password.";
         this.showForgotPasswordInfoMessage = true;
+    }
+
+    //If Login form is invalid or waiting for response from server, disable Reset button
+    isResetButtonDisabled () {
+        if (!this.userActionDisabled && this.emsForgotPasswordFormModel.valid)
+        {
+            return false;
+        } else {
+            return true;
+        }
     }
 
 }
