@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
     }
 
     //Open the popup for change password
-    openChangePasswordDialog1() {
+    openChangePasswordDialog() {
         this.showLogin = false;
         const dialogRef = this.dialog.open(ChangePasswordFormComponent, {
             width: '482px',
