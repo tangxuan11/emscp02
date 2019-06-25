@@ -4,7 +4,7 @@ import { AuthGuardService } from './Core/Services/auth-guard.service';
 
 const routes: Routes = [
     { path: 'dashboard', loadChildren: './AppFeatures/Dashboard/dashboard.module#DashboardModule', canActivate: [AuthGuardService], runGuardsAndResolvers: 'always' },
-    { path: 'analytics', loadChildren: './AppFeatures/Analytics/analytics.module#AnalyticsModule' },
+    { path: 'analytics', loadChildren: './AppFeatures/Analytics/Main/analytics-main.module#AnalyticsMainModule' },
     { path: 'analytics/reports', loadChildren: './AppFeatures/Analytics/Reports/reports.module#ReportsModule' },
     { path: 'analytics/usage_summary', loadChildren: './AppFeatures/Analytics/UsageSummary/usage-summary.module#UsageSummaryModule' },
     { path: 'message_log', loadChildren: './AppFeatures/MessageLog/message-log.module#MessageLogModule' },
