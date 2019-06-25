@@ -1,0 +1,35 @@
+@import "src/styles.scss";
+
+$theme: $light_theme;
+$primary: map-get($theme, primary);
+$accent: map-get($theme, accent);
+
+$analytics-main-traffic-summary-height: 300px;
+$analytics-channel-traffic-summary-height: 300px;
+$analytics-country-traffic-summary-height: 300px;
+$analytics-main-width: 1200px;
+
+$analytics-main-border-radius: 10px;
+
+.analytics-main {
+    width: $analytics-main-width;
+    margin-left: 20px;
+}
+
+.analytics-main-traffic-summary {
+    height: $analytics-main-traffic-summary-height;
+    border-radius: $analytics-main-border-radius;
+    background-color: mat-color($primary, 200);
+}
+
+.analytics-channel-traffic-summary {
+    height: $analytics-channel-traffic-summary-height;
+    border-radius: $analytics-main-border-radius;
+    background-color: mat-color($primary, 200);
+}
+
+.analytics-country-traffic-summary {
+    height: $analytics-main-traffic-summary-height;
+    border-radius: $analytics-main-border-radius;
+    background-color: mat-color($primary, 200);
+}

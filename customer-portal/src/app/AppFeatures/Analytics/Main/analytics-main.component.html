@@ -1,6 +1,13 @@
-<p>
-    analytics-main works!
-</p>
-<app-main-traffic-summary></app-main-traffic-summary>
-<app-channel-traffic-summary></app-channel-traffic-summary>
-<app-country-traffic-summary></app-country-traffic-summary>
+
+<div class="analytics-main" fxLayout="column" fxLayoutAlign="space-evenly stretch" fxLayoutGap="20px">
+    <div class="analytics-main-traffic-summary" fxFlex="">
+        <app-main-traffic-summary></app-main-traffic-summary>
+    </div>
+    <div class="analytics-channel-traffic-summary" fxFlex="">
+        <app-channel-traffic-summary></app-channel-traffic-summary>
+    </div>
+    <div class="analytics-country-traffic-summary" fxFlex="">
+        <app-country-traffic-summary></app-country-traffic-summary>
+    </div>
+    
+</div>
