@@ -36,6 +36,10 @@ export interface Notification {
     message: string;
 }
 
+export interface AnalyticsMainTrafficSummaryResponse {
+    chart: string;
+}
+
 @Injectable({
     providedIn: 'root'
 })
