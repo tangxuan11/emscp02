@@ -1,9 +1,13 @@
 <a routerLink={{featureURL}} routerLinkActive="active">
-    <div fxLayout="row" id="dashboard-panel-container" fxLayoutAlign="center center">
+    <div fxLayout="row"
+         id="dashboard-panel-container"
+         fxLayoutAlign="center center"
+         fxLayoutGap="5px">
         <mat-icon fxFlex="33" class="svg-icon" svgIcon="{{featureIcon}}"></mat-icon>
 
         <div fxFlex="67"
-             fxLayout="column">
+             fxLayout="column"
+             fxLayoutGap="7px">
             <div fxFlex="50" class="dashboard-panel-title">
                 {{featureTitle}}
             </div>
