@@ -41,6 +41,10 @@ export interface SVGIcon {
     url: string;
 }
 
+export interface AnalyticsMainTrafficSummaryResponse {
+    chart: string;
+}
+
 @Injectable({
     providedIn: 'root'
 })
