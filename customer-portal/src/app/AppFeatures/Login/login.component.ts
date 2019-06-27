@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
     openForgotPasswordDialog() {
         this.showLogin = false;
         const dialogRef = this.dialog.open(ForgotPasswordFormComponent, {
-            width: '482px',
+            width: '500px',
             data: {},
             disableClose: true,
             position: {top: '11%'}
@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
     openChangePasswordDialog() {
         this.showLogin = false;
         const dialogRef = this.dialog.open(ChangePasswordFormComponent, {
-            width: '482px',
+            width: '500px',
             data: {},
             disableClose: true,
             position: {top: '11%'}

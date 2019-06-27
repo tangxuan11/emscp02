@@ -1,23 +1,40 @@
-<div fxLayout="column">
-    
-    <div fxFlex="" fxLayout="row wrap" fxLayoutGap="5%">
-        <div *ngFor="let dashboardElem of dashboardElementsTop">
-            <div fxFlex class="dashboard-panel">
-                <app-dashboard-sub-a [featureTitle]="dashboardElem.title" [featureURL]="dashboardElem.href"
-                    [featureDescription]="dashboardElem.description" [featureIcon]="dashboardElem.icon">
-                </app-dashboard-sub-a>
-            </div>
-        </div>
-    </div>
+<div *ngIf="!largerScreen; else largeScreen"
+     class="dashboard-container">
 
-    <div fxFlex="" fxLayout="row wrap" fxLayoutGap="5%">
-        <div *ngFor="let dashboardElem of dashboardElementsBottom">
-            <div fxFlex class="dashboard-panel">
-                <app-dashboard-sub-a [featureTitle]="dashboardElem.title" [featureURL]="dashboardElem.href"
-                    [featureDescription]="dashboardElem.description" [featureIcon]="dashboardElem.icon">
+    <div fxLayout="row wrap"
+         fxLayoutAlign="space-evenly"
+         fxLayoutGap="3% grid">
+        <ng-container *ngFor="let dashboardRow of dashboardElements">
+            <ng-container *ngFor="let dashboardElem of dashboardRow">
+                <app-dashboard-sub-a [featureTitle]="dashboardElem.title"
+                                     [featureURL]="dashboardElem.href"
+                                     [featureDescription]="dashboardElem.description"
+                                     [featureIcon]="dashboardElem.icon">
                 </app-dashboard-sub-a>
-            </div>
-        </div>
+            </ng-container>
+        </ng-container>
     </div>
-
 </div>
+
+<ng-template #largeScreen>
+    <div fxLayout="column"
+         fxLayoutAlign="start stretch"
+         fxLayoutGap="3%"
+         class="dashboard-container">
+
+        <div *ngFor="let dashboardRow of dashboardElements"
+             fxFlex=""
+             fxLayout="row"
+             fxLayoutAlign="space-evenly center">
+
+            <ng-container *ngFor="let dashboardElem of dashboardRow">
+                <app-dashboard-sub-a [featureTitle]="dashboardElem.title"
+                                     [featureURL]="dashboardElem.href"
+                                     [featureDescription]="dashboardElem.description"
+                                     [featureIcon]="dashboardElem.icon">
+                </app-dashboard-sub-a>
+            </ng-container>
+
+        </div>
+    </div>
+</ng-template>

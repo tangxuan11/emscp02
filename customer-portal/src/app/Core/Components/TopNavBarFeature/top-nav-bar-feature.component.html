@@ -4,11 +4,9 @@
     aria-label="Toggle sidenav"
     mat-icon-button
     (click)="toggleSidebarCollapse()">
-        <mat-icon inline="true" aria-label="Side nav toggle icon">
-            menu
-        </mat-icon>
+        <mat-icon class="svg-icon" svgIcon="menu"></mat-icon>
     </button>
-    <a (click)="addNotif()"><h2>EMS</h2><p>ENTERPRISE MESSAGING SERVICES</p></a>
+    <a (click)="addNotif()"><h2>EMS</h2><p>ENTERPRISE MESSAGING SERVICE</p></a>
 
     <!-- This elements splits elements in the toolbar/navbar. All elements
        before this span will be placed on the left side of the toolbar/navbar.
@@ -21,14 +19,12 @@
     </button>
     <mat-menu #profile_dropdown>
         <button mat-menu-item>
-            <mat-icon color="accent"
-                      class="material-icons">
-                settings
+            <mat-icon color="accent" svgIcon="settings_outlined">
             </mat-icon>
             <span class="dropdown_text">Settings</span>
         </button>
         <button mat-menu-item (click)="logOut()">
-            <mat-icon color="accent" class="material-icons">
+            <mat-icon color="accent">
                 exit_to_app
             </mat-icon>
             <span class="dropdown_text">Log Out</span>
@@ -42,7 +38,7 @@
             [matBadgeHidden]="notifications.length <= 0"
             [matMenuTriggerFor]="notifMenu"
             id="notifButton">
-        <img src="assets/icons/notification_header_icon.png" />
+        <mat-icon class="svg-icon" svgIcon="notification_outlined"></mat-icon>
         <mat-menu class="notifMenu" #notifMenu="matMenu">
             <ng-container *ngFor="let n of notifications; let idx = index">
                 <app-notification [title]="n.title"

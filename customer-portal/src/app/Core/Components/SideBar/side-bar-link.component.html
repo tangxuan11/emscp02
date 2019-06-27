@@ -9,9 +9,15 @@
        [ngClass]="{'mainPanel': !isSubpanel,
                    'subPanel': isSubpanel,
                    'expanded': expanded}">
+                   <!--
         <mat-icon class="{{(sideNavLink.isActive || expanded) ?
                             activeIconStyle : iconStyle}}">
                   {{(sideNavLink.isActive || expanded) ? activeIcon : icon }}
+        </mat-icon> -->
+
+        <mat-icon class="svg-icon" id="{{title}}"
+                  svgIcon="{{(sideNavLink.isActive || expanded) ?
+                              activeIcon : icon}}">
         </mat-icon>
         <div class="linkText">{{title}}</div>
         <mat-icon class="material-icons expandIcon"

@@ -23,7 +23,7 @@ $accent: map-get($theme, accent);
     }
 
     mat-sidenav-content, router-outlet {
-        //background-color: $bright_silver;
+        background-color: mat-color($primary, A100);
     }
 }
 

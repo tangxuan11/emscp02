@@ -36,6 +36,11 @@ export interface Notification {
     message: string;
 }
 
+export interface SVGIcon {
+    alias: string;
+    url: string;
+}
+
 @Injectable({
     providedIn: 'root'
 })

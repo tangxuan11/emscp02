@@ -13,7 +13,7 @@ export interface SidebarNavLink {
 export interface SidebarNavGroup {
     panels: SidebarNavLink[];
 }
-
+/*
 export let navLinks = [
     {
         panels: [
@@ -171,6 +171,166 @@ export let navLinks = [
             {
                 title: "Help",
                 icon: "help_outline",
+                activeIcon: "help",
+                route: "/help"
+            }
+        ]
+    }
+];
+*/
+
+export let navLinks = [
+    {
+        panels: [
+            {
+                title: "Dashboard",
+                icon: "dashboard_outlined",
+                activeIcon: "dashboard",
+                route: "/dashboard"
+            },
+            {
+                title: "Analytics",
+                icon: "analytics_outlined",
+                activeIcon: "analytics",
+                route: "/analytics",
+                subPanels: [
+                    {
+                        title: "Reports",
+                        icon: "assessment",
+                        iconStyle: "outlined",
+                        activeIconStyle: "filled",
+                        route: "/analytics/reports",
+                        isSubpanel: true
+                    },
+                    {
+                        title: "Usage Summary",
+                        icon: "pie_chart",
+                        iconStyle: "outlined",
+                        activeIconStyle: "filled",
+                        route: "/analytics/usage_summary",
+                        isSubpanel: true
+                    }
+                ]
+            },
+            {
+                title: "Message Log",
+                icon: "message_log",
+                route: "/message_log"
+            },
+            {
+                title: "Web Text",
+                icon: "web_text_outlined",
+                activeIcon: "web_text",
+                route: "/web_text"
+            },
+            {
+                title: "Registries",
+                icon: "registries_outlined",
+                activeIcon: "registries",
+                route: "/registries"
+            },
+            {
+                title: "Campaign",
+                icon: "campaign_outlined",
+                activeIcon: "campaign",
+                route: "/campaign",
+                subPanels: [
+                    {
+                        title: "Getting Started",
+                        icon: "play_circle_outline",
+                        iconStyle: "outlined",
+                        activeIcon: "play_circle_filled",
+                        activeIconStyle: "filled",
+                        route: "/campaign/getting_started",
+                        isSubpanel: true
+                    },
+                    {
+                        title: "Address Book",
+                        icon: "contacts",
+                        iconStyle: "outlined",
+                        activeIconStyle: "filled",
+                        route: "/campaign/address_book",
+                        isSubpanel: true
+                    },
+                    {
+                        title: "Templates",
+                        icon: "dashboard",
+                        iconStyle: "outlined",
+                        activeIconStyle: "filled",
+                        route: "/campaign/templates",
+                        isSubpanel: true
+                    },
+                    {
+                        title: "Campaigns",
+                        icon: "send",
+                        iconStyle: "outlined",
+                        activeIconStyle: "filled",
+                        route: "/campaign/campaigns",
+                        isSubpanel: true
+                    }
+                ]
+            },
+            {
+                title: "CMS",
+                icon: "cms_outlined",
+                activeIcon: "cms",
+                route: "/cms",
+                subPanels: [
+                    {
+                        title: "About",
+                        icon: "info",
+                        iconStyle: "outlined",
+                        activeIconStyle: "filled",
+                        route: "/cms/about",
+                        isSubpanel: true
+                    },
+                    {
+                        title: "Change Management",
+                        icon: "work_outline",
+                        activeIcon: "work",
+                        route: "/cms/change_management",
+                        isSubpanel: true
+                    },
+                    {
+                        title: "Template Editor",
+                        icon: "edit",
+                        iconStyle: "outlined",
+                        activeIconStyle: "filled",
+                        route: "/cms/template_editor",
+                        isSubpanel: true
+                    },
+                    {
+                        title: "Package Management",
+                        icon: "web",
+                        route: "/cms/package_management",
+                        isSubpanel: true
+                    },
+                    {
+                        title: "Package Installation",
+                        icon: "launch",
+                        route: "/cms/package_installation",
+                        isSubpanel: true
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        panels: [
+            {
+                title: "Enterprise",
+                icon: "enterprise_outlined",
+                activeIcon: "enterprise",
+                route: "/enterprise"
+            },
+            {
+                title: "Settings",
+                icon: "settings_outlined",
+                route: "/settings"
+            },
+            {
+                title: "Help",
+                icon: "help_outlined",
                 activeIcon: "help",
                 route: "/help"
             }

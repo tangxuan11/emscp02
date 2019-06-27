@@ -12,7 +12,7 @@ $accent: map-get($theme, accent);
     left: 0;
     z-index: 1;
     height: $top-nav-bar-height;
-    box-shadow: 0px 10px 40px -10px mat-color($primary, darker);
+    box-shadow: 0px 10px 40px -10px mat-color($primary, 800);
 
     .mat-button {
         padding: 0 0 0 5px;
@@ -22,9 +22,12 @@ $accent: map-get($theme, accent);
         }
     }
 
-    mat-icon {
-        font-size: 22px;
-        display: inline
+    .mat-icon {
+
+        &:not(.svg-icon) {
+            font-size: 22px;
+            display: inline;
+        }
     }
 
     a {
@@ -65,6 +68,11 @@ $accent: map-get($theme, accent);
 
 .dropdown_text {
     font-weight: bold;
+}
+
+.svg-icon {
+    vertical-align: top;
+    max-height: 17px;
 }
 
 .notif-menu-divider {

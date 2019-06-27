@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatCardModule,
+         MatDialogModule,
          MatIconModule,
          MatButtonModule,
          MatFormFieldModule,
@@ -23,6 +24,7 @@ import { ForgotPasswordFormComponent } from './forgot-password-form.component';
         CommonModule,
         FlexLayoutModule,
         MatCardModule,
+        MatDialogModule,
         MatIconModule,
         MatButtonModule,
         MatFormFieldModule,
@@ -38,6 +40,6 @@ import { ForgotPasswordFormComponent } from './forgot-password-form.component';
         ForgotPasswordFormComponent,
         ChangePasswordFormComponent
     ]
-    
+
 })
 export class LoginModule { }

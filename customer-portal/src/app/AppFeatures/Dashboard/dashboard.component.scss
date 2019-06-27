@@ -1,15 +1,4 @@
 
-$dashboard-panel-margin: 20px;
-$dashboard-row-maxwidth: 1600px;
-
 .dashboard-container {
-    display: block;
-}
-
-.dashboard-row {
-    max-width: $dashboard-row-maxwidth;
-}
-
-.dashboard-panel {
-    margin: $dashboard-panel-margin;
+    margin-top: 40px;
 }
