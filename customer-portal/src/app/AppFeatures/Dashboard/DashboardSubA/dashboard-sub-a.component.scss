@@ -6,7 +6,7 @@ $accent: map-get($theme, accent);
 $foreground: map-get($theme, foreground);
 
 $dashboard-panel-container-width: 360px;
-$dashboard-panel-left-height: 200px;
+$dashboard-panel-container-height: 200px;
 $dashboard-panel-left-width: 33%;
 $dashboard-panel-right-width: 67%;
 $dashboard-panel-title-font-size: 25px;
@@ -16,6 +16,7 @@ $dashboard-panel-icon-img-size: 72px;
 
 #dashboard-panel-container {
     width: $dashboard-panel-container-width;
+    height: $dashboard-panel-container-height;
     box-shadow: 0 0 10px mat-color($primary, darker);
     border-radius: 15px;
     background-color: mat-color($primary, 50);
@@ -28,21 +29,6 @@ $dashboard-panel-icon-img-size: 72px;
     }
 }
 
-.dashboard-panel-left {
-    width: $dashboard-panel-left-width;
-    height: $dashboard-panel-left-height;
-}
-
-.dashboard-panel-logo {
-    margin: auto auto;
-    max-height: $dashboard-panel-icon-img-size;
-    min-height: $dashboard-panel-icon-img-size;
-}
-
-.dashboard-panel-right {
-    width: $dashboard-panel-right-width;
-}
-
 .dashboard-panel-title {
     font-size: $dashboard-panel-title-font-size;
     font-family: $dashboard-panel-title-font-family;
@@ -53,7 +39,6 @@ $dashboard-panel-icon-img-size: 72px;
 .dashboard-panel-desc {
     font-size: $dashboard-panel-desc-font-size;
     font-family: $dashboard-panel-title-font-family;
-    margin-left: 10px;
     color: mat-color($foreground, secondary-text);
     font-weight: 600;
 }

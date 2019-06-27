@@ -1,18 +1,13 @@
 <a routerLink={{featureURL}} routerLinkActive="active">
-    <div fxLayout="row" id="dashboard-panel-container">
-        <div fxFlex fxLayout="column" class="dashboard-panel-left">
-            <div fxFlex class="dashboard-panel-logo">
-                <mat-icon class="svg-icon" svgIcon="{{featureIcon}}"></mat-icon>
-            </div>
-        </div>
+    <div fxLayout="row" id="dashboard-panel-container" fxLayoutAlign="center center">
+        <mat-icon fxFlex="33" class="svg-icon" svgIcon="{{featureIcon}}"></mat-icon>
 
-        <div fxLayout="column" class="dashboard-panel-right">
-            <div fxFlex class="dashboard-panel-title">
-                <p>
-                    {{featureTitle}}
-                </p>
+        <div fxFlex="67"
+             fxLayout="column">
+            <div fxFlex="50" class="dashboard-panel-title">
+                {{featureTitle}}
             </div>
-            <div fxFlex class="dashboard-panel-desc">
+            <div fxFlex="50" class="dashboard-panel-desc">
                 {{featureDescription}}
             </div>
         </div>
