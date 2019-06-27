@@ -1,3 +1,39 @@
-<p>
-  channel-traffic-summary works!
-</p>
+<div fxLayout="column" fxLayoutAlign="start stretch">
+    <p fxFlex="15px" fxFlexOffset="5">Percentage of Total Traffic</p>
+    <mat-divider></mat-divider>
+    <mat-table fxFlex="" [dataSource]="data">
+        <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef> Channels </mat-header-cell>
+            <mat-cell *matCellDef="let channel">
+                <span class="channel-color" [style.backgroundColor]="channel.color"></span>
+                <span>{{channel.name}}</span>
+            </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="traffic_volume">
+            <mat-header-cell *matHeaderCellDef> Current Month Traffic Volume </mat-header-cell>
+            <mat-cell *matCellDef="let channel" fxLayout="row" fxLayoutAlign="center">
+                <span fxFlex="50" class="traffic">{{channel.traffic}}</span>
+                <span fxFlex="50">
+                    <mat-chip-list>
+                        <mat-chip>
+                            <div class="chip-text">
+                                {{channel.traffic/totalTraffic | percent}}
+                            </div>
+                        </mat-chip>
+                    </mat-chip-list>
+                </span>
+            </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="success_rate">
+            <mat-header-cell *matHeaderCellDef> Delivery Success Rate </mat-header-cell>
+            <mat-cell *matCellDef="let channel" class="mat-cell-bold">
+                {{ (channel.successRate < 0) ? 'NA' : (channel.successRate | percent)}}
+            </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayColumns;"></mat-row>
+    </mat-table>
+</div>

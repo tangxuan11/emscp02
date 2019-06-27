@@ -1,0 +1,73 @@
+@import "src/styles.scss";
+
+$theme: $material_theme;
+$primary: map-get($theme, primary);
+$accent: map-get($theme, accent);
+$foreground: map-get($theme, foreground);
+
+$analytics-title-font-family: Arial, Helvetica, sans-serif;
+
+p {
+    padding: 10px 0px 10px 25px;
+    margin-bottom: 0;
+    font-size: 12pt;
+    font-weight: 600;
+    font-family: $analytics-title-font-family;
+}
+
+.mat-table {
+    width: 100%;
+
+    .mat-header-row {
+        min-height: 30px!important;
+        background-color: mat-color($primary);
+        border: 1px solid mat-color($primary, 600);
+
+        .mat-header-cell {
+            font-size: 11pt;
+            color: mat-color($foreground, text);
+            font-weight: normal;
+        }
+    }
+
+    .mat-row {
+        min-height: 40px!important;
+
+        .mat-cell {
+            font-size: 10pt;
+
+            &.mat-cell-bold {
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+.channel-color {
+    width: 11px;
+    height: 11px;
+    margin-right: 10px;
+}
+
+.traffic {
+    padding-right: 10px;;
+}
+
+.mat-chip {
+    min-height: 17px;
+    width: 35px;
+    height: 17px;
+    line-height: 17px;
+    border-radius: 17px;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 0;
+
+    .chip-text {
+        margin: 0 auto;
+    }
+}
+
+.traffic-volume {
+    display: inline-block;
+}

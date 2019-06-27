@@ -14,12 +14,21 @@ import { MainTrafficSummaryComponent } from './MainTrafficSummary/main-traffic-s
 import { ChannelTrafficSummaryComponent } from './ChannelTrafficSummary/channel-traffic-summary.component';
 import { CountryTrafficSummaryComponent } from './CountryTrafficSummary/country-traffic-summary.component';
 
+import { MatButtonModule,
+         MatChipsModule,
+         MatDividerModule,
+         MatTableModule } from '@angular/material';
+
 @NgModule({
     declarations: [AnalyticsMainComponent, MainTrafficSummaryComponent, ChannelTrafficSummaryComponent, CountryTrafficSummaryComponent],
     imports: [
         CommonModule,
         AnalyticsMainRoutingModule,
-        FusionChartsModule
+        FusionChartsModule,
+        MatButtonModule,
+        MatChipsModule,
+        MatDividerModule,
+        MatTableModule
     ]
 })
 export class AnalyticsMainModule { }
