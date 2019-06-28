@@ -18,7 +18,7 @@
                     <mat-chip-list>
                         <mat-chip>
                             <div class="chip-text">
-                                {{channel.traffic/totalTraffic | percent}}
+                                {{channel.traffic/totalTraffic | percent:'1.0-1'}}
                             </div>
                         </mat-chip>
                     </mat-chip-list>
@@ -27,8 +27,8 @@
         </ng-container>
 
         <ng-container matColumnDef="success_rate">
-            <mat-header-cell *matHeaderCellDef> Delivery Success Rate </mat-header-cell>
-            <mat-cell *matCellDef="let channel" class="mat-cell-bold">
+            <mat-header-cell *matHeaderCellDef class="mat-last-col"> Delivery Success Rate </mat-header-cell>
+            <mat-cell *matCellDef="let channel" class="mat-cell-bold mat-last-col">
                 {{ (channel.successRate < 0) ? 'NA' : (channel.successRate | percent)}}
             </mat-cell>
         </ng-container>

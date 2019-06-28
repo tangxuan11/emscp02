@@ -6,6 +6,8 @@ $accent: map-get($theme, accent);
 $foreground: map-get($theme, foreground);
 
 $analytics-title-font-family: Arial, Helvetica, sans-serif;
+$numColumns: 3;
+@include mat-table-last-col-resize($numColumns);
 
 p {
     padding: 10px 0px 10px 25px;
@@ -13,34 +15,6 @@ p {
     font-size: 12pt;
     font-weight: 600;
     font-family: $analytics-title-font-family;
-}
-
-.mat-table {
-    width: 100%;
-
-    .mat-header-row {
-        min-height: 30px!important;
-        background-color: mat-color($primary);
-        border: 1px solid mat-color($primary, 600);
-
-        .mat-header-cell {
-            font-size: 11pt;
-            color: mat-color($foreground, text);
-            font-weight: normal;
-        }
-    }
-
-    .mat-row {
-        min-height: 40px!important;
-
-        .mat-cell {
-            font-size: 10pt;
-
-            &.mat-cell-bold {
-                font-weight: bold;
-            }
-        }
-    }
 }
 
 .channel-color {
@@ -66,8 +40,4 @@ p {
     .chip-text {
         margin: 0 auto;
     }
-}
-
-.traffic-volume {
-    display: inline-block;
 }

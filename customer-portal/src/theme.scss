@@ -3,11 +3,16 @@
 @include mat-core();
 @include angular-material-theme($material_theme);
 @include form-field-adjustment($material_theme);
+@include mat-table-style($material_theme);
 
 .theme-dark {
     @include angular-material-theme($dark_theme);
+    @include form-field-adjustment($dark_theme);
+    @include mat-table-style($dark_theme);
 }
 
 .theme-default {
     @include angular-material-theme($material_theme);
+    @include form-field-adjustment($material_theme);
+    @include mat-table-style($material_theme);
 }
