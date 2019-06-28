@@ -116,6 +116,8 @@ THE SOFTWARE.
 
 @angular/material/card
 
+@angular/material/chips
+
 @angular/material/core
 
 @angular/material/datepicker
@@ -135,6 +137,8 @@ THE SOFTWARE.
 @angular/material/sidenav
 
 @angular/material/snack-bar
+
+@angular/material/table
 
 @angular/material/toolbar
 
