@@ -24,7 +24,7 @@ const DUMMY_DATA: ChannelTraffic[] = [
 export class ChannelTrafficSummaryComponent implements OnInit {
     displayColumns: string[] = ['name','traffic_volume','success_rate'];
     data = DUMMY_DATA;
-    totalTraffic = 2000;
+    totalTraffic = 4000;
 
     constructor() { }
 

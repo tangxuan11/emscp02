@@ -1,3 +1,43 @@
-<p>
-  country-traffic-summary works!
-</p>
+<div fxLayout="column" fxLayoutAlign="start stretch">
+    <p fxFlex="15px" fxFlexOffset="5">{{ channel }}</p>
+    <mat-divider></mat-divider>
+    <mat-table fxFlex="" [dataSource]="data">
+        <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef> Top Countries </mat-header-cell>
+            <mat-cell *matCellDef="let country">
+                {{country.name}}
+            </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="traffic_volume">
+            <mat-header-cell *matHeaderCellDef> Current Month Traffic Volume </mat-header-cell>
+            <mat-cell *matCellDef="let country">
+                {{country.traffic}}
+            </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="success_rate">
+            <mat-header-cell *matHeaderCellDef> Delivered (%) </mat-header-cell>
+            <mat-cell *matCellDef="let country">
+                {{ (country.successRate < 0) ? 'NA' : (country.successRate | percent:'1.0-1')}}
+            </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="failure_rate">
+            <mat-header-cell *matHeaderCellDef> Failed (%) </mat-header-cell>
+            <mat-cell *matCellDef="let country">
+                {{ (country.failureRate < 0) ? 'NA' : (country.failureRate | percent:'1.0-1')}}
+            </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="no_receipt">
+            <mat-header-cell *matHeaderCellDef class="mat-last-col"> No Delivery Receipt </mat-header-cell>
+            <mat-cell *matCellDef="let country" class="mat-last-col">
+                {{ (country.noReceiptRate < 0) ? 'NA' : (country.noReceiptRate | percent:'1.0-1')}}
+            </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayColumns;"></mat-row>
+    </mat-table>
+</div>

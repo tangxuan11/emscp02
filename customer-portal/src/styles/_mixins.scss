@@ -72,7 +72,11 @@
         .mat-header-row {
             .mat-header-cell {
                 &.mat-last-col {
-                    flex: 0 0 calc(100% / ( 2 * #{$numColumns} ));
+                    @if $numColumns == 3 or $numColumns == 4 {
+                        flex: 0 0 calc(100% / ( 2 * #{$numColumns} ));
+                    } @else if $numColumns == 5 {
+                        flex: 0 0 calc(100% / ( 1.5 * #{$numColumns} ));
+                    }
                 }
             }
         }
@@ -80,7 +84,11 @@
         .mat-row {
             .mat-cell {
                 &.mat-last-col {
-                    flex: 0 0 calc(100% / ( 2 * #{$numColumns} ));
+                    @if $numColumns == 3 or $numColumns == 4 {
+                        flex: 0 0 calc(100% / ( 2 * #{$numColumns} ));
+                    } @else if $numColumns == 5 {
+                        flex: 0 0 calc(100% / ( 1.5 * #{$numColumns} ));
+                    }
                 }
             }
         }
