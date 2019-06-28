@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 
 export interface ChannelTraffic {
     name: string;
@@ -21,14 +21,32 @@ const DUMMY_DATA: ChannelTraffic[] = [
     templateUrl: './channel-traffic-summary.component.html',
     styleUrls: ['./channel-traffic-summary.component.scss']
 })
-export class ChannelTrafficSummaryComponent implements OnInit {
+export class ChannelTrafficSummaryComponent implements OnInit, OnChanges {
     displayColumns: string[] = ['name','traffic_volume','success_rate'];
-    data = DUMMY_DATA;
-    totalTraffic = 4000;
+    data: ChannelTraffic[];
+    totalTraffic: number = 0;
+    mostTrafficDigits: number = 1;
 
-    constructor() { }
+    constructor() {
+        this.data = DUMMY_DATA;
+    }
+
+    ngOnChanges() {
+        for (let channel of this.data) {
+            this.totalTraffic += channel.traffic;
+            let numTrafficDigits = channel.traffic.toString().length;
+            if (numTrafficDigits > this.mostTrafficDigits)
+                this.mostTrafficDigits = numTrafficDigits;
+        }
+    }
 
     ngOnInit() {
+        for (let channel of this.data) {
+            this.totalTraffic += channel.traffic;
+            let numTrafficDigits = channel.traffic.toString().length;
+            if (numTrafficDigits > this.mostTrafficDigits)
+                this.mostTrafficDigits = numTrafficDigits;
+        }
     }
 
 }
