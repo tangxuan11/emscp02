@@ -31,17 +31,30 @@ export class MainTrafficSummaryComponent implements OnInit {
                 "yAxisName": "",
                 "numberPrefix": "",
                 "theme": "fusion",
+                "axisonleft": "0",
+                "drawCustomLegend":"1",
                 "legendPosition": "right",
                 "legendIconSides": "4",
                 "legendIconStartAngle": "45",
                 "legendIconBorderThickness": "2",
                 "captionalignment": "left",
+                "showYAxisValues" : "1",
+                "showLegend": "1"
             },
             "categories": []
         }
 
         this.sendRequestForMainTrafficSummary();
+        
 
+    }
+
+    render1 () {
+        this.dataSource["dataset"][6]["initiallyHidden"] = "0";
+    }
+
+    render2 () {
+        this.dataSource["dataset"][6]["initiallyHidden"] = "1";
     }
 
     sendRequestForMainTrafficSummary() {
@@ -96,6 +109,7 @@ export class MainTrafficSummaryComponent implements OnInit {
             {
                 "seriesName": "ALL CHANNELS",
                 "color": "#ff0000",
+                "initiallyHidden": "0",
                 "data": []
             }
         ];
