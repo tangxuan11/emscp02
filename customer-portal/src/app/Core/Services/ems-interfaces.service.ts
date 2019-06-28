@@ -45,6 +45,10 @@ export interface AnalyticsMainTrafficSummaryResponse {
     chart: string;
 }
 
+export interface AnalyticsChannelTrafficSummaryResponse {
+    chart: string;
+}
+
 @Injectable({
     providedIn: 'root'
 })

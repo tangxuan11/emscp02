@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { AnalyticsMainTrafficSummaryResponse } from "./ems-interfaces.service";
+import { AnalyticsMainTrafficSummaryResponse, AnalyticsChannelTrafficSummaryResponse } from "./ems-interfaces.service";
 
 @Injectable({
     providedIn: 'root'
@@ -9,6 +9,7 @@ import { AnalyticsMainTrafficSummaryResponse } from "./ems-interfaces.service";
 export class AnalyticsGetMainTrafficSummaryService {
 
     analyticsMainTrafficSummaryData$: Observable<AnalyticsMainTrafficSummaryResponse[]>;
+    analyticsChannelTrafficSummaryData$: Observable<AnalyticsChannelTrafficSummaryResponse[]>;
 
     username: string;
 
@@ -26,8 +27,19 @@ export class AnalyticsGetMainTrafficSummaryService {
             .set("t", "Traffic Summary")
             .set("y", "domain");
 
-        this.analyticsMainTrafficSummaryData$ = this.httpClient.get<AnalyticsMainTrafficSummaryResponse[]>(this.analyticsMainTrafficSummaryServerURL, { params: httpParams });
+        this.analyticsMainTrafficSummaryData$ = this.httpClient
+        .get<AnalyticsMainTrafficSummaryResponse[]>(this.analyticsMainTrafficSummaryServerURL, { params: httpParams });
         return this.analyticsMainTrafficSummaryData$;
+    }
+
+    sendAnalyticsChannelTrafficSummaryHttp(indata: string) {
+        this.username = indata;
+        let httpParams = new HttpParams()
+            .set("channel", "yes");
+
+        this.analyticsChannelTrafficSummaryData$ = this.httpClient
+        .get<AnalyticsChannelTrafficSummaryResponse[]>(this.analyticsMainTrafficSummaryServerURL, { params: httpParams });
+        return this.analyticsChannelTrafficSummaryData$;
     }
 }
 
