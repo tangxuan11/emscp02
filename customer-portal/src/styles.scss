@@ -1,6 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~@angular/material/theming';
 @import 'styles/themes';
+@import 'styles/variables';
+@import 'styles/mixins';
 
 $theme: $material_theme;
 $primary: map-get($theme, primary);

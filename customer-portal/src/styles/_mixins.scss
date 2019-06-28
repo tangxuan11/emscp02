@@ -12,7 +12,7 @@
             input {
                 caret-color: mat-color($foreground, secondary-text)!important;
             }
-            
+
             .mat-form-field-label {
                 color: mat-color($foreground, secondary-text)!important;
             }
@@ -26,6 +26,61 @@
                 }
                 .mat-form-field-ripple {
                     background-color: mat-color($warn)!important;
+                }
+            }
+        }
+    }
+}
+
+@mixin mat-table-style($theme) {
+    $primary: map-get($theme, primary);
+    $accent: map-get($theme, accent);
+    $warn: map-get($theme, warn);
+    $foreground: map-get($theme, foreground);
+
+    .mat-table {
+        width: 100%;
+
+        .mat-header-row {
+            min-height: 30px!important;
+            background-color: mat-color($primary, 600);
+            border: 1px solid mat-color($primary, 600);
+
+            .mat-header-cell {
+                font-size: 11pt;
+                color: mat-color($foreground, text);
+                font-weight: normal;
+            }
+        }
+
+        .mat-row {
+            min-height: 40px!important;
+
+            .mat-cell {
+                font-size: 10pt;
+
+                &.mat-cell-bold {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+
+@mixin mat-table-last-col-resize($numColumns) {
+    .mat-table {
+        .mat-header-row {
+            .mat-header-cell {
+                &.mat-last-col {
+                    flex: 0 0 calc(100% / ( 2 * #{$numColumns} ));
+                }
+            }
+        }
+
+        .mat-row {
+            .mat-cell {
+                &.mat-last-col {
+                    flex: 0 0 calc(100% / ( 2 * #{$numColumns} ));
                 }
             }
         }
