@@ -1,5 +1,8 @@
 <div fxLayout="column" fxLayoutAlign="start stretch">
-    <p fxFlex="15px" fxFlexOffset="5">{{ channel }}</p>
+    <div class="title" fxFlex="15px">
+        <mat-icon svgIcon="breadcrumb" class="svg-icon" color="accent"></mat-icon>
+        <span>{{ channel }}</span>
+    </div>
     <mat-divider></mat-divider>
     <mat-table fxFlex="" [dataSource]="data">
         <ng-container matColumnDef="name">

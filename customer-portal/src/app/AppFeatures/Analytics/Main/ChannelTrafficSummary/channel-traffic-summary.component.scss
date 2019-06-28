@@ -9,12 +9,20 @@ $analytics-title-font-family: Arial, Helvetica, sans-serif;
 $numColumns: 3;
 @include mat-table-last-col-resize($numColumns);
 
-p {
-    padding: 10px 0px 10px 25px;
-    margin-bottom: 0;
-    font-size: 12pt;
-    font-weight: 600;
-    font-family: $analytics-title-font-family;
+.title {
+    margin-top: 15px;
+    padding: 12px 0 3px 20px;
+    height: 25px;
+    .svg-icon {
+        max-height: 10px;
+    }
+
+    span {
+        margin-top: 5px;
+        font-size: 12pt;
+        font-weight: 600;
+        font-family: $analytics-title-font-family;
+    }
 }
 
 .channel-color {
@@ -24,20 +32,23 @@ p {
 }
 
 .traffic {
-    padding-right: 10px;;
+    padding-right: 5px;
 }
 
-.mat-chip {
-    min-height: 17px;
-    width: 35px;
-    height: 17px;
-    line-height: 17px;
-    border-radius: 17px;
-    font-size: 10px;
-    font-weight: bold;
-    padding: 0;
+.mat-chip-list {
 
-    .chip-text {
-        margin: 0 auto;
+    .mat-chip {
+        min-height: 17px;
+        width: 35px;
+        height: 17px;
+        line-height: 17px;
+        border-radius: 17px;
+        font-size: 10px;
+        font-weight: bold;
+        padding: 0;
+
+        .chip-text {
+            margin: 0 auto;
+        }
     }
 }

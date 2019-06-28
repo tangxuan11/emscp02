@@ -1,5 +1,8 @@
 <div fxLayout="column" fxLayoutAlign="start stretch">
-    <p fxFlex="15px" fxFlexOffset="5">Percentage of Total Traffic</p>
+    <div class="title" fxFlex="15px">
+        <mat-icon svgIcon="breadcrumb" class="svg-icon" color="accent"></mat-icon>
+        <span>Percentage of Total Traffic</span>
+    </div>
     <mat-divider></mat-divider>
     <mat-table fxFlex="" [dataSource]="data">
         <ng-container matColumnDef="name">
@@ -12,9 +15,12 @@
 
         <ng-container matColumnDef="traffic_volume">
             <mat-header-cell *matHeaderCellDef> Current Month Traffic Volume </mat-header-cell>
-            <mat-cell *matCellDef="let channel" fxLayout="row" fxLayoutAlign="center">
-                <span fxFlex="50" class="traffic">{{channel.traffic}}</span>
-                <span fxFlex="50">
+            <mat-cell *matCellDef="let channel">
+                <span class="traffic"
+                      [style.padding-left.px]="(7.49 * (mostTrafficDigits - channel.traffic.toString().length))">
+                    {{channel.traffic}}
+                </span>
+                <span>
                     <mat-chip-list>
                         <mat-chip>
                             <div class="chip-text">

@@ -19,6 +19,7 @@ import { CountryTrafficSummaryComponent } from './CountryTrafficSummary/country-
 import { MatButtonModule,
          MatChipsModule,
          MatDividerModule,
+         MatIconModule,
          MatTableModule } from '@angular/material';
 
 @NgModule({
@@ -30,6 +31,8 @@ import { MatButtonModule,
         MatButtonModule,
         MatChipsModule,
         MatDividerModule,
+        MatTableModule,
+        MatIconModule,
         MatTableModule,
         FlexLayoutModule
     ]

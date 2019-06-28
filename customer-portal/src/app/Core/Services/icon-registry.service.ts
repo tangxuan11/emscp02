@@ -17,6 +17,10 @@ export class IconRegistryService {
             url: "assets/icons/analytics_inactive.svg"
         },
         {
+            alias: "breadcrumb",
+            url: "assets/icons/breadcrumb_icon.svg"
+        },
+        {
             alias: "campaign",
             url: "assets/icons/campaign_active.svg"
         },
