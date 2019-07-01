@@ -13,14 +13,17 @@ $analytics-main-border-radius: 10px;
 .analytics-main-traffic-summary {
     border-radius: $analytics-main-border-radius;
     background-color: mat-color($primary, 200);
+    box-shadow: 0 0 10px mat-color($primary, darker);
 }
 
 .analytics-channel-traffic-summary {
     border-radius: $analytics-main-border-radius;
     background-color: mat-color($primary, 200);
+    box-shadow: 0 0 10px mat-color($primary, darker);
 }
 
 .analytics-country-traffic-summary {
     border-radius: $analytics-main-border-radius;
     background-color: mat-color($primary, 200);
+    box-shadow: 0 0 10px mat-color($primary, darker);
 }
