@@ -13,7 +13,8 @@ export class ChangePasswordHttpClientService {
     changePasswordRes: changePasswordResponse[] = [];
     changePasswordData$: Observable<changePasswordResponse[]>;
 
-    changePasswordServerURL: string = 'https://ems-portal.mpvm37.mp.ics.com/auth_reset_tang.php';
+    //changePasswordServerURL: string = 'https://ems-portal.mpvm37.mp.ics.com/auth_reset_tang.php';
+    changePasswordServerURL: string = 'https://ems-portal.mpvm23.mp.ics.com/server/authChangePasswordService.php';
 
     constructor(private httpClient: HttpClient) { }
 

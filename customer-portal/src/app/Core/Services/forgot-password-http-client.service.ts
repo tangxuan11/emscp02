@@ -12,7 +12,8 @@ export class ForgotPasswordHttpClientService {
     forgotPasswordRes: forgotPasswordResponse[] = [];
     forgotPasswordData$: Observable<forgotPasswordResponse[]>;
 
-    forgotPasswordServerURL: string = 'https://ems-portal.mpvm37.mp.ics.com/auth_forgot_tang.php';
+    //forgotPasswordServerURL: string = 'https://ems-portal.mpvm37.mp.ics.com/auth_forgot_tang.php';
+    forgotPasswordServerURL: string = 'https://ems-portal.mpvm23.mp.ics.com/server/authForgotPasswordService.php';
 
     constructor(private httpClient: HttpClient) { }
 

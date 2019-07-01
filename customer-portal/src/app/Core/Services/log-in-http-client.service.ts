@@ -13,7 +13,8 @@ export class LogInHttpClientService {
     loginRes: loginResponse[] = [];
     loginData$: Observable<loginResponse[]>;
 
-    loginServerURL: string = 'https://ems-portal.mpvm37.mp.ics.com/auth_tang1.php';
+    //loginServerURL: string = 'https://ems-portal.mpvm37.mp.ics.com/auth_tang1.php';
+    loginServerURL: string = 'https://ems-portal.mpvm23.mp.ics.com/server/authService.php';
 
     constructor(private httpClient: HttpClient) { }
 
