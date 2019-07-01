@@ -25,7 +25,6 @@ export class MainTrafficSummaryComponent implements OnInit {
 
         this.dataSource = {
             "chart": {
-                "caption": "Current Month Traffic Summary",
                 "subCaption": "",
                 "xAxisname": "",
                 "yAxisName": "",
@@ -45,7 +44,7 @@ export class MainTrafficSummaryComponent implements OnInit {
         }
 
         this.sendRequestForMainTrafficSummary();
-        
+
 
     }
 
@@ -134,4 +133,3 @@ export class MainTrafficSummaryComponent implements OnInit {
         return this.sample_dataset;
     }
 }
-

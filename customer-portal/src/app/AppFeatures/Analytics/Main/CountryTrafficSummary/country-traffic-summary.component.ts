@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 
 export interface CountryTraffic {
     name: string;
@@ -51,14 +51,33 @@ const DUMMY_DATA: CountryTraffic[] = [
     templateUrl: './country-traffic-summary.component.html',
     styleUrls: ['./country-traffic-summary.component.scss']
 })
-export class CountryTrafficSummaryComponent implements OnInit {
+export class CountryTrafficSummaryComponent implements OnInit, OnChanges {
     channel = "SMS";
     displayColumns: string[] = ['name','traffic_volume','success_rate', 'failure_rate', 'no_receipt'];
     data = DUMMY_DATA;
+    private numCountries: number = 5;
 
     constructor() { }
 
     ngOnInit() {
+        this.updateTableData();
+    }
+
+    ngOnChanges() {
+        this.updateTableData();
+    }
+
+    private updateTableData() {
+        this.data.sort( (a,b) => {
+            return b.traffic-a.traffic;
+        });
+        this.data.splice(this.numCountries);
+    }
+
+    setNumCountries(num: number) {
+        if (num <= 0) return;
+        this.numCountries = num;
+        this.updateTableData();
     }
 
 }

@@ -1,1 +1,16 @@
-<fusioncharts width="1200" height="300" type="msline" dataFormat="JSON" [dataSource]="dataSource"></fusioncharts>
+<div fxLayout="column" fxLayoutAlign="start stretch">
+    <div class="title"
+         fxFlex="35px"
+         fxLayout="row"
+         fxLayoutAlign="start center">
+        <mat-icon svgIcon="breadcrumb"
+                  fxFlex="20px"
+                  fxFlexOffset="20px"
+                  class="svg-icon"
+                  color="accent">
+        </mat-icon>
+        <p fxFlex="">Current Month Traffic Summary</p>
+    </div>
+    <mat-divider></mat-divider>
+    <fusioncharts fxFlex="" width="100%" type="scrollline2d" dataFormat="JSON" [dataSource]="dataSource"></fusioncharts>
+</div>

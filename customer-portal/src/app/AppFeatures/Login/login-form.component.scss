@@ -41,15 +41,6 @@ $login-form-error-padding-bottom: 20px;
     width: 70%;
 }
 
-button {
-    &[mat-raised-button] {
-        &[disabled] {
-            background-color: mat-color($accent, 300);
-            color: mat-color($primary, lighter);
-        }
-    }
-}
-
 a.disabled {
     pointer-events: none;
     cursor: default;
