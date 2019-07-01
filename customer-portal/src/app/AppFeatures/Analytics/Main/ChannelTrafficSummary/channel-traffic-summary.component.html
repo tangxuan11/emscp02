@@ -1,7 +1,15 @@
 <div fxLayout="column" fxLayoutAlign="start stretch">
-    <div class="title" fxFlex="15px">
-        <mat-icon svgIcon="breadcrumb" class="svg-icon" color="accent"></mat-icon>
-        <span>Percentage of Total Traffic</span>
+    <div class="title"
+         fxFlex="35px"
+         fxLayout="row"
+         fxLayoutAlign="start center">
+        <mat-icon svgIcon="breadcrumb"
+                  fxFlex="20px"
+                  fxFlexOffset="20px"
+                  class="svg-icon"
+                  color="accent">
+        </mat-icon>
+        <p fxFlex="">Percentage of Total Traffic</p>
     </div>
     <mat-divider></mat-divider>
     <mat-table fxFlex="" [dataSource]="data">
@@ -42,4 +50,7 @@
         <mat-header-row *matHeaderRowDef="displayColumns"></mat-header-row>
         <mat-row *matRowDef="let row; columns: displayColumns;"></mat-row>
     </mat-table>
+
+    <!-- White space for rounding outer div corners -->
+    <div fxFlex="10px"></div>
 </div>

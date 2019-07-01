@@ -21,7 +21,28 @@ const DUMMY_DATA: CountryTraffic[] = [
         traffic: 1000,
         successRate: 0.985,
         failureRate: 0.005,
-        noReceiptRate: 0.005
+        noReceiptRate: 0.01
+    },
+    {
+        name: "Singapore",
+        traffic: 900,
+        successRate: 0.97,
+        failureRate: 0.01,
+        noReceiptRate: 0.02
+    },
+    {
+        name: "Germany",
+        traffic: 875,
+        successRate: 0.995,
+        failureRate: 0.003,
+        noReceiptRate: 0.002
+    },
+    {
+        name: "India",
+        traffic: 1000,
+        successRate: 0.925,
+        failureRate: 0.06,
+        noReceiptRate: 0.015
     }
 ]
 

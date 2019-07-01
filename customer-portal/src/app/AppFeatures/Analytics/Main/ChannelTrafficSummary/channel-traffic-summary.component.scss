@@ -10,15 +10,12 @@ $numColumns: 3;
 @include mat-table-last-col-resize($numColumns);
 
 .title {
-    margin-top: 15px;
-    padding: 12px 0 3px 20px;
-    height: 25px;
+
     .svg-icon {
         max-height: 10px;
     }
 
-    span {
-        margin-top: 5px;
+    p {
         font-size: 12pt;
         font-weight: 600;
         font-family: $analytics-title-font-family;

@@ -44,7 +44,8 @@
         .mat-header-row {
             min-height: 30px!important;
             background-color: mat-color($primary, 600);
-            border: 1px solid mat-color($primary, 600);
+            border-top: 1px solid mat-color($primary, darker);
+            border-bottom: 1px solid mat-color($primary, darker);
 
             .mat-header-cell {
                 font-size: 11pt;
