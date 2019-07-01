@@ -13,7 +13,11 @@ export class AnalyticsGetMainTrafficSummaryService {
 
     username: string;
 
-    analyticsMainTrafficSummaryServerURL: string = 'https://ems-portal.mpvm37.mp.ics.com/analytics_tang.php';
+    //analyticsMainTrafficSummaryServerURL: string = 'https://ems-portal.mpvm37.mp.ics.com/analytics_tang.php';
+    analyticsMainTrafficSummaryServerURL: string = 'https://ems-portal.mpvm23.mp.ics.com/server/analyticsGetTrafficSummary.php';
+
+    analyticsChannelTrafficSummaryServerURL: string = 'https://ems-portal.mpvm23.mp.ics.com/server/analyticsGetChannelSummary.php';
+
 
     constructor(private httpClient: HttpClient) { }
 
@@ -35,10 +39,13 @@ export class AnalyticsGetMainTrafficSummaryService {
     sendAnalyticsChannelTrafficSummaryHttp(indata: string) {
         this.username = indata;
         let httpParams = new HttpParams()
-            .set("channel", "yes");
+            .set("g", "Traffic: Inbound Request Summary")
+            .set("o", '["total"]')
+            .set("t", "Traffic Summary")
+            .set("y", "domain");
 
         this.analyticsChannelTrafficSummaryData$ = this.httpClient
-        .get<AnalyticsChannelTrafficSummaryResponse[]>(this.analyticsMainTrafficSummaryServerURL, { params: httpParams });
+        .get<AnalyticsChannelTrafficSummaryResponse[]>(this.analyticsChannelTrafficSummaryServerURL, { params: httpParams });
         return this.analyticsChannelTrafficSummaryData$;
     }
 }
