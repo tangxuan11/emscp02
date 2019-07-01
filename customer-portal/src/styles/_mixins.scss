@@ -1,5 +1,7 @@
 @import '~@angular/material/theming';
 
+// This mixin adjust material's for form fields to make inputs more visible when
+// using the EMS themes.
 @mixin form-field-adjustment($theme) {
     $primary: map-get($theme, primary);
     $accent: map-get($theme, accent);
@@ -32,6 +34,7 @@
     }
 }
 
+// This mixin adjust material's tables to have a global style for the EMS.
 @mixin mat-table-style($theme) {
     $primary: map-get($theme, primary);
     $accent: map-get($theme, accent);
@@ -68,6 +71,9 @@
     }
 }
 
+// Material's tables have even width columns with text left aligned. For this
+// reason, the table's last column is variably shrunk to limit the amout of
+// negative space on the right side of the table. Improves column spacing.
 @mixin mat-table-last-col-resize($numColumns) {
     .mat-table {
         .mat-header-row {
@@ -91,6 +97,28 @@
                         flex: 0 0 calc(100% / ( 1.5 * #{$numColumns} ));
                     }
                 }
+            }
+        }
+    }
+}
+
+// This mixin implements a common styling for all mat raised buttons
+@mixin mat-raised-button-style($theme) {
+    $primary: map-get($theme, primary);
+    $accent: map-get($theme, accent);
+    $foreground: map-get($theme, foreground);
+
+    [mat-raised-button] {
+        &[disabled] {
+            &[color="primary"] {
+                background-color: mat-color($primary, 300);
+                color: mat-color($foreground, secondary-text);
+                border: 1px solid mat-color($primary);
+            }
+
+            &[color="accent"] {
+                background-color: mat-color($accent, 300);
+                color: mat-color($primary, lighter);
             }
         }
     }
